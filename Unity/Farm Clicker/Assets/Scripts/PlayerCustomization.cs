@@ -91,7 +91,6 @@ public class PlayerCustomization : MonoBehaviour {
 	AudioSource m_source;
 
 	void Start () {
-		DontDestroyOnLoad (gameObject);
 		m_source = gameObject.GetComponent<AudioSource>();
         iGender = -1;
 		HatRenderer1.sprite = ListHat1[iHat1];
