@@ -507,35 +507,20 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnContinueClick () {
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		PlayerPrefs.SetInt("", );
-		int iGender = 0;
-		int iHat1 = 0;
-		int iHat2 = 0;
-		int iBackHair = 0;
-		int iFrontHair = 0;
-		int iEyebrows = 0;
-		int iEyes = 0;
-		int iMustache = 0;
-		int iHand = 0;
-		int iNeck = 0;
-		int iFace = 0;
-		int iShirt = 0;
-		int iOveralls = 0;
-		int iSleeves = 0;
-		int iBoots = 0;
+		PlayerPrefs.SetInt("Gender", iGender);
+		PlayerPrefs.SetInt("Hat 1", iHat1);
+		PlayerPrefs.SetInt("Hat 2", iHat2);
+		PlayerPrefs.SetInt("Back Hair", iBackHair);
+		PlayerPrefs.SetInt("Front Hair", iFrontHair);
+		PlayerPrefs.SetInt("Eyebrows", iEyebrows);
+		PlayerPrefs.SetInt("Eyes", iEyes);
+		PlayerPrefs.SetInt("Mustache", iMustache);
+		PlayerPrefs.SetInt("Hand", iHand);
+		PlayerPrefs.SetInt("Neck", iNeck);
+		PlayerPrefs.SetInt("Face", iFace);
+		PlayerPrefs.SetInt("Shirt", iShirt);
+		PlayerPrefs.SetInt("Overalls", iOveralls);
+		PlayerPrefs.SetInt("Sleeves", iSleeves);
+		PlayerPrefs.SetInt("Boots", iBoots);
 	}
 }
