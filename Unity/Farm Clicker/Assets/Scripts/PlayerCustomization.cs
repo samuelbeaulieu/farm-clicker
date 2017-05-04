@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCustomization : MonoBehaviour {
 
@@ -86,7 +87,12 @@ public class PlayerCustomization : MonoBehaviour {
     int RandomSleeves;
     int RandomBoots;
 
+	public AudioClip BtnSound;
+	AudioSource m_source;
+
 	void Start () {
+		DontDestroyOnLoad (gameObject);
+		m_source = gameObject.GetComponent<AudioSource>();
         iGender = -1;
 		HatRenderer1.sprite = ListHat1[iHat1];
 		HatRenderer2.sprite = ListHat2[iHat2];
@@ -107,6 +113,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnRandomClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
         RandomGender = Random.Range(-5, 5);
         if (RandomGender <= 0) {
             RandomGender = -1;
@@ -188,6 +196,8 @@ public class PlayerCustomization : MonoBehaviour {
     }
 
 	public void onBtnBoyClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iGender = -1;
         LeanTween.moveLocalX(btnNextHat, 1250f, 1f);
         LeanTween.moveLocalX(btnNextHair, 1250f, 1f);
@@ -220,6 +230,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnGirlClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iGender = 1;
         LeanTween.moveLocalX(btnNextHat, 1250f, 1f);
         LeanTween.moveLocalX(btnNextHair, 1250f, 1f);
@@ -319,6 +331,8 @@ public class PlayerCustomization : MonoBehaviour {
     }
 
 	public void onBtnNextHatClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iHat1++;
 		iHat2++;
 		if (iHat1 >= 8 && iHat2 >= 8) {
@@ -330,6 +344,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevHatClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iHat1--;
 		iHat2--;
 		if (iHat1 <= 0 && iHat2 <= 0) {
@@ -341,6 +357,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextHairClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iBackHair++;
 		iFrontHair++;
 		if (iBackHair >= 13 && iFrontHair >= 13) {
@@ -354,6 +372,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevHairClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iBackHair--;
 		iFrontHair--;
 		if (iBackHair <= 0 && iFrontHair <= 0) {
@@ -367,6 +387,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextEyebrowsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iEyebrows++;
 		if (iEyebrows >= 13) {
 			iEyebrows = 0;
@@ -375,6 +397,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevEyebrowsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iEyebrows--;
 		if (iEyebrows <= 0) {
 			iEyebrows = 13;
@@ -383,6 +407,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextEyesClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iEyes++;
 		if (iEyes >= 5) {
 			iEyes = 0;
@@ -391,6 +417,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevEyesClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iEyes--;
 		if (iEyes <= 0) {
 			iEyes = 5;
@@ -399,6 +427,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextMustacheClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iMustache++;
 		if (iMustache >= 13) {
 			iMustache = 0;
@@ -407,6 +437,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevMustacheClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iMustache--;
 		if (iMustache <= 0) {
 			iMustache = 13;
@@ -415,6 +447,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextSkinClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iHand++;
 		iNeck++;
 		iFace++;
@@ -429,6 +463,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevSkinClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iHand--;
 		iNeck--;
 		iFace--;
@@ -443,6 +479,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextShirtClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iShirt++;
 		if (iShirt >= 9) {
 			iShirt = 0;
@@ -451,6 +489,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevShirtClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iShirt--;
 		if (iShirt <= 0) {
 			iShirt = 9;
@@ -459,6 +499,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextOverallsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iOveralls++;
 		if (iOveralls >= 9) {
 			iOveralls = 0;
@@ -467,6 +509,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevOverallsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iOveralls--;
 		if (iOveralls <= 0) {
 			iOveralls = 9;
@@ -475,6 +519,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextSleevesClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iSleeves++;
 		if (iSleeves >= 9) {
 			iSleeves = 0;
@@ -483,6 +529,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevSleevesClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iSleeves--;
 		if (iSleeves <= 0) {
 			iSleeves = 9;
@@ -491,6 +539,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
     public void onBtnNextBootsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iBoots++;
 		if (iBoots >= 1) {
 			iBoots = 0;
@@ -499,6 +549,8 @@ public class PlayerCustomization : MonoBehaviour {
 	}
 
 	public void onBtnPrevBootsClick () {
+		m_source.clip = BtnSound;
+		m_source.Play();
 		iBoots--;
 		if (iBoots <= 0) {
 			iBoots = 1;
@@ -522,5 +574,14 @@ public class PlayerCustomization : MonoBehaviour {
 		PlayerPrefs.SetInt("Overalls", iOveralls);
 		PlayerPrefs.SetInt("Sleeves", iSleeves);
 		PlayerPrefs.SetInt("Boots", iBoots);
+		Debug.Log ("PlayerPrefs");
+		m_source.clip = BtnSound;
+		m_source.Play();
+		Invoke("ChangeScenePlay", 1f);
+	}
+
+	void ChangeScenePlay()
+	{
+		SceneManager.LoadScene(1);
 	}
 }

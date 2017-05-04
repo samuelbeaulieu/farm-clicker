@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class AnimMenu : MonoBehaviour {
 
@@ -95,17 +94,14 @@ public class AnimMenu : MonoBehaviour {
 		}
 	}
 	
-    public void OnInputFieldClick()
-	{
+    public void OnInputFieldClick() {
 		m_source.clip = btnSound;
 		m_source.Play();
 	}
     
-	public void OnBtnPlayClick()
-	{
+	public void OnBtnPlayClick() {
 		m_source.clip = btnSound;
 		m_source.Play();
-
 		panelPlayerCustomization.SetActive(true);
 		panelMenu.SetActive(false);
 	}
