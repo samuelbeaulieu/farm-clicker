@@ -4,102 +4,73 @@ using UnityEngine;
 
 public class Localization : MonoBehaviour {
 
-	public bool enableFR;
-	public bool enableEN;
-	public GameObject btnFrancais;
-	public GameObject btnEnglish;
 	Dictionary<string, string> EN;
 	Dictionary<string, string> FR;
 	Dictionary<string, string> CurrentLang;
 
+	//langue en cours
+	string CurrentLangStr = "EN";
+
+	//list of textfields to update
+	List<GameObject> m_textFieldList;
+
 	// Use this for initialization
 	void Awake () {
-		EN = new Dictionary<string, string>();
-		EN["NAME"] = "Enter your name...";
-		EN["PLAY"] = "Play";
-		EN["LANGUAGE"] = "Language";
-		EN["FRENCH"] = "French";
-		EN["ENGLISH"] = "English";
-		EN["RESTART"] = "Restart";
-		EN["EXIT"] = "Exit";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
-		EN[""] = "";
+		DontDestroyOnLoad (gameObject);
 
+		m_textFieldList = new List<GameObject> ();
+
+		EN = new Dictionary<string, string>();
+		EN["BTN_PLAY"] = "Play";
+		EN["INPUT_NAME"] = "Enter your name...";
+		EN["BTN_LANGUAGE"] = "Language";
+		EN["BTN_FRANCAIS"] = "French";
+		EN["BTN_ENGLISH"] = "English";
+		EN["BTN_RESTART"] = "Restart";
+		EN["BTN_EXIT"] = "Exit";
 
 		FR = new  Dictionary<string, string>();
-		FR["NAME"] = "Entrez votre nom...";
-		FR["PLAY"] = "Jouer";
-		FR["LANGUAGE"] = "Langue";
-		FR["FRENCH"] = "Français";
-		FR["ENGLISH"] = "Anglais";
-		FR["RESTART"] = "Recommencer";
-		FR["EXIT"] = "Quitter";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
+		FR["BTN_PLAY"] = "Jouer";
+		FR["INPUT_NAME"] = "Entrer votre nom...";
+		FR["BTN_LANGUAGE"] = "Langue";
+		FR["BTN_FRANCAIS"] = "Français";
+		FR["BTN_ENGLISH"] = "Anglais";
+		FR["BTN_RESTART"] = "Recommencer";
+		FR["BTN_EXIT"] = "Quitter";
 
-		enableEN = true;
-		enableFR = false;
-
-		if (enableFR == true) {
-			CurrentLang = FR;
-			Debug.Log("French");
-		} else if (enableEN == true) {
+		//what should be the defualt loaded language?
+		if (CurrentLangStr == "EN") {
 			CurrentLang = EN;
-			Debug.Log("English");
+		} else {
+			CurrentLang = FR;
 		}
 	}
 
-
-	public void onFrenchClick()
-	{
-		enableEN = false;
-		enableFR = true;
-	}
-
-	public void onEnglishClick()
-	{
-		enableEN = true;
-		enableFR = false;
-	}
-
-
+	//Get a localized string value
 	public string GetString(string a_key)
 	{
 		return CurrentLang[a_key];
 	}
 
-	public void SetCurrentLang(string a_lang)
+	//registers a textfield to be notified when lang is changed
+	public void RegisterTextField(GameObject a_textField){
+		m_textFieldList.Add (a_textField);
+	}
+
+	//switch the current localized lang
+	public void SwitchCurrentLang()
 	{
-		if (a_lang == "EN") {
-			CurrentLang = EN;
-		} else{
+		if (CurrentLangStr == "EN") {
+			CurrentLangStr = "FR";
 			CurrentLang = FR;
+		} else {
+			CurrentLangStr = "EN";
+			CurrentLang = EN;
+		}
+
+		//we loop through each registered textfield and we trigger a text update for it
+		for (int i = 0; i < m_textFieldList.Count; i++) {
+			m_textFieldList [i].GetComponent<GetLocalizedText> ().UpdateText ();
 		}
 	}
 }
