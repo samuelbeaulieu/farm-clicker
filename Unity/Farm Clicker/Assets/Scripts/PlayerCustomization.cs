@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerCustomization : MonoBehaviour {
-
+//git
 	public GameObject btnBoy;
 	public GameObject btnGirl;
 	public GameObject btnNextHat;
