@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\GetLocalizedText.cs" />
     <Compile Include="Assets\Scripts\Localization.cs" />
     <Compile Include="Assets\Scripts\PlayerCustomization.cs" />
+    <Compile Include="Assets\Scripts\PlayerLookInGame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
