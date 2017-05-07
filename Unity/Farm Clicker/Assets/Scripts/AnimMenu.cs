@@ -21,6 +21,22 @@ public class AnimMenu : MonoBehaviour {
 	public GameObject txtCopy;
 	public GameObject panelPlayerCustomization;
 	public GameObject panelMenu;
+	public GameObject imgFace;
+	public GameObject imgOveralls;
+	public GameObject imgNeck;
+	public GameObject imgHand;
+	public GameObject imgShirt;
+	public GameObject imgFrontHair;
+	public GameObject imgBackHair;
+	public GameObject imgEyebrows;
+	public GameObject imgEyes;
+	public GameObject imgHat1;
+	public GameObject imgHat2;
+	public GameObject imgSleeves;
+	public GameObject imgMustache;
+	public GameObject imgBoots;
+	public GameObject imgMouth;
+
 	public AudioClip btnSound;
 	public bool menuActive = false;
 	public bool menuLanguageActive = false;
@@ -30,6 +46,21 @@ public class AnimMenu : MonoBehaviour {
 	void Start () {
 		m_source = gameObject.GetComponent<AudioSource>();
         panelPlayerCustomization.SetActive(false);
+        imgFace.SetActive(false);
+        imgOveralls.SetActive(false);
+        imgHand.SetActive(false);
+        imgNeck.SetActive(false);
+        imgShirt.SetActive(false);
+        imgFrontHair.SetActive(false);
+        imgBackHair.SetActive(false);
+        imgEyebrows.SetActive(false);
+        imgEyes.SetActive(false);
+        imgHat1.SetActive(false);
+        imgHat2.SetActive(false);
+        imgSleeves.SetActive(false);
+        imgMustache.SetActive(false);
+        imgBoots.SetActive(false);
+        imgMouth.SetActive(false);
 	}
 
 	public void OnBtnMenuClick()
@@ -103,6 +134,21 @@ public class AnimMenu : MonoBehaviour {
 		m_source.clip = btnSound;
 		m_source.Play();
 		panelPlayerCustomization.SetActive(true);
+        imgFace.SetActive(true);
+        imgOveralls.SetActive(true);
+        imgHand.SetActive(true);
+        imgNeck.SetActive(true);
+        imgShirt.SetActive(true);
+        imgFrontHair.SetActive(true);
+        imgBackHair.SetActive(true);
+        imgEyebrows.SetActive(true);
+        imgEyes.SetActive(true);
+        imgHat1.SetActive(true);
+        imgHat2.SetActive(true);
+        imgSleeves.SetActive(true);
+        imgMustache.SetActive(true);
+        imgBoots.SetActive(true);
+        imgMouth.SetActive(true);
 		panelMenu.SetActive(false);
 	}
 }
