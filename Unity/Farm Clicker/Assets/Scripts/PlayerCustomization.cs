@@ -29,6 +29,9 @@ public class PlayerCustomization : MonoBehaviour {
 	public GameObject btnNextBoots;
 	public GameObject btnPrevBoots;
 	public GameObject imgMouth;
+	public GameObject btnBack;
+	public GameObject panelPlayerCustomization;
+	public GameObject panelMenu;
 
 	public List<Sprite> ListHat1;
 	public SpriteRenderer HatRenderer1;
@@ -134,6 +137,21 @@ public class PlayerCustomization : MonoBehaviour {
         RandomOveralls = Random.Range(0, 10);
         RandomSleeves = Random.Range(0, 10);
         RandomBoots = Random.Range(0, 2);
+
+		iHat1 = RandomHat;
+		iHat2 = RandomHat;
+		iBackHair = RandomHair;
+		iFrontHair = RandomHair;
+		iEyebrows = RandomEyebrows;
+		iEyes = RandomEyes;
+		iMustache = RandomMustache;
+		iHand = RandomSkin;
+		iNeck = RandomSkin;
+		iFace = RandomSkin;
+		iShirt = RandomShirt;
+		iOveralls = RandomOveralls;
+		iSleeves = RandomSleeves;
+		iBoots = RandomBoots;
 
         HatRenderer1.sprite = ListHat1[RandomHat];
 		HatRenderer2.sprite = ListHat2[RandomHat];
@@ -334,7 +352,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.Play();
 		iHat1++;
 		iHat2++;
-		if (iHat1 >= 8 && iHat2 >= 8) {
+		if (iHat1 > 8 && iHat2 > 8) {
 			iHat1 = 0;
 			iHat2 = 0;
 		}
@@ -347,7 +365,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.Play();
 		iHat1--;
 		iHat2--;
-		if (iHat1 <= 0 && iHat2 <= 0) {
+		if (iHat1 < 0 && iHat2 < 0) {
 			iHat1 = 8;
 			iHat2 = 8;
 		}
@@ -360,7 +378,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.Play();
 		iBackHair++;
 		iFrontHair++;
-		if (iBackHair >= 13 && iFrontHair >= 13) {
+		if (iBackHair > 13 && iFrontHair > 13) {
 			iBackHair = 0;
 			iFrontHair = 0;
 		}
@@ -375,7 +393,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.Play();
 		iBackHair--;
 		iFrontHair--;
-		if (iBackHair <= 0 && iFrontHair <= 0) {
+		if (iBackHair < 0 && iFrontHair < 0) {
 			iBackHair = 13;
 			iFrontHair = 13;
 		}
@@ -389,7 +407,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iEyebrows++;
-		if (iEyebrows >= 13) {
+		if (iEyebrows > 13) {
 			iEyebrows = 0;
 		}
 		EyebrowsRenderer.sprite = ListEyebrows[iEyebrows];
@@ -399,7 +417,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iEyebrows--;
-		if (iEyebrows <= 0) {
+		if (iEyebrows < 0) {
 			iEyebrows = 13;
 		}
 		EyebrowsRenderer.sprite = ListEyebrows[iEyebrows];
@@ -409,7 +427,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iEyes++;
-		if (iEyes >= 5) {
+		if (iEyes > 5) {
 			iEyes = 0;
 		}
 		EyesRenderer.sprite = ListEyes[iEyes];
@@ -419,7 +437,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iEyes--;
-		if (iEyes <= 0) {
+		if (iEyes < 0) {
 			iEyes = 5;
 		}
 		EyesRenderer.sprite = ListEyes[iEyes];
@@ -429,7 +447,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iMustache++;
-		if (iMustache >= 13) {
+		if (iMustache > 13) {
 			iMustache = 0;
 		}
 		MustacheRenderer.sprite = ListMustache[iMustache];
@@ -439,7 +457,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iMustache--;
-		if (iMustache <= 0) {
+		if (iMustache < 0) {
 			iMustache = 13;
 		}
 		MustacheRenderer.sprite = ListMustache[iMustache];
@@ -451,7 +469,7 @@ public class PlayerCustomization : MonoBehaviour {
 		iHand++;
 		iNeck++;
 		iFace++;
-		if (iHand >= 4 && iNeck >= 4 && iFace >= 4) {
+		if (iHand > 4 && iNeck > 4 && iFace > 4) {
 			iHand = 0;
 			iNeck = 0;
 			iFace = 0;
@@ -467,7 +485,7 @@ public class PlayerCustomization : MonoBehaviour {
 		iHand--;
 		iNeck--;
 		iFace--;
-		if (iHand <= 0 && iNeck <= 0 && iFace <= 0) {
+		if (iHand < 0 && iNeck < 0 && iFace < 0) {
 			iHand = 4;
 			iNeck = 4;
 			iFace = 4;
@@ -481,7 +499,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iShirt++;
-		if (iShirt >= 9) {
+		if (iShirt > 9) {
 			iShirt = 0;
 		}
 		ShirtRenderer.sprite = ListShirt[iShirt];
@@ -491,7 +509,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iShirt--;
-		if (iShirt <= 0) {
+		if (iShirt < 0) {
 			iShirt = 9;
 		}
 		ShirtRenderer.sprite = ListShirt[iShirt];
@@ -501,7 +519,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iOveralls++;
-		if (iOveralls >= 9) {
+		if (iOveralls > 9) {
 			iOveralls = 0;
 		}
 		OverallsRenderer.sprite = ListOveralls[iOveralls];
@@ -511,7 +529,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iOveralls--;
-		if (iOveralls <= 0) {
+		if (iOveralls < 0) {
 			iOveralls = 9;
 		}
 		OverallsRenderer.sprite = ListOveralls[iOveralls];
@@ -521,7 +539,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iSleeves++;
-		if (iSleeves >= 9) {
+		if (iSleeves > 9) {
 			iSleeves = 0;
 		}
 		SleevesRenderer.sprite = ListSleeves[iSleeves];
@@ -531,7 +549,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iSleeves--;
-		if (iSleeves <= 0) {
+		if (iSleeves < 0) {
 			iSleeves = 9;
 		}
 		SleevesRenderer.sprite = ListSleeves[iSleeves];
@@ -541,7 +559,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iBoots++;
-		if (iBoots >= 1) {
+		if (iBoots > 1) {
 			iBoots = 0;
 		}
 		BootsRenderer.sprite = ListBoots[iBoots];
@@ -551,7 +569,7 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		iBoots--;
-		if (iBoots <= 0) {
+		if (iBoots < 0) {
 			iBoots = 1;
 		}
 		BootsRenderer.sprite = ListBoots[iBoots];
@@ -577,6 +595,13 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.clip = BtnSound;
 		m_source.Play();
 		Invoke("ChangeScenePlay", 1f);
+	}
+
+	public void OnBtnBackClick() {
+		m_source.clip = BtnSound;
+		m_source.Play();
+		panelPlayerCustomization.SetActive(false);
+		panelMenu.SetActive(true);
 	}
 
 	void ChangeScenePlay()
