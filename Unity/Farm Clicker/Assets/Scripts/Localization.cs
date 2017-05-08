@@ -8,6 +8,7 @@ public class Localization : MonoBehaviour {
 	public GameObject btnEnglish;
 	public GameObject btnFrench;
 	public AudioClip btnSound;
+
 	Dictionary<string, string> EN;
 	Dictionary<string, string> FR;
 	Dictionary<string, string> CurrentLang;

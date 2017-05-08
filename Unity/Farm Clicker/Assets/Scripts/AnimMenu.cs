@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AnimMenu : MonoBehaviour {
 
+	//Buttons & UI
 	public GameObject Logo;
 	public GameObject inputName;
 	public GameObject btnPlay;
@@ -21,6 +22,9 @@ public class AnimMenu : MonoBehaviour {
 	public GameObject txtCopy;
 	public GameObject panelPlayerCustomization;
 	public GameObject panelMenu;
+	public InputField mainInputField;
+
+	//Player
 	public GameObject imgFace;
 	public GameObject imgOveralls;
 	public GameObject imgNeck;
@@ -43,8 +47,11 @@ public class AnimMenu : MonoBehaviour {
 
 	AudioSource m_source;
 
+	//On start do this
 	void Start () {
 		m_source = gameObject.GetComponent<AudioSource>();
+
+		//Do not show player on this screen
         panelPlayerCustomization.SetActive(false);
         imgFace.SetActive(false);
         imgOveralls.SetActive(false);
@@ -63,9 +70,18 @@ public class AnimMenu : MonoBehaviour {
         imgMouth.SetActive(false);
 	}
 
+	void Update () {
+		if (mainInputField.text == "") {
+			btnPlay.GetComponent<Button>().interactable = false;
+		} else if (mainInputField.text != "") {
+			btnPlay.GetComponent<Button>().interactable = true;
+		}
+	}
+
+	//When you click the hamburger menu button
 	public void OnBtnMenuClick()
 	{
-		if (menuActive == false) {
+		if (menuActive == false) {		//When side menu is disabled
 			m_source.clip = btnSound;
 			m_source.Play();
 			imgIcon.SetActive(false);
@@ -80,7 +96,7 @@ public class AnimMenu : MonoBehaviour {
 			LeanTween.moveLocalX(btnExit, -734.51f, 0.5f);
 			LeanTween.moveLocalX(txtCopy, -741.51f, 0.5f);
 			menuActive = true;
-		} else if (menuActive == true) {
+		} else if (menuActive == true) {		//When side menu is enabled
 			m_source.clip = btnSound;
 			m_source.Play();
 			imgIcon.SetActive(true);
@@ -104,9 +120,10 @@ public class AnimMenu : MonoBehaviour {
 		}
 	}
 
+	//When you click the Language button
 	public void OnBtnLanguageClick()
 	{
-		if (menuLanguageActive == false) {
+		if (menuLanguageActive == false) {		//When Language menu is disabled
 			m_source.clip = btnSound;
 			m_source.Play();
 			LeanTween.moveLocalY(btnFrancais, 125f, 0.25f);
@@ -114,7 +131,7 @@ public class AnimMenu : MonoBehaviour {
 			LeanTween.moveLocalY(btnRestart, 25f, 0.25f);
 			LeanTween.moveLocalY(btnExit, -100f, 0.25f);
 			menuLanguageActive = true;
-		} else if (menuLanguageActive == true) {
+		} else if (menuLanguageActive == true) {		//When Language menu is enabled
 			m_source.clip = btnSound;
 			m_source.Play();
 			LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
@@ -124,15 +141,19 @@ public class AnimMenu : MonoBehaviour {
 			menuLanguageActive = false;
 		}
 	}
-	
+
+	//When you click the input field
     public void OnInputFieldClick() {
 		m_source.clip = btnSound;
 		m_source.Play();
 	}
     
+	//When you click the Play button
 	public void OnBtnPlayClick() {
 		m_source.clip = btnSound;
 		m_source.Play();
+
+		//Show Player on next panel
 		panelPlayerCustomization.SetActive(true);
         imgFace.SetActive(true);
         imgOveralls.SetActive(true);
@@ -149,6 +170,25 @@ public class AnimMenu : MonoBehaviour {
         imgMustache.SetActive(true);
         imgBoots.SetActive(true);
         imgMouth.SetActive(true);
+
+		//Close side panel on Menu Panel
 		panelMenu.SetActive(false);
+		imgIcon.SetActive(true);
+		imgIconX.SetActive(false);
+		LeanTween.moveLocalX(btnMenu, -912.3f, 0.5f);
+		LeanTween.moveLocalX(imgMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(txtMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(btnLanguage, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnFrancais, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnEnglish, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnRestart, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnExit, -1172f, 0.5f);
+		LeanTween.moveLocalX(txtCopy, -1178.5f, 0.5f);
+		LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
+		LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
+		LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+		menuLanguageActive = false;
+		menuActive = false;
 	}
 }
