@@ -63,6 +63,23 @@ public class PlayerCustomization : MonoBehaviour {
 	public SpriteRenderer BootsRenderer;
 	public SpriteRenderer MouthRenderer;
 
+	//Player
+	public GameObject imgFace;
+	public GameObject imgOveralls;
+	public GameObject imgNeck;
+	public GameObject imgHand;
+	public GameObject imgShirt;
+	public GameObject imgFrontHair;
+	public GameObject imgBackHair;
+	public GameObject imgEyebrows;
+	public GameObject imgEyes;
+	public GameObject imgHat1;
+	public GameObject imgHat2;
+	public GameObject imgSleeves;
+	public GameObject imgMustache;
+	public GameObject imgBoots;
+	public GameObject imgMouth1;
+
 	int iGender = 0;
 	int iHat1 = 0;
 	int iHat2 = 0;
@@ -602,6 +619,23 @@ public class PlayerCustomization : MonoBehaviour {
 		m_source.Play();
 		panelPlayerCustomization.SetActive(false);
 		panelMenu.SetActive(true);
+
+		//Do not show player on this screen
+		imgFace.SetActive(false);
+		imgOveralls.SetActive(false);
+		imgHand.SetActive(false);
+		imgNeck.SetActive(false);
+		imgShirt.SetActive(false);
+		imgFrontHair.SetActive(false);
+		imgBackHair.SetActive(false);
+		imgEyebrows.SetActive(false);
+		imgEyes.SetActive(false);
+		imgHat1.SetActive(false);
+		imgHat2.SetActive(false);
+		imgSleeves.SetActive(false);
+		imgMustache.SetActive(false);
+		imgBoots.SetActive(false);
+		imgMouth1.SetActive(false);
 	}
 
 	void ChangeScenePlay()

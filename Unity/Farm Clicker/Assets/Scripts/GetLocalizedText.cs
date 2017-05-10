@@ -13,7 +13,7 @@ public class GetLocalizedText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//better if we passed the Localiztion script by reference instead of finding it by name
-		m_localizationScript = GameObject.Find("Actions").GetComponent<Localization>();
+		m_localizationScript = GameObject.Find("Language").GetComponent<Localization>();
 		//we want to add this textfield to the list all localized textfields
 		m_localizationScript.RegisterTextField (gameObject);
 		//we get the reference to the current gameobject Text component
