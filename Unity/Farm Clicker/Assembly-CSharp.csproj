@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimMenu.cs" />
+     <Compile Include="Assets\Scripts\DayNightSwitch.cs" />
      <Compile Include="Assets\Scripts\GetLocalizedText.cs" />
      <Compile Include="Assets\Scripts\Localization.cs" />
      <Compile Include="Assets\Scripts\PlayerCustomization.cs" />
