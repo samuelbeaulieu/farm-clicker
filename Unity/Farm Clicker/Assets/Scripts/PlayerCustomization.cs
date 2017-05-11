@@ -608,7 +608,7 @@ public class PlayerCustomization : MonoBehaviour {
 		PlayerPrefs.SetInt("Overalls", iOveralls);
 		PlayerPrefs.SetInt("Sleeves", iSleeves);
 		PlayerPrefs.SetInt("Boots", iBoots);
-		Debug.Log ("PlayerPrefs");
+		Debug.Log ("Player settings saved");
 		m_source.clip = BtnSound;
 		m_source.Play();
 		Invoke("ChangeScenePlay", 1f);

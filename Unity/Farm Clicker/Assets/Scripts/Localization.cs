@@ -32,6 +32,8 @@ public class Localization : MonoBehaviour {
 		EN["BTN_FRANCAIS"] = "French";
 		EN["BTN_ENGLISH"] = "English";
 		EN["BTN_RESTART"] = "Restart";
+		EN["BTN_CONFIRM"] = "Confirm";
+		EN["BTN_CANCEL"] = "Cancel";
 		EN["BTN_EXIT"] = "Exit";
 
 		EN["PLAYER_CUSTOM_TITLE"] = "Player Customization";
@@ -58,7 +60,7 @@ public class Localization : MonoBehaviour {
         EN["BOY"] = "Boy";
         EN["GIRL"] = "Girl";
         EN["RANDOM"] = "Random";
-        EN["BTN_CONTINUE"] = "Continue";
+		EN["BTN_CONTINUE"] = "Continue";
 
 		FR = new  Dictionary<string, string>();
 		FR["BTN_PLAY"] = "Jouer";
@@ -67,6 +69,8 @@ public class Localization : MonoBehaviour {
 		FR["BTN_FRANCAIS"] = "Français";
 		FR["BTN_ENGLISH"] = "Anglais";
 		FR["BTN_RESTART"] = "Recommencer";
+		FR["BTN_CONFIRM"] = "Confirmer";
+		FR["BTN_CANCEL"] = "Annuler";
 		FR["BTN_EXIT"] = "Quitter";
 
         FR["PLAYER_CUSTOM_TITLE"] = "Modification du joueur";

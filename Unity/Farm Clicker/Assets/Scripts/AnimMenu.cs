@@ -17,6 +17,8 @@ public class AnimMenu : MonoBehaviour {
 	public GameObject btnFrancais;
 	public GameObject btnEnglish;
 	public GameObject btnRestart;
+	public GameObject btnCancel;
+	public GameObject btnConfirm;
 	public GameObject btnExit;
 	public GameObject txtMenu;
 	public GameObject txtCopy;
@@ -44,6 +46,7 @@ public class AnimMenu : MonoBehaviour {
 	public AudioClip btnSound;
 	public bool menuActive = false;
 	public bool menuLanguageActive = false;
+	public bool menuRestartActive = false;
 
 	AudioSource m_source;
 
@@ -93,6 +96,8 @@ public class AnimMenu : MonoBehaviour {
 			LeanTween.moveLocalX(btnFrancais, -734.51f, 0.5f);
 			LeanTween.moveLocalX(btnEnglish, -734.51f, 0.5f);
 			LeanTween.moveLocalX(btnRestart, -734.51f, 0.5f);
+			LeanTween.moveLocalX(btnCancel, -734.51f, 0.5f);
+			LeanTween.moveLocalX(btnConfirm, -734.51f, 0.5f);
 			LeanTween.moveLocalX(btnExit, -734.51f, 0.5f);
 			LeanTween.moveLocalX(txtCopy, -741.51f, 0.5f);
 			menuActive = true;
@@ -101,10 +106,12 @@ public class AnimMenu : MonoBehaviour {
 			m_source.Play();
 			imgIcon.SetActive(true);
 			imgIconX.SetActive(false);
-			if (menuLanguageActive == true) {
+			if (menuLanguageActive == true || menuRestartActive == true) {
 				LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
 				LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
 				LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+				LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+				LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
 				LeanTween.moveLocalY(btnExit, 25f, 0.25f);
 			}
 			LeanTween.moveLocalX(btnMenu, -912.3f, 0.5f);
@@ -113,33 +120,120 @@ public class AnimMenu : MonoBehaviour {
 			LeanTween.moveLocalX(btnLanguage, -1172f, 0.5f);
 			LeanTween.moveLocalX(btnFrancais, -1172f, 0.5f);
 			LeanTween.moveLocalX(btnEnglish, -1172f, 0.5f);
+			LeanTween.moveLocalX(btnCancel, -1172f, 0.5f);
+			LeanTween.moveLocalX(btnConfirm, -1172f, 0.5f);
 			LeanTween.moveLocalX(btnRestart, -1172f, 0.5f);
 			LeanTween.moveLocalX(btnExit, -1172f, 0.5f);
 			LeanTween.moveLocalX(txtCopy, -1178.5f, 0.5f);
 			menuActive = false;
+			menuLanguageActive = false;
+			menuRestartActive = false;
 		}
 	}
 
 	//When you click the Language button
 	public void OnBtnLanguageClick()
 	{
-		if (menuLanguageActive == false) {		//When Language menu is disabled
+		if (menuLanguageActive == false) {		//When Language menu is enabled
 			m_source.clip = btnSound;
 			m_source.Play();
+			if (menuRestartActive == true) {		//When Language menu is disabled
+				m_source.clip = btnSound;
+				m_source.Play();
+				LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+				LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
+				LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+				menuRestartActive = false;
+			}
 			LeanTween.moveLocalY(btnFrancais, 125f, 0.25f);
 			LeanTween.moveLocalY(btnEnglish, 175f, 0.25f);
 			LeanTween.moveLocalY(btnRestart, 25f, 0.25f);
+			LeanTween.moveLocalY(btnCancel, 25f, 0.25f);
+			LeanTween.moveLocalY(btnConfirm, 25f, 0.25f);
 			LeanTween.moveLocalY(btnExit, -100f, 0.25f);
 			menuLanguageActive = true;
-		} else if (menuLanguageActive == true) {		//When Language menu is enabled
+		} else if (menuLanguageActive == true) {		//When Language menu is disabled
 			m_source.clip = btnSound;
 			m_source.Play();
 			LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
 			LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
 			LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+			LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+			LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
 			LeanTween.moveLocalY(btnExit, 25f, 0.25f);
 			menuLanguageActive = false;
 		}
+	}
+
+
+
+	public void OnBtnRestartClick () {
+		if (menuRestartActive == false) {		//When Language menu is enabled
+			m_source.clip = btnSound;
+			m_source.Play();
+			if (menuLanguageActive == true) {		//When Language menu is disabled
+				m_source.clip = btnSound;
+				m_source.Play();
+				LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
+				LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
+				LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+				LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+				LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
+				LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+				menuLanguageActive = false;
+			}
+			LeanTween.moveLocalY(btnCancel, 0f, 0.25f);
+			LeanTween.moveLocalY(btnConfirm, 50f, 0.25f);
+			LeanTween.moveLocalY(btnExit, -100f, 0.25f);
+			menuRestartActive = true;
+		} else if (menuRestartActive == true) {		//When Language menu is disabled
+			m_source.clip = btnSound;
+			m_source.Play();
+			LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+			LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
+			LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+			menuRestartActive = false;
+		}
+	}
+
+	public void OnBtnConfirmClick () {
+		m_source.clip = btnSound;
+		m_source.Play();
+		PlayerPrefs.DeleteAll();
+		Debug.Log ("Player restore completed");
+		imgIcon.SetActive(true);
+		imgIconX.SetActive(false);
+		if (menuLanguageActive == true || menuRestartActive == true) {
+			LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
+			LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
+			LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+			LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+			LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
+			LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+		}
+		LeanTween.moveLocalX(btnMenu, -912.3f, 0.5f);
+		LeanTween.moveLocalX(imgMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(txtMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(btnLanguage, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnFrancais, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnEnglish, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnCancel, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnConfirm, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnRestart, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnExit, -1172f, 0.5f);
+		LeanTween.moveLocalX(txtCopy, -1178.5f, 0.5f);
+		menuActive = false;
+		menuLanguageActive = false;
+		menuRestartActive = false;
+	}
+
+	public void OnBtnCancelClick () {
+		m_source.clip = btnSound;
+		m_source.Play();
+		LeanTween.moveLocalY(btnCancel, 150f, 0.25f);
+		LeanTween.moveLocalY(btnConfirm, 150f, 0.25f);
+		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+		menuRestartActive = false;
 	}
 
 	//When you click the input field

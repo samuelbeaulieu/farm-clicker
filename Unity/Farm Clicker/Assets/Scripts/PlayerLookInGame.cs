@@ -68,7 +68,7 @@ public class PlayerLookInGame : MonoBehaviour {
 		iOveralls = PlayerPrefs.GetInt("Overalls");
 		iSleeves = PlayerPrefs.GetInt("Sleeves");
 		iBoots = PlayerPrefs.GetInt("Boots");
-
+		Debug.Log ("Player settings restored");
 		HatRenderer1.sprite = ListHat1 [iHat1];
 		HatRenderer2.sprite = ListHat2 [iHat2];
 		BackHairRenderer.sprite = ListBackHair [iBackHair];

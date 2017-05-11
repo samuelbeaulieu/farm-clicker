@@ -13,17 +13,17 @@ public class DayNightSwitch : MonoBehaviour {
 	}
 
 	void SwitchToNight () {
-		LeanTween.rotate (imgNight.GetComponent<RectTransform>(), 360f, 10f);
-		LeanTween.alpha(imgDay, 1f, 5f).setDelay(5f);
+		LeanTween.rotate (imgNight.GetComponent<RectTransform>(), 360f, 420f);
+		LeanTween.alpha(imgDay, 1f, 60f).setDelay(380f);
 		imgDay.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);
-		Invoke ("SwitchToDay", 10f);
+		Invoke ("SwitchToDay", 420f);
 	}
 
 	void SwitchToDay () {
-		LeanTween.rotate (imgDay.GetComponent<RectTransform>(), 360f, 10f);
+		LeanTween.rotate (imgDay.GetComponent<RectTransform>(), 360f, 780f);
 		LeanTween.alpha(imgNight, 1f, 5f).setDelay(5f);
 		imgNight.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
-		Invoke ("SwitchToNight", 10f);
+		Invoke ("SwitchToNight", 780f);
 	}
 
 	void ResetDay () {
