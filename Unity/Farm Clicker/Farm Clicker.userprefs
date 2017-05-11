@@ -2,12 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScoreManager.cs">
     <Files>
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="71" Column="23" />
       <File FileName="Assets\Scripts\DayNightSwitch.cs" Line="26" Column="31" />
-      <File FileName="Assets\Scripts\ScoreManager.cs" Line="22" Column="18" />
       <File FileName="Assets\Scripts\AnimMenu.cs" Line="184" Column="5" />
       <File FileName="Assets\Scripts\Localization.cs" Line="73" Column="5" />
       <File FileName="Assets\Scripts\PlayerCustomization.cs" Line="611" Column="3" />
-      <File FileName="Assets\Scripts\PlayerLookInGame.cs" Line="51" Column="20" />
+      <File FileName="Assets\Scripts\PlayerLookInGame.cs" Line="71" Column="1" />
+      <File FileName="Assets\Scripts\TaskCompleted.cs" Line="8" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

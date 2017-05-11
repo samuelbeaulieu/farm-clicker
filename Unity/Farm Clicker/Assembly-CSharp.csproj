@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\PlayerCustomization.cs" />
      <Compile Include="Assets\Scripts\PlayerLookInGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\TaskCompleted.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
