@@ -22,7 +22,6 @@ public class ScoreManager : MonoBehaviour {
 	public float result1 = 1000;
 
 
-
 	void Start () {
 		//verify if value already exist in PlayerPrefs
 		if (PlayerPrefs.HasKey ("Score")) {
@@ -44,6 +43,7 @@ public class ScoreManager : MonoBehaviour {
 			if (scoreCount >= 50 && scoreCount <= 99) {
 				scoreCount += pointsPerTouch2;
 			}
+
 			Vector3 p = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 10f));
 			var addTwoY = p.y + 2;
 			var remTwoY = p.y - 2;
@@ -52,11 +52,13 @@ public class ScoreManager : MonoBehaviour {
 			RandomGoToPositionX = Random.Range(remTwoX, addTwoX);
 			RandomGoToPositionY = Random.Range(remTwoY, addTwoY);
 
+
 			spawnImgMoney = (GameObject)Instantiate (imgMoney, new Vector3 (p.x, p.y, 0f), Quaternion.identity);
 			LeanTween.alpha (spawnImgMoney, 0f, 0.5f);
 			LeanTween.moveLocalX (spawnImgMoney, RandomGoToPositionX, 0.5f);
 			LeanTween.moveLocalY (spawnImgMoney, RandomGoToPositionY, 0.5f);
 			Destroy (spawnImgMoney, 0.5f);
+
 		}
 
 		if (scoreCount >= 100) {
@@ -83,5 +85,6 @@ public class ScoreManager : MonoBehaviour {
 		scoreText.text = " " + Mathf.Round(scoreCount) + " ";
 		PlayerPrefs.SetFloat ("Score", scoreCount);
 		PlayerPrefs.Save();
+
 	}
 }
