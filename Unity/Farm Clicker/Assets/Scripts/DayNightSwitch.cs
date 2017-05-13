@@ -7,23 +7,35 @@ public class DayNightSwitch : MonoBehaviour {
 	public GameObject imgDay;
 	public GameObject imgNight;
 
+	public const string LAYER_NAME = "background1";
+	public const string LAYER_NAME2 = "background2";
+	public SpriteRenderer sprite;
+	public SpriteRenderer sprite2;
+
 	// Use this for initialization
 	void Start () {
 		Invoke ("SwitchToDay", 0f);
 	}
 
 	void SwitchToNight () {
-		LeanTween.rotate (imgNight.GetComponent<RectTransform>(), 360f, 420f);
-		LeanTween.alpha(imgDay, 1f, 60f).setDelay(380f);
+		sprite2.sortingLayerName = LAYER_NAME2;
+		sprite.sortingLayerName = LAYER_NAME;
+		LeanTween.rotate (imgNight.GetComponent<RectTransform>(), 360f, 42f);
+		LeanTween.rotate (imgDay.GetComponent<RectTransform>(), 360f, 42f);
+		LeanTween.alpha(imgDay, 1f,10f).setDelay(31f);
 		imgDay.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);
-		Invoke ("SwitchToDay", 420f);
+		sprite.sortingLayerName = LAYER_NAME2;
+		Invoke ("SwitchToDay", 42f);
 	}
 
 	void SwitchToDay () {
-		LeanTween.rotate (imgDay.GetComponent<RectTransform>(), 360f, 780f);
-		LeanTween.alpha(imgNight, 1f, 5f).setDelay(5f);
-		imgNight.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
-		Invoke ("SwitchToNight", 780f);
+		sprite.sortingLayerName = LAYER_NAME2;
+		sprite2.sortingLayerName = LAYER_NAME;
+		LeanTween.rotate (imgDay.GetComponent<RectTransform>(), 360f, 78f);
+		LeanTween.rotate (imgNight.GetComponent<RectTransform>(), 360f, 78f);
+		LeanTween.alpha(imgNight, 1f, 19f).setDelay(58f);
+		imgNight.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);
+		Invoke ("SwitchToNight", 78f);
 	}
 
 	void ResetDay () {
