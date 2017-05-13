@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TaskScreen : MonoBehaviour {
+public class NotepadScreens : MonoBehaviour {
 
 	public GameObject imgNotepad;
 	public GameObject scrollViewTask;
@@ -29,12 +29,26 @@ public class TaskScreen : MonoBehaviour {
 			TaskActive = true;
 			imgNotepad.SetActive(true);
 			scrollViewTask.SetActive(true);
+			ShopActive = false;
+			scrollViewShop.SetActive(false);
 		} else {
 			TaskActive = false;
 			imgNotepad.SetActive(false);
 			scrollViewTask.SetActive(false);
 		}
+	}
 
-
+	public void OnBtnShopClick () {
+		if (ShopActive == false) {
+			ShopActive = true;
+			imgNotepad.SetActive(true);
+			scrollViewShop.SetActive(true);
+			TaskActive = false;
+			scrollViewTask.SetActive(false);
+		} else {
+			ShopActive = false;
+			imgNotepad.SetActive(false);
+			scrollViewShop.SetActive(false);
+		}
 	}
 }

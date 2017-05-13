@@ -50,11 +50,11 @@
      <Compile Include="Assets\Scripts\DayNightSwitch.cs" />
      <Compile Include="Assets\Scripts\GetLocalizedText.cs" />
      <Compile Include="Assets\Scripts\Localization.cs" />
+     <Compile Include="Assets\Scripts\NotepadScreens.cs" />
      <Compile Include="Assets\Scripts\PlayerCustomization.cs" />
      <Compile Include="Assets\Scripts\PlayerLookInGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\TaskCompleted.cs" />
-     <Compile Include="Assets\Scripts\TaskScreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -15,12 +15,14 @@ public class ScoreManager : MonoBehaviour {
 	public float pointsPerTouch;
 	public float pointsPerTouch2;
 
-	//Progress bar
-	public Transform LoadingBar;
-	public Transform TextIndicator;
-	public Transform TextIndicatorResult;
-	public float result1 = 1000;
 
+	public float seedsPriceBefore;
+	public float seedsPriceAfter;
+	public float seedsLevel = 0;
+	public float seedsCPS;
+	public Text seedsLevelTxt;
+	public Text seedsCPSTxt;
+	public Text seedsPriceTxt;
 
 	void Start () {
 		//verify if value already exist in PlayerPrefs
@@ -65,26 +67,15 @@ public class ScoreManager : MonoBehaviour {
 			scoreCount += pointsPerSecond * Time.deltaTime;
 		}
 
-
-
-		//Progress bar
-		if (scoreCount < 1000) {
-			TextIndicator.GetComponent<Text>().text = ((int)scoreCount).ToString();
-			TextIndicatorResult.GetComponent<Text>().text = ((int)result1).ToString();
-		} else {
-			TextIndicator.GetComponent<Text>().text = "Done!";
-		}
-
-		LoadingBar.GetComponent<Image> ().fillAmount = scoreCount / result1;
-
-
-
-
-
-
 		scoreText.text = " " + Mathf.Round(scoreCount) + " ";
 		PlayerPrefs.SetFloat ("Score", scoreCount);
 		PlayerPrefs.Save();
+
+	}
+
+	public void SeedsBuy () {
+
+	
 
 	}
 }
