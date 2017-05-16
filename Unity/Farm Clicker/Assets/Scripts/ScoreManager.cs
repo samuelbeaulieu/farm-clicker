@@ -14,15 +14,18 @@ public class ScoreManager : MonoBehaviour {
 	private float RandomGoToPositionY;
 	public float pointsPerTouch;
 	public float pointsPerTouch2;
+	public float lastUpdate;
 
 
 	public float seedsPriceBefore;
 	public float seedsPriceAfter;
-	public float seedsLevel = 0;
-	public float seedsCPS;
+	public float seedsLevel;
+	public int cost = 3;
+	public int level;
 	public Text seedsLevelTxt;
 	public Text seedsCPSTxt;
 	public Text seedsPriceTxt;
+	public Text seedsCostTxt;
 
 	void Start () {
 		//verify if value already exist in PlayerPrefs
@@ -60,22 +63,32 @@ public class ScoreManager : MonoBehaviour {
 			LeanTween.moveLocalX (spawnImgMoney, RandomGoToPositionX, 0.5f);
 			LeanTween.moveLocalY (spawnImgMoney, RandomGoToPositionY, 0.5f);
 			Destroy (spawnImgMoney, 0.5f);
+		}
+
+		if(Time.time - lastUpdate >= 1f){
+			scoreCount += pointsPerSecond;
+			lastUpdate = Time.time;
 
 		}
 
-		if (scoreCount >= 100) {
-			scoreCount += pointsPerSecond * Time.deltaTime;
-		}
+		seedsCPSTxt.text = "C.P.S : " + pointsPerSecond;
+		seedsLevelTxt.text = "Level : " + seedsLevel;
+		seedsCostTxt.text = " " + cost + "$";
 
 		scoreText.text = " " + Mathf.Round(scoreCount) + " ";
 		PlayerPrefs.SetFloat ("Score", scoreCount);
 		PlayerPrefs.Save();
 
+
+
 	}
 
 	public void SeedsBuy () {
-
-	
-
+		if (scoreCount >= cost) {
+			scoreCount -= cost;
+			seedsLevel += 1;
+			pointsPerSecond += 0.1f;
+			cost = Mathf.RoundToInt (cost * Mathf.Pow (1.15f, seedsLevel));
+		}
 	}
 }
