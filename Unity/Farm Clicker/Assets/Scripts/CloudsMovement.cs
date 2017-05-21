@@ -72,14 +72,31 @@ public class CloudsMovement : MonoBehaviour {
 		}
 		RandomCloudPositionY1 = Random.Range(0, 5);
 		Cloud1.transform.position = new Vector3 (CloudStart1, RandomCloudPositionY1, 0);
-		RandomCloudSpeed1 = Random.Range(2, 7);
-		LeanTween.moveLocalX (Cloud1, RandomCloudEnd1, RandomCloudSpeed1).setOnComplete (OnCloudOut1);
+		RandomCloudSpeed1 = Random.Range(10, 15);
+		LeanTween.moveLocalX (Cloud1, RandomCloudEnd1, RandomCloudSpeed1).setOnComplete(OnCloudOut1);
 	}
 
 	void OnCloudOut1 () {
 		Vector3 Cloud1 = gameObject.transform.position;
-		Invoke ("MakeCloud1", 0);
+		Invoke("MakeCloud1", 0);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	void MakeCloud2 () {
 		RandomCloud2 = Random.Range(0, 2);

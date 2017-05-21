@@ -16,7 +16,8 @@ public class ScoreManager : MonoBehaviour {
 	public decimal pointsPerTouch2;
 	public float lastUpdate;
 
-	//seeds
+	//Seeds
+	public GameObject imgSeeds;
 	public float seedsLevel;
 	public decimal seedsCPS;
 	public int seedsCost;
@@ -24,7 +25,8 @@ public class ScoreManager : MonoBehaviour {
 	public Text seedsCPSTxt;
 	public Text seedsCostTxt;
 
-	//flowers
+	//Flowers
+	public GameObject imgFlowers;
 	public float flowersLevel;
 	public decimal flowersCPS;
 	public int flowersCost;
@@ -32,7 +34,8 @@ public class ScoreManager : MonoBehaviour {
 	public Text flowersCPSTxt;
 	public Text flowersCostTxt;
 
-	//tomato
+	//Tomato
+	public GameObject imgTomato;
 	public float tomatoLevel;
 	public decimal tomatoCPS;
 	public int tomatoCost;
@@ -40,7 +43,17 @@ public class ScoreManager : MonoBehaviour {
 	public Text tomatoCPSTxt;
 	public Text tomatoCostTxt;
 
+	//Tree
+	public GameObject imgTree;
+	public float TreeLevel;
+	public decimal TreeCPS;
+	public int TreeCost;
+	public Text TreeLevelTxt;
+	public Text TreeCPSTxt;
+	public Text TreeCostTxt;
+
 	//GreenApple
+	public GameObject imgGreenApple;
 	public float GreenAppleLevel;
 	public decimal GreenAppleCPS;
 	public int GreenAppleCost;
@@ -49,6 +62,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text GreenAppleCostTxt;
 
 	//Carrot
+	public GameObject imgCarrot;
 	public float CarrotLevel;
 	public decimal CarrotCPS;
 	public int CarrotCost;
@@ -57,6 +71,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text CarrotCostTxt;
 
 	//GreenPear
+	public GameObject imgGreenPear;
 	public float GreenPearLevel;
 	public decimal GreenPearCPS;
 	public int GreenPearCost;
@@ -65,6 +80,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text GreenPearCostTxt;
 
 	//Corn
+	public GameObject imgCorn;
 	public float CornLevel;
 	public decimal CornCPS;
 	public int CornCost;
@@ -73,6 +89,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text CornCostTxt;
 
 	//RedApple
+	public GameObject imgRedApple;
 	public float RedAppleLevel;
 	public decimal RedAppleCPS;
 	public int RedAppleCost;
@@ -81,6 +98,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text RedAppleCostTxt;
 
 	//Watermelon
+	public GameObject imgWatermelon;
 	public float WatermelonLevel;
 	public decimal WatermelonCPS;
 	public int WatermelonCost;
@@ -89,6 +107,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text WatermelonCostTxt;
 
 	//RedPear
+	public GameObject imgRedPear;
 	public float RedPearLevel;
 	public decimal RedPearCPS;
 	public int RedPearCost;
@@ -97,6 +116,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text RedPearCostTxt;
 
 	//Pumpkin
+	public GameObject imgPumpkin;
 	public float PumpkinLevel;
 	public decimal PumpkinCPS;
 	public int PumpkinCost;
@@ -105,6 +125,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text PumpkinCostTxt;
 
 	//Wrench
+	public GameObject imgWrench;
 	public float WrenchLevel;
 	public decimal WrenchCPS;
 	public int WrenchCost;
@@ -113,6 +134,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text WrenchCostTxt;
 
 	//Screwdriver
+	public GameObject imgScrewdriver;
 	public float ScrewdriverLevel;
 	public decimal ScrewdriverCPS;
 	public int ScrewdriverCost;
@@ -121,6 +143,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text ScrewdriverCostTxt;
 
 	//Hammer
+	public GameObject imgHammer;
 	public float HammerLevel;
 	public decimal HammerCPS;
 	public int HammerCost;
@@ -129,6 +152,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text HammerCostTxt;
 
 	//Handsaw
+	public GameObject imgHandsaw;
 	public float Level;
 	public decimal CPS;
 	public int Cost;
@@ -137,6 +161,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text CostTxt;
 
 	//Fence
+	public GameObject imgFence;
 	public float FenceLevel;
 	public decimal FenceCPS;
 	public int FenceCost;
@@ -144,15 +169,8 @@ public class ScoreManager : MonoBehaviour {
 	public Text FenceCPSTxt;
 	public Text FenceCostTxt;
 
-	//Tree
-	public float TreeLevel;
-	public decimal TreeCPS;
-	public int TreeCost;
-	public Text TreeLevelTxt;
-	public Text TreeCPSTxt;
-	public Text TreeCostTxt;
-
 	//Dog
+	public GameObject imgDog;
 	public float DogLevel;
 	public decimal DogCPS;
 	public int DogCost;
@@ -161,6 +179,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text DogCostTxt;
 
 	//Cat
+	public GameObject imgCat;
 	public float CatLevel;
 	public decimal CatCPS;
 	public int CatCost;
@@ -169,6 +188,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text CatCostTxt;
 
 	//Chicken
+	public GameObject imgChicken;
 	public float ChickenLevel;
 	public decimal ChickenCPS;
 	public int ChickenCost;
@@ -177,6 +197,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text ChickenCostTxt;
 
 	//Pig
+	public GameObject imgPig;
 	public float PigLevel;
 	public decimal PigCPS;
 	public int PigCost;
@@ -185,6 +206,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text PigCostTxt;
 
 	//Sheep
+	public GameObject imgSheep;
 	public float SheepLevel;
 	public decimal SheepCPS;
 	public int SheepCost;
@@ -193,6 +215,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text SheepCostTxt;
 
 	//Cow
+	public GameObject imgCow;
 	public float CowLevel;
 	public decimal CowCPS;
 	public int CowCost;
@@ -201,6 +224,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text CowCostTxt;
 
 	//Horse
+	public GameObject imgHorse;
 	public float HorseLevel;
 	public decimal HorseCPS;
 	public int HorseCost;
@@ -209,6 +233,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text HorseCostTxt;
 
 	//GoldPear
+	public GameObject imgGoldPear;
 	public float GoldPearLevel;
 	public decimal GoldPearCPS;
 	public int GoldPearCost;
@@ -217,6 +242,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text GoldPearCostTxt;
 
 	//Barn
+	public GameObject imgBarn;
 	public float BarnLevel;
 	public decimal BarnCPS;
 	public int BarnCost;
@@ -225,6 +251,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text BarnCostTxt;
 
 	//Tractor
+	public GameObject imgTractor;
 	public float TractorLevel;
 	public decimal TractorCPS;
 	public int TractorCost;
@@ -233,6 +260,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text TractorCostTxt;
 
 	//Mill
+	public GameObject imgMill;
 	public float MillLevel;
 	public decimal MillCPS;
 	public int MillCost;
@@ -241,6 +269,7 @@ public class ScoreManager : MonoBehaviour {
 	public Text MillCostTxt;
 
 	//GoldApple
+	public GameObject imgGoldApple;
 	public float GoldAppleLevel;
 	public decimal GoldAppleCPS;
 	public int GoldAppleCost;
@@ -370,6 +399,7 @@ public class ScoreManager : MonoBehaviour {
 			seedsCPS += 1;
 			pointsPerSecond += seedsCPS;
 			seedsCost = Mathf.RoundToInt (seedsCost * Mathf.Pow (1.15f, seedsLevel));
+			imgSeeds.SetActive(true);
 		}
 		//seeds txt update
 		seedsCPSTxt.text = "C.P.S : " + seedsCPS;
@@ -384,6 +414,7 @@ public class ScoreManager : MonoBehaviour {
 			flowersCPS += 3;
 			pointsPerSecond += flowersCPS;
 			flowersCost = Mathf.RoundToInt (flowersCost * Mathf.Pow (1.35f, flowersLevel));
+			imgFlowers.SetActive(true);
 		}
 		//flowers txt update
 		flowersCPSTxt.text = "C.P.S : " + flowersCPS;
@@ -398,11 +429,27 @@ public class ScoreManager : MonoBehaviour {
 			tomatoCPS += 3;
 			pointsPerSecond += tomatoCPS;
 			tomatoCost = Mathf.RoundToInt (tomatoCost * Mathf.Pow (1.55f, tomatoLevel));
+			imgTomato.SetActive(true);
 		}
 		//tomato txt update
 		tomatoCPSTxt.text = "C.P.S : " + tomatoCPS;
 		tomatoLevelTxt.text = "Level : " + tomatoLevel;
 		tomatoCostTxt.text = tomatoCost + "$";
+	}
+
+	public void BuyTree () {
+		if (scoreCount >= TreeCost) {
+			scoreCount -= TreeCost;
+			TreeLevel += 1;
+			TreeCPS += 3;
+			pointsPerSecond += TreeCPS;
+			TreeCost = Mathf.RoundToInt (TreeCost * Mathf.Pow (1.55f, TreeLevel));
+			imgTree.SetActive(true);
+		}
+		//tomato txt update
+		TreeCPSTxt.text = "C.P.S : " + TreeCPS;
+		TreeLevelTxt.text = "Level : " + TreeLevel;
+		TreeCostTxt.text = TreeCost + "$";
 	}
 
 	public void BuyGreenApple () {
@@ -412,6 +459,7 @@ public class ScoreManager : MonoBehaviour {
 			GreenAppleCPS += 3;
 			pointsPerSecond += GreenAppleCPS;
 			GreenAppleCost = Mathf.RoundToInt (GreenAppleCost * Mathf.Pow (1.75f, GreenAppleLevel));
+			imgGreenApple.SetActive(true);
 		}
 		//GreenApple txt update
 		GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
@@ -426,6 +474,7 @@ public class ScoreManager : MonoBehaviour {
 			CPS += 3;
 			pointsPerSecond += CPS;
 			Cost = Mathf.RoundToInt (Cost * Mathf.Pow (1.55f, Level));
+			//img.SetActive(true);
 		}
 		//tomato txt update
 		CPSTxt.text = "C.P.S : " + CPS;
