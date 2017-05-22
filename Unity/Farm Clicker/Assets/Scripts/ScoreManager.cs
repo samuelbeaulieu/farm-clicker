@@ -27,36 +27,36 @@ public class ScoreManager : MonoBehaviour {
 
 	//Flowers
 	public GameObject imgFlowers;
-	public float flowersLevel;
+	public decimal flowersLevel;
 	public decimal flowersCPS;
-	public int flowersCost;
+	public decimal flowersCost;
 	public Text flowersLevelTxt;
 	public Text flowersCPSTxt;
 	public Text flowersCostTxt;
 
 	//Tomato
 	public GameObject imgTomato;
-	public float tomatoLevel;
+	public decimal tomatoLevel;
 	public decimal tomatoCPS;
-	public int tomatoCost;
+	public decimal tomatoCost;
 	public Text tomatoLevelTxt;
 	public Text tomatoCPSTxt;
 	public Text tomatoCostTxt;
 
 	//Tree
 	public GameObject imgTree;
-	public float TreeLevel;
+	public decimal TreeLevel;
 	public decimal TreeCPS;
-	public int TreeCost;
+	public decimal TreeCost;
 	public Text TreeLevelTxt;
 	public Text TreeCPSTxt;
 	public Text TreeCostTxt;
 
 	//GreenApple
 	public GameObject imgGreenApple;
-	public float GreenAppleLevel;
+	public decimal GreenAppleLevel;
 	public decimal GreenAppleCPS;
-	public int GreenAppleCost;
+	public decimal GreenAppleCost;
 	public Text GreenAppleLevelTxt;
 	public Text GreenAppleCPSTxt;
 	public Text GreenAppleCostTxt;
@@ -396,7 +396,6 @@ public class ScoreManager : MonoBehaviour {
 		string mymoney = scoreCount.ToString ();
 		PlayerPrefs.SetString ("Score", mymoney);
 		PlayerPrefs.Save();
-
 	}
 
 	//notepad task click
@@ -457,7 +456,7 @@ public class ScoreManager : MonoBehaviour {
 			flowersLevel += 1;
 			flowersCPS += 3;
 			pointsPerSecond += flowersCPS;
-			flowersCost = Mathf.RoundToInt (flowersCost * Mathf.Pow (1.05f, flowersLevel));
+			flowersCost += 15;
 			imgFlowers.SetActive(true);
 		}
 		if (flowersLevel > 3) {
@@ -479,9 +478,9 @@ public class ScoreManager : MonoBehaviour {
 		if (scoreCount >= tomatoCost) {
 			scoreCount -= tomatoCost;
 			tomatoLevel += 1;
-			tomatoCPS += 3;
+			tomatoCPS += 6;
 			pointsPerSecond += tomatoCPS;
-			tomatoCost = Mathf.RoundToInt (tomatoCost * Mathf.Pow (1.05f, tomatoLevel));
+			tomatoCost += 100;
 			imgTomato.SetActive(true);
 		}
 		//tomato txt update
@@ -500,9 +499,9 @@ public class ScoreManager : MonoBehaviour {
 		if (scoreCount >= TreeCost) {
 			scoreCount -= TreeCost;
 			TreeLevel += 1;
-			TreeCPS += 3;
+			TreeCPS += 9;
 			pointsPerSecond += TreeCPS;
-			TreeCost = Mathf.RoundToInt (TreeCost * Mathf.Pow (1.05f, TreeLevel));
+			TreeCost += 250;
 			imgTree.SetActive(true);
 		}
 		//Tree txt update
