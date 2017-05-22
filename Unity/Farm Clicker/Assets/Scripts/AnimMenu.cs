@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AnimMenu : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class AnimMenu : MonoBehaviour {
 	public GameObject Logo;
 	public GameObject inputName;
 	public GameObject btnPlay;
+	public GameObject btnContinue;
 	public GameObject btnMenu;
 	public GameObject imgIcon;
 	public GameObject imgIconX;
@@ -48,6 +50,9 @@ public class AnimMenu : MonoBehaviour {
 	public bool menuLanguageActive = false;
 	public bool menuRestartActive = false;
 
+	public Text playerNameInput;
+	private string playerName;
+
 	AudioSource m_source;
 
 	//On start do this
@@ -71,6 +76,16 @@ public class AnimMenu : MonoBehaviour {
         imgMustache.SetActive(false);
         imgBoots.SetActive(false);
         imgMouth.SetActive(false);
+
+		if (PlayerPrefs.HasKey ("Name")) {
+			btnPlay.SetActive(false);
+			btnContinue.SetActive(true);
+			inputName.SetActive(false);
+		} else {
+			btnPlay.SetActive(true);
+			btnContinue.SetActive(false);
+			inputName.SetActive(true);
+		}
 	}
 
 	void Update () {
@@ -165,8 +180,6 @@ public class AnimMenu : MonoBehaviour {
 		}
 	}
 
-
-
 	public void OnBtnRestartClick () {
 		if (menuRestartActive == false) {		//When Language menu is enabled
 			m_source.clip = btnSound;
@@ -225,6 +238,9 @@ public class AnimMenu : MonoBehaviour {
 		menuActive = false;
 		menuLanguageActive = false;
 		menuRestartActive = false;
+		btnPlay.SetActive(true);
+		btnContinue.SetActive(false);
+		inputName.SetActive(true);
 	}
 
 	public void OnBtnCancelClick () {
@@ -240,6 +256,13 @@ public class AnimMenu : MonoBehaviour {
     public void OnInputFieldClick() {
 		m_source.clip = btnSound;
 		m_source.Play();
+	}
+
+	//When you click the exit button
+	public void OnBtnExitClick() {
+		m_source.clip = btnSound;
+		m_source.Play();
+		Invoke("ExitApp", 1f);
 	}
     
 	//When you click the Play button
@@ -284,5 +307,49 @@ public class AnimMenu : MonoBehaviour {
 		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
 		menuLanguageActive = false;
 		menuActive = false;
+
+		PlayerPrefs.SetString ("Name", playerName);
+		PlayerPrefs.Save();
+	}
+
+	//When you click the Play button
+	public void OnBtnContinueClick() {
+		m_source.clip = btnSound;
+		m_source.Play();
+
+		//Close side panel on Menu Panel
+		panelMenu.SetActive(false);
+		imgIcon.SetActive(true);
+		imgIconX.SetActive(false);
+		LeanTween.moveLocalX(btnMenu, -912.3f, 0.5f);
+		LeanTween.moveLocalX(imgMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(txtMenu, -1178.5f, 0.5f);
+		LeanTween.moveLocalX(btnLanguage, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnFrancais, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnEnglish, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnRestart, -1172f, 0.5f);
+		LeanTween.moveLocalX(btnExit, -1172f, 0.5f);
+		LeanTween.moveLocalX(txtCopy, -1178.5f, 0.5f);
+		LeanTween.moveLocalY(btnFrancais, 275f, 0.25f);
+		LeanTween.moveLocalY(btnEnglish, 275f, 0.25f);
+		LeanTween.moveLocalY(btnRestart, 150f, 0.25f);
+		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
+		menuLanguageActive = false;
+		menuActive = false;
+
+		PlayerPrefs.SetString ("Name", playerName);
+		PlayerPrefs.Save();
+
+		Invoke("ChangeScenePlay", 1f);
+	}
+
+	void ChangeScenePlay()
+	{
+		SceneManager.LoadScene(1);
+	}
+
+	void ExitApp()
+	{
+		Application.Quit();
 	}
 }
