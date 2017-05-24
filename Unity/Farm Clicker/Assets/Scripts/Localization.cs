@@ -9,6 +9,8 @@ public class Localization : MonoBehaviour {
 	public GameObject btnFrench;
 	public AudioClip btnSound;
 
+	public string playerName;
+
 	Dictionary<string, string> EN;
 	Dictionary<string, string> FR;
 	Dictionary<string, string> CurrentLang;
@@ -25,8 +27,13 @@ public class Localization : MonoBehaviour {
 
 		m_textFieldList = new List<GameObject> ();
 
+		playerName = PlayerPrefs.GetString("Name");
+
 		EN = new Dictionary<string, string>();
-		EN["BTN_PLAY"] = "Play";
+
+		//menu screen
+		EN ["BTN_PLAY"] = "Play";
+		EN ["BTN_CONTINUE"] = "Continue";
 		EN["INPUT_NAME"] = "Enter your name...";
 		EN["BTN_LANGUAGE"] = "Language";
 		EN["BTN_FRANCAIS"] = "French";
@@ -36,6 +43,7 @@ public class Localization : MonoBehaviour {
 		EN["BTN_CANCEL"] = "Cancel";
 		EN["BTN_EXIT"] = "Exit";
 
+		//player customization screen
 		EN["PLAYER_CUSTOM_TITLE"] = "Player Customization";
         EN["PREV_HAT"] = "Previous hat";
         EN["NEXT_HAT"] = "Next hat";
@@ -62,8 +70,33 @@ public class Localization : MonoBehaviour {
         EN["RANDOM"] = "Random";
 		EN["BTN_CONTINUE"] = "Continue";
 
+		//welcome screen
+		EN["WELCOME_MSG"] = "Hi " + playerName + ", do you want the instructions?";
+		EN["BTN_SHOW"] = "Show";
+		EN["BTN_SKIP"] = "Skip";
+
+		//instructions screen
+		EN["INSTRUCTIONS_TITLE"] = "Instructions";
+		EN["INSTRUCTIONS_NUMBER1"] = "1. Click anywhere on the screen to get more corn dollars.";
+		EN["INSTRUCTIONS_NUMBER2"] = "2. You can buy object and other stuffs on the shop. It will make you earn a certain amount of corn dollars every second. The more object you have the more you earn. Levels give you more corn dollars per second.";
+		EN["INSTRUCTIONS_NUMBER3"] = "3. Finishing task will give you a special gift. Some might be better than other!";
+		EN["INSTRUCTIONS_END"] = "Don't forget to have fun    :D";
+		EN["INSTRUCTIONS_CLOSE"] = "(Close this by pressing the instructions button)";
+		EN["BTN_INSTRUCTIONS"] = "Instructions";
+
+		//game screen
+		EN["BTN_SHOP"] = "Shop";
+		EN["BTN_TASK"] = "Task";
+		EN["CORN_DOLLARS"] = "Corn dollars";
+
+
+
+
 		FR = new  Dictionary<string, string>();
+
+		//menu screen
 		FR["BTN_PLAY"] = "Jouer";
+		FR ["BTN_CONTINUE"] = "Continuer";
 		FR["INPUT_NAME"] = "Entrer votre nom...";
 		FR["BTN_LANGUAGE"] = "Langue";
 		FR["BTN_FRANCAIS"] = "Français";
@@ -73,6 +106,7 @@ public class Localization : MonoBehaviour {
 		FR["BTN_CANCEL"] = "Annuler";
 		FR["BTN_EXIT"] = "Quitter";
 
+		//player customization screen
         FR["PLAYER_CUSTOM_TITLE"] = "Modification du joueur";
         FR["PREV_HAT"] = "Chapeau précédent";
         FR["NEXT_HAT"] = "Chapeau suivant";
@@ -98,6 +132,41 @@ public class Localization : MonoBehaviour {
         FR["GIRL"] = "Fille";
         FR["RANDOM"] = "Aléatoire";
         FR["BTN_CONTINUE"] = "Continuer";
+
+		//welcome screen
+		FR["WELCOME_MSG"] = "Bonjour " + playerName + ", voulez-vous voir les instructions?";
+		FR["BTN_SHOW"] = "Afficher";
+		FR["BTN_SKIP"] = "Passer";
+
+		//instructions screen
+		FR["INSTRUCTIONS_TITLE"] = "Instructions";
+		FR["INSTRUCTIONS_NUMBER1"] = "1. Appuyer n'importe où sur l'écran pour gagner des billets de maïs.";
+		FR["INSTRUCTIONS_NUMBER2"] = "2. Vous pouvez acheter des oubjets et autres choses dans le magasin. Cela vous feras gagner un certain nombre de billet de maïs par seconde. Plus vous avez d'objet plus vous gagner. Les niveaux vous donne aussi plus de billet de maïs par seconde.";
+		FR["INSTRUCTIONS_NUMBER3"] = "3. Finir des tâches vous donneras des cadeaux spéciaux. Certains seront meilleur que d'autre.";
+		FR["INSTRUCTIONS_END"] = "N'oubliez pas de vous amusez    :D";
+		FR["INSTRUCTIONS_CLOSE"] = "(Fermer cette fenêtre avec le boutton Instructions)";
+		FR["BTN_INSTRUCTIONS"] = "Instructions";
+
+		//game screen
+		FR["BTN_SHOP"] = "Magasin";
+		FR["BTN_TASK"] = "Tâches";
+		FR["CORN_DOLLARS"] = "Billet de Maïs";
+
+
+
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+		FR[""] = "";
+
+
 
 		//what should be the defualt loaded language?
 		if (CurrentLangStr == "EN") {

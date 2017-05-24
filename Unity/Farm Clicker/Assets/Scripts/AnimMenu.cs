@@ -92,7 +92,9 @@ public class AnimMenu : MonoBehaviour {
 		if (mainInputField.text == "") {
 			btnPlay.GetComponent<Button>().interactable = false;
 		} else if (mainInputField.text != "") {
+			playerName = mainInputField.text;
 			btnPlay.GetComponent<Button>().interactable = true;
+			PlayerPrefs.SetString ("Name", playerName);
 		}
 	}
 
@@ -307,8 +309,6 @@ public class AnimMenu : MonoBehaviour {
 		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
 		menuLanguageActive = false;
 		menuActive = false;
-
-		PlayerPrefs.SetString ("Name", playerName);
 		PlayerPrefs.Save();
 	}
 
@@ -336,8 +336,6 @@ public class AnimMenu : MonoBehaviour {
 		LeanTween.moveLocalY(btnExit, 25f, 0.25f);
 		menuLanguageActive = false;
 		menuActive = false;
-
-		PlayerPrefs.SetString ("Name", playerName);
 		PlayerPrefs.Save();
 
 		Invoke("ChangeScenePlay", 1f);
