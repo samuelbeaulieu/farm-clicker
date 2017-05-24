@@ -42,3 +42,5 @@
 /Users/1601646/Desktop/ProjectFarmClicker/Unity/Farm Clicker/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/1601646/Desktop/ProjectFarmClicker/Unity/Farm Clicker/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/1601646/Desktop/ProjectFarmClicker/Unity/Farm Clicker/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/1601646/Desktop/ProjectFarmClicker/Unity/Farm Clicker/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/1601646/Desktop/ProjectFarmClicker/Unity/Farm Clicker/Temp/bin/Debug/Assembly-CSharp.dll

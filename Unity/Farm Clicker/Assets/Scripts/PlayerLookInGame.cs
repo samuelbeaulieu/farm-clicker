@@ -52,7 +52,7 @@ public class PlayerLookInGame : MonoBehaviour {
 	int iSleeves = 0;
 	int iBoots = 0;
 
-	void Start () {
+	void Awake () {
 		iGender = PlayerPrefs.GetInt("Gender");
 		iHat1 = PlayerPrefs.GetInt("Hat 1");
 		iHat2 = PlayerPrefs.GetInt("Hat 2");
@@ -68,7 +68,7 @@ public class PlayerLookInGame : MonoBehaviour {
 		iOveralls = PlayerPrefs.GetInt("Overalls");
 		iSleeves = PlayerPrefs.GetInt("Sleeves");
 		iBoots = PlayerPrefs.GetInt("Boots");
-		Debug.Log ("Player settings restored");
+		Debug.Log ("Player look restored");
 		HatRenderer1.sprite = ListHat1 [iHat1];
 		HatRenderer2.sprite = ListHat2 [iHat2];
 		BackHairRenderer.sprite = ListBackHair [iBackHair];

@@ -71,7 +71,7 @@ public class Localization : MonoBehaviour {
 		EN["BTN_CONTINUE"] = "Continue";
 
 		//welcome screen
-		EN["WELCOME_MSG"] = "Hi " + playerName + ", do you want the instructions?";
+		EN["WELCOME_MSG"] = "Hi, do you want the instructions?";
 		EN["BTN_SHOW"] = "Show";
 		EN["BTN_SKIP"] = "Skip";
 
@@ -134,7 +134,7 @@ public class Localization : MonoBehaviour {
         FR["BTN_CONTINUE"] = "Continuer";
 
 		//welcome screen
-		FR["WELCOME_MSG"] = "Bonjour " + playerName + ", voulez-vous voir les instructions?";
+		FR["WELCOME_MSG"] = "Bonjour, voulez-vous voir les instructions?";
 		FR["BTN_SHOW"] = "Afficher";
 		FR["BTN_SKIP"] = "Passer";
 

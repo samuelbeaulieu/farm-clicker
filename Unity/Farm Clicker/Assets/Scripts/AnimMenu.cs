@@ -95,6 +95,7 @@ public class AnimMenu : MonoBehaviour {
 			playerName = mainInputField.text;
 			btnPlay.GetComponent<Button>().interactable = true;
 			PlayerPrefs.SetString ("Name", playerName);
+			PlayerPrefs.Save ();
 		}
 	}
 
@@ -215,7 +216,7 @@ public class AnimMenu : MonoBehaviour {
 		m_source.clip = btnSound;
 		m_source.Play();
 		PlayerPrefs.DeleteAll();
-		Debug.Log ("Player restore completed");
+		Debug.Log ("Player reset completed");
 		imgIcon.SetActive(true);
 		imgIconX.SetActive(false);
 		if (menuLanguageActive == true || menuRestartActive == true) {
