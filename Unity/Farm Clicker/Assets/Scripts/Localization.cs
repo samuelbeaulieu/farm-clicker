@@ -120,7 +120,25 @@ public class Localization : MonoBehaviour {
 		EN["BTN_MILL"] = "Mill";
 		EN["BTN_GOLDAPPLE"] = "Gold Apple";
 
-
+		//task screen
+		EN["WELCOME_GIFT"] = "Welcome gift";
+		EN["WELCOME_GIFT_DESC"] = "Customize your player";
+		EN["TASK1"] = "Slumdog Millionaire";
+		EN["TASK1_DESC"] = "Get more than $20 000 000";
+		EN["TASK2"] = "Wakeup Newton";
+		EN["TASK2_DESC"] = "Get one red apple";
+		EN["TASK3"] = "Everybody love bacon";
+		EN["TASK3_DESC"] = "Buy a pig";
+		EN["TASK4"] = "Ain't Nobody Got Time";
+		EN["TASK4_DESC"] = "Tap one full day";
+		EN["TASK5"] = "More Than the developper";
+		EN["TASK5_DESC"] = "Get more than $10 000";
+		EN["TASK6"] = "Hard Worker";
+		EN["TASK6_DESC"] = "Upgrade the hammer";
+		EN["TASK7"] = "Oh Hi Doggy";
+		EN["TASK7_DESC"] = "Adopt a dog";
+		EN["TASK8"] = "Fantastic Beast";
+		EN["TASK8_DESC"] = "Eat, Sleep, Click, Repeat";
 
 
 		FR = new  Dictionary<string, string>();
@@ -214,7 +232,25 @@ public class Localization : MonoBehaviour {
 		FR["BTN_MILL"] = "Moulin";
 		FR["BTN_GOLDAPPLE"] = "Pomme en or";
 
-
+		//task screen
+		FR["WELCOME_GIFT"] = "Cadeau de bienvenue";
+		FR["WELCOME_GIFT_DESC"] = "Modifie ton personnage";
+		FR["TASK1"] = "Slumdog Millionaire";
+		FR["TASK1_DESC"] = "Amasse plus de 20 000 000 $";
+		FR["TASK2"] = "Réveille toi Newton";
+		FR["TASK2_DESC"] = "Achête une pomme rouge";
+		FR["TASK3"] = "Tout le monde aime le bacon";
+		FR["TASK3_DESC"] = "Achête un cochon";
+		FR["TASK4"] = "J'ai pas le temps pour ça";
+		FR["TASK4_DESC"] = "Clique pendant un jour";
+		FR["TASK5"] = "Plus que le développeur";
+		FR["TASK5_DESC"] = "Amasse plus de 10 000$";
+		FR["TASK6"] = "Travail intense";
+		FR["TASK6_DESC"] = "Améliore le marteau";
+		FR["TASK7"] = "Oh salut le chien";
+		FR["TASK7_DESC"] = "Adopte un chien";
+		FR["TASK8"] = "Animaux fantastiques";
+		FR["TASK8_DESC"] = "Mange, Dors, Clique, Recommence";
 
 		//what should be the defualt loaded language?
 		if (CurrentLangStr == "EN") {

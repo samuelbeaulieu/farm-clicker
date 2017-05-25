@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class ScoreManager : MonoBehaviour {
 	private GameObject spawnImgMoney;
 	public Text scoreText;
 	public decimal scoreCount;
+	public decimal touchCount;
 	public decimal pointsPerSecond;
 	private float RandomGoToPositionX;
 	private float RandomGoToPositionY;
@@ -347,7 +349,86 @@ public class ScoreManager : MonoBehaviour {
 	public bool WelcomeActive;
 	public bool instructionsActive;
 
+	//Gift
+	public GameObject btnGift;
+	public bool gift;
+
+	//Task1
+	public Text txtTask1;
+	public GameObject btnTask1;
+	public GameObject imgToDo1;
+	public GameObject imgCompleted1;
+	public GameObject imgColor1;
+	public decimal taskResult1;
+	public bool taskCompleted1;
+
+	//Task2
+	public Text txtTask2;
+	public GameObject btnTask2;
+	public GameObject imgToDo2;
+	public GameObject imgCompleted2;
+	public GameObject imgColor2;
+	public decimal taskResult2;
+	public bool taskCompleted2;
+
+	//Task3
+	public Text txtTask3;
+	public GameObject btnTask3;
+	public GameObject imgToDo3;
+	public GameObject imgCompleted3;
+	public GameObject imgColor3;
+	public decimal taskResult3;
+	public bool taskCompleted3;
+
+	//Task4
+	public Text txtTask4;
+	public GameObject btnTask4;
+	public GameObject imgToDo4;
+	public GameObject imgCompleted4;
+	public GameObject imgColor4;
+	public decimal taskResult4;
+	public bool taskCompleted4;
+
+	//Task5
+	public Text txtTask5;
+	public GameObject btnTask5;
+	public GameObject imgToDo5;
+	public GameObject imgCompleted5;
+	public GameObject imgColor5;
+	public decimal taskResult5;
+	public bool taskCompleted5;
+
+	//Task6
+	public Text txtTask6;
+	public GameObject btnTask6;
+	public GameObject imgToDo6;
+	public GameObject imgCompleted6;
+	public GameObject imgColor6;
+	public decimal taskResult6;
+	public bool taskCompleted6;
+
+	//Task7
+	public Text txtTask7;
+	public GameObject btnTask7;
+	public GameObject imgToDo7;
+	public GameObject imgCompleted7;
+	public GameObject imgColor7;
+	public decimal taskResult7;
+	public bool taskCompleted7;
+
+	//Task8
+	public Text txtTask8;
+	public GameObject btnTask8;
+	public GameObject imgToDo8;
+	public GameObject imgCompleted8;
+	public GameObject imgColor8;
+	public decimal taskResult8;
+	public bool taskCompleted8;
+
+	//audio
 	public AudioClip clickMoney;
+	public AudioClip btnClick;
+	public AudioClip btnError;
 	AudioSource m_source;
 
 	void Awake () {
@@ -1304,10 +1385,59 @@ public class ScoreManager : MonoBehaviour {
 				GoldAppleCostTxt.text = GoldAppleCost + "$";
 			}
 
+			//-------------------- Gift --------------------
+			if (PlayerPrefs.HasKey ("GiftReceived")) {
+				btnGift.GetComponent<Button>().interactable = false;
+			} else {
+				gift = true;
+			}
+
+			//-------------------- Task1 --------------------
+			if (PlayerPrefs.HasKey ("Task1")) {
+				btnTask1.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task2 --------------------
+			if (PlayerPrefs.HasKey ("Task2")) {
+				btnTask2.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task3 --------------------
+			if (PlayerPrefs.HasKey ("Task3")) {
+				btnTask3.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task4 --------------------
+			if (PlayerPrefs.HasKey ("Task4")) {
+				btnTask4.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task5 --------------------
+			if (PlayerPrefs.HasKey ("Task5")) {
+				btnTask5.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task6 --------------------
+			if (PlayerPrefs.HasKey ("Task6")) {
+				btnTask6.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task7 --------------------
+			if (PlayerPrefs.HasKey ("Task7")) {
+				btnTask7.GetComponent<Button>().interactable = false;
+			}
+
+			//-------------------- Task8 --------------------
+			if (PlayerPrefs.HasKey ("Task8")) {
+				btnTask8.GetComponent<Button>().interactable = false;
+			}
+
 		} else {
+			//IF THERE'S NO PREVIOUS GAME, SET THOSE OPTIONS
 			//Show welcome message at first launch
 			WelcomeActive = true;
 			panelWelcome.SetActive (true);
+			gift = true;
 
 			//set seeds default values
 			seedsCost = 100;
@@ -1648,7 +1778,10 @@ public class ScoreManager : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && TaskActive == false && ShopActive == false && WelcomeActive == false && instructionsActive == false) {
 			m_source.clip = clickMoney;
 			m_source.Play();
+			//add to score
 			scoreCount++;
+			//keep track of how much touch you made
+			touchCount++;
 
 			//money animation generation
 			Vector3 p = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 10f));
@@ -1670,14 +1803,253 @@ public class ScoreManager : MonoBehaviour {
 			lastUpdate = Time.time;
 		}
 
+
+		//------------------------------------------------ TASK ------------------------------------------------
+		//Initialisation of task goals
+		taskResult1 = 20000000;
+		taskResult2 = 1;
+		taskResult3 = 1;
+		taskResult4 = 86400;
+		taskResult5 = 10000;
+		taskResult6 = 40;
+		taskResult7 = 1;
+		taskResult8 = 500000;
+
+		taskCompleted1 = false;
+		taskCompleted2 = false;
+		taskCompleted3 = false;
+		taskCompleted4 = false;
+		taskCompleted5 = false;
+		taskCompleted6 = false;
+		taskCompleted7 = false;
+		taskCompleted8 = false;
+
+		//-------------------- TASK1 --------------------
+		if (scoreCount >= taskResult1) {
+			txtTask1.text = "Done!";
+			imgToDo1.SetActive (false);
+			imgCompleted1.SetActive (true);
+			imgColor1.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted1 = true;
+		} else {
+			txtTask1.text = scoreCount + " / " + taskResult1;
+		}
+
+		//-------------------- TASK2 --------------------
+		if (RedAppleLevel >= taskResult2) {
+			txtTask2.text = "Done!";
+			imgToDo2.SetActive (false);
+			imgCompleted2.SetActive (true);
+			imgColor2.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted2 = true;
+		} else {
+			txtTask2.text = RedAppleLevel + " / " + taskResult2;
+		}
+
+		//-------------------- TASK3 --------------------
+		if (PigLevel >= taskResult3) {
+			txtTask3.text = "Done!";
+			imgToDo3.SetActive (false);
+			imgCompleted3.SetActive (true);
+			imgColor3.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted3 = true;
+		} else {
+			txtTask3.text = PigLevel + " / " + taskResult3;
+		}
+
+		//-------------------- TASK4 --------------------
+		if (touchCount >= taskResult4) {
+			txtTask4.text = "Done!";
+			imgToDo4.SetActive (false);
+			imgCompleted4.SetActive (true);
+			imgColor4.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted4 = true;
+		} else {
+			txtTask4.text = touchCount + " / " + taskResult4;
+		}
+
+		//-------------------- TASK5 --------------------
+		if (scoreCount >= taskResult5) {
+			txtTask5.text = "Done!";
+			imgToDo5.SetActive (false);
+			imgCompleted5.SetActive (true);
+			imgColor5.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted5 = true;
+		} else {
+			txtTask5.text = scoreCount + " / " + taskResult5;
+		}
+
+		//-------------------- TASK6 --------------------
+		if (HammerLevel >= taskResult6) {
+			txtTask6.text = "Done!";
+			imgToDo6.SetActive (false);
+			imgCompleted6.SetActive (true);
+			imgColor6.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted6 = true;
+		} else {
+			txtTask6.text = HammerLevel + " / " + taskResult6;
+		}
+
+		//-------------------- TASK7 --------------------
+		if (DogLevel >= taskResult7) {
+			txtTask7.text = "Done!";
+			imgToDo7.SetActive (false);
+			imgCompleted7.SetActive (true);
+			imgColor7.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted7 = true;
+		} else {
+			txtTask7.text = DogLevel + " / " + taskResult7;
+		}
+
+		//-------------------- TASK8 --------------------
+		if (touchCount >= taskResult8) {
+			txtTask8.text = "Done!";
+			imgToDo8.SetActive (false);
+			imgCompleted8.SetActive (true);
+			imgColor8.GetComponent<Image>().color = new Color32(138,197,97,255);
+			taskCompleted8 = true;
+		} else {
+			txtTask8.text = touchCount + " / " + taskResult8;
+		}
+
+		//Return to menu
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			PlayerPrefs.Save ();
+			SceneManager.LoadScene(0);
+		}
+
+		//update score
 		scoreText.text = " " + scoreCount + " ";
 		string mymoney = scoreCount.ToString ();
 		PlayerPrefs.SetString ("Score", mymoney);
 		PlayerPrefs.Save();
 	}
 
+	//-------------------------------------------------  Task  -------------------------------------------------
+	//--------------------------  Gift  --------------------------
+	public void Gift () {
+		if (gift == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 100;
+			btnGift.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("GiftReceived", "GiftReceived");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+
+	}
+	//--------------------------  Task1  --------------------------gift = true;
+	public void Task1 () {
+		if (taskCompleted1 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 1000000;
+			btnTask1.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task1", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task2  --------------------------
+	public void Task2 () {
+		if (taskCompleted2 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 15000000;
+			btnTask2.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task2", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task3  --------------------------
+	public void Task3 () {
+		if (taskCompleted3 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 2500000000000;
+			btnTask3.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task3", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task4  --------------------------
+	public void Task4 () {
+		if (taskCompleted4 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 86400;
+			btnTask4.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task4", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task5  --------------------------
+	public void Task5 () {
+		if (taskCompleted5 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 10000;
+			btnTask5.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task5", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task6  --------------------------
+	public void Task6 () {
+		if (taskCompleted6 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 5000000000000;
+			btnTask6.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task6", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task7  --------------------------
+	public void Task7 () {
+		if (taskCompleted7 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 250000000000;
+			btnTask7.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task7", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+	//--------------------------  Task8  --------------------------
+	public void Task8 () {
+		if (taskCompleted8 == true) {
+			m_source.clip = btnClick;
+			m_source.Play();
+			scoreCount += 500000000000;
+			btnTask8.GetComponent<Button>().interactable = false;
+			PlayerPrefs.SetString("Task8", "Received");
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
+		}
+	}
+
 	//btnShowInstructions showing
 	public void OnBtnShowInstructionsClick () {
+		m_source.clip = btnClick;
+		m_source.Play();
 		instructionsActive = true;
 		WelcomeActive = false;
 		panelWelcome.SetActive (false);
@@ -1692,6 +2064,8 @@ public class ScoreManager : MonoBehaviour {
 
 	//btnSkipInstructions showing
 	public void OnBtnSkipInstructionsClick () {
+		m_source.clip = btnClick;
+		m_source.Play();
 		instructionsActive = false;
 		WelcomeActive = false;
 		panelWelcome.SetActive(false);
@@ -1702,6 +2076,8 @@ public class ScoreManager : MonoBehaviour {
 
 	//notepad task click
 	public void OnBtnTaskClick () {
+		m_source.clip = btnClick;
+		m_source.Play();
 		if (TaskActive == false) {
 			TaskActive = true;
 			imgNotepad.SetActive(true);
@@ -1717,6 +2093,8 @@ public class ScoreManager : MonoBehaviour {
 
 	//notepad shop click
 	public void OnBtnShopClick () {
+		m_source.clip = btnClick;
+		m_source.Play();
 		if (ShopActive == false) {
 			ShopActive = true;
 			imgNotepad.SetActive(true);
@@ -1734,18 +2112,23 @@ public class ScoreManager : MonoBehaviour {
 	public void RecalPtsPerSec () {
 		pointsPerSecond = seedsPointsPerSecond + FlowersPointsPerSecond + TomatoPointsPerSecond + TreePointsPerSecond + GreenApplePointsPerSecond + CarrotPointsPerSecond + GreenPearPointsPerSecond + CornPointsPerSecond + RedApplePointsPerSecond + WatermelonPointsPerSecond + RedPearPointsPerSecond + PumpkinPointsPerSecond + WrenchPointsPerSecond + ScrewdriverPointsPerSecond + HammerPointsPerSecond + HandsawPointsPerSecond + FencePointsPerSecond + DogPointsPerSecond + CatPointsPerSecond + ChickenPointsPerSecond + PigPointsPerSecond + SheepPointsPerSecond + CowPointsPerSecond + HorsePointsPerSecond + GoldPearPointsPerSecond + BarnPointsPerSecond + TractorPointsPerSecond + MillPointsPerSecond + GoldApplePointsPerSecond;
 	}
-		
+
 	//-------------------------------------------------  Shop  -------------------------------------------------
 	//--------------------------  seeds  --------------------------
 	public void BuySeeds () {
 		//check for the money available
 		if (scoreCount >= seedsCost) {
+			m_source.clip = btnClick;
+			m_source.Play();
 			scoreCount -= seedsCost;
 			seedsLevel += 1;
 			seedsCPS = seedsCPS + 1;
 			seedsPointsPerSecond = seedsCPS;
 			seedsCost += 50;
 			imgSeeds.SetActive(true);
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the flowers
 		if (seedsLevel >= 25) {
@@ -1774,13 +2157,21 @@ public class ScoreManager : MonoBehaviour {
 		if (seedsLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= flowersCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= flowersCost;
 				flowersLevel += 1;
 				flowersCPS = flowersCPS + 3;
 				FlowersPointsPerSecond = flowersCPS;
 				flowersCost += 175;
 				imgFlowers.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the tomato
 		if (flowersLevel >= 25) {
@@ -1809,13 +2200,21 @@ public class ScoreManager : MonoBehaviour {
 		if (flowersLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= tomatoCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= tomatoCost;
 				tomatoLevel += 1;
 				tomatoCPS = tomatoCPS + 10;
 				TomatoPointsPerSecond = tomatoCPS;
 				tomatoCost += 1500;
 				imgTomato.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Tree
 		if (tomatoLevel >= 25) {
@@ -1844,13 +2243,21 @@ public class ScoreManager : MonoBehaviour {
 		if (tomatoLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= TreeCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= TreeCost;
 				TreeLevel += 1;
 				TreeCPS = TreeCPS + 31;
 				TreePointsPerSecond = TreeCPS;
 				TreeCost += 5250;
 				imgTree.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the GreenApple
 		if (TreeLevel >= 25) {
@@ -1879,13 +2286,21 @@ public class ScoreManager : MonoBehaviour {
 		if (TreeLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= GreenAppleCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= GreenAppleCost;
 				GreenAppleLevel += 1;
 				GreenAppleCPS = GreenAppleCPS + 60;
 				GreenApplePointsPerSecond = GreenAppleCPS;
 				GreenAppleCost += 13750;
 				imgGreenApple.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the carrot
 		if (GreenAppleLevel >= 25) {
@@ -1914,13 +2329,21 @@ public class ScoreManager : MonoBehaviour {
 		if (GreenAppleLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= CarrotCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= CarrotCost;
 				CarrotLevel += 1;
 				CarrotCPS = CarrotCPS + 200;
 				CarrotPointsPerSecond = CarrotCPS;
 				CarrotCost += 73120;
 				imgCarrot.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the GreenPear
 		if (CarrotLevel >= 25) {
@@ -1949,13 +2372,21 @@ public class ScoreManager : MonoBehaviour {
 		if (CarrotLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= GreenPearCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= GreenPearCost;
 				GreenPearLevel += 1;
 				GreenPearCPS = GreenPearCPS + 400;
 				GreenPearPointsPerSecond = GreenPearCPS;
 				GreenPearCost += 137852;
 				imgGreenPear.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Corn
 		if (GreenPearLevel >= 25) {
@@ -1984,13 +2415,21 @@ public class ScoreManager : MonoBehaviour {
 		if (GreenPearLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= CornCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= CornCost;
 				CornLevel += 1;
 				CornCPS = CornCPS + 700;
 				CornPointsPerSecond = CornCPS;
 				CornCost += 2600000;
 				imgCorn.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the RedApple
 		if (CornLevel >= 25) {
@@ -2019,13 +2458,21 @@ public class ScoreManager : MonoBehaviour {
 		if (CornLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= RedAppleCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= RedAppleCost;
 				RedAppleLevel += 1;
 				RedAppleCPS = RedAppleCPS + 3000;
 				RedApplePointsPerSecond = RedAppleCPS;
 				RedAppleCost += 5300000;
 				imgRedApple.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the 
 		if (RedAppleLevel >= 25) {
@@ -2054,13 +2501,21 @@ public class ScoreManager : MonoBehaviour {
 		if (RedAppleLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= WatermelonCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= WatermelonCost;
 				WatermelonLevel += 1;
 				WatermelonCPS = WatermelonCPS + 15000;
 				WatermelonPointsPerSecond = WatermelonCPS;
 				WatermelonCost += 17500000;
 				imgWatermelon.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the RedPear
 		if (WatermelonLevel >= 25) {
@@ -2089,13 +2544,21 @@ public class ScoreManager : MonoBehaviour {
 		if (WatermelonLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= RedPearCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= RedPearCost;
 				RedPearLevel += 1;
 				RedPearCPS = RedPearCPS + 30000;
 				RedPearPointsPerSecond = RedPearCPS;
 				RedPearCost += 3300252;
 				imgRedPear.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Pumpkin
 		if (RedPearLevel >= 25) {
@@ -2124,13 +2587,21 @@ public class ScoreManager : MonoBehaviour {
 		if (RedPearLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= PumpkinCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= PumpkinCost;
 				PumpkinLevel += 1;
 				PumpkinCPS = PumpkinCPS + 80000;
 				PumpkinPointsPerSecond = PumpkinCPS;
 				PumpkinCost += 55000000;
 				imgPumpkin.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Wrench
 		if (PumpkinLevel >= 25) {
@@ -2159,13 +2630,21 @@ public class ScoreManager : MonoBehaviour {
 		if (PumpkinLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= WrenchCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= WrenchCost;
 				WrenchLevel += 1;
 				WrenchCPS = WrenchCPS + 150000;
 				WrenchPointsPerSecond = WrenchCPS;
 				WrenchCost += 67895220;
 				imgWrench.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Screwdriver
 		if (WrenchLevel >= 25) {
@@ -2194,13 +2673,21 @@ public class ScoreManager : MonoBehaviour {
 		if (WrenchLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= ScrewdriverCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= ScrewdriverCost;
 				ScrewdriverLevel += 1;
 				ScrewdriverCPS = ScrewdriverCPS + 200000;
 				ScrewdriverPointsPerSecond = ScrewdriverCPS;
 				ScrewdriverCost += 90632300;
 				imgScrewdriver.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Hammer
 		if (ScrewdriverLevel >= 25) {
@@ -2229,13 +2716,21 @@ public class ScoreManager : MonoBehaviour {
 		if (ScrewdriverLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= HammerCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= HammerCost;
 				HammerLevel += 1;
 				HammerCPS = HammerCPS + 300000;
 				HammerPointsPerSecond = HammerCPS;
 				HammerCost += 119230152;
 				imgHammer.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Handsaw
 		if (HammerLevel >= 25) {
@@ -2264,13 +2759,21 @@ public class ScoreManager : MonoBehaviour {
 		if (HammerLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= HandsawCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= HandsawCost;
 				HandsawLevel += 1;
 				HandsawCPS = HandsawCPS + 800000;
 				HandsawPointsPerSecond = HandsawCPS;
 				HandsawCost += 165298456;
 				imgHandsaw.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Fence
 		if (HandsawLevel >= 25) {
@@ -2299,13 +2802,21 @@ public class ScoreManager : MonoBehaviour {
 		if (HandsawLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= FenceCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= FenceCost;
 				FenceLevel += 1;
 				FenceCPS = FenceCPS + 1200000;
 				FencePointsPerSecond = FenceCPS;
 				FenceCost += 250000000;
 				imgFence.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Dog
 		if (FenceLevel >= 25) {
@@ -2334,13 +2845,21 @@ public class ScoreManager : MonoBehaviour {
 		if (FenceLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= DogCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= DogCost;
 				DogLevel += 1;
 				DogCPS = DogCPS + 2000000;
 				DogPointsPerSecond = DogCPS;
 				DogCost += 400000000;
 				imgDog.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Cat
 		if (DogLevel >= 25) {
@@ -2369,13 +2888,21 @@ public class ScoreManager : MonoBehaviour {
 		if (DogLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= CatCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= CatCost;
 				CatLevel += 1;
 				CatCPS = CatCPS + 3500000;
 				CatPointsPerSecond = CatCPS;
 				CatCost += 800000000;
 				imgCat.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Chicken
 		if (CatLevel >= 25) {
@@ -2404,13 +2931,21 @@ public class ScoreManager : MonoBehaviour {
 		if (CatLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= ChickenCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= ChickenCost;
 				ChickenLevel += 1;
 				ChickenCPS = ChickenCPS + 6000000;
 				ChickenPointsPerSecond = ChickenCPS;
 				ChickenCost += 1200000000;
 				imgChicken.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Pig
 		if (ChickenLevel >= 25) {
@@ -2439,13 +2974,21 @@ public class ScoreManager : MonoBehaviour {
 		if (ChickenLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= PigCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= PigCost;
 				PigLevel += 1;
 				PigCPS = PigCPS + 10000000;
 				PigPointsPerSecond = PigCPS;
 				PigCost += 1700000000;
 				imgPig.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Sheep
 		if (PigLevel >= 25) {
@@ -2474,13 +3017,21 @@ public class ScoreManager : MonoBehaviour {
 		if (PigLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= SheepCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= SheepCost;
 				SheepLevel += 1;
 				SheepCPS = SheepCPS + 15000000;
 				SheepPointsPerSecond = SheepCPS;
 				SheepCost += 3000000000;
 				imgSheep.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Cow
 		if (SheepLevel >= 25) {
@@ -2509,13 +3060,21 @@ public class ScoreManager : MonoBehaviour {
 		if (SheepLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= CowCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= CowCost;
 				CowLevel += 1;
 				CowCPS = CowCPS + 25000000;
 				CowPointsPerSecond = CowCPS;
 				CowCost += 5500000000;
 				imgCow.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Horse
 		if (CowLevel >= 25) {
@@ -2544,13 +3103,21 @@ public class ScoreManager : MonoBehaviour {
 		if (CowLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= HorseCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= HorseCost;
 				HorseLevel += 1;
 				HorseCPS = HorseCPS + 40000000;
 				HorsePointsPerSecond = HorseCPS;
 				HorseCost += 8000000000;
 				imgHorse.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the GoldPear
 		if (HorseLevel >= 25) {
@@ -2579,13 +3146,21 @@ public class ScoreManager : MonoBehaviour {
 		if (HorseLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= GoldPearCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= GoldPearCost;
 				GoldPearLevel += 1;
 				GoldPearCPS = GoldPearCPS + 70000000;
 				GoldPearPointsPerSecond = GoldPearCPS;
 				GoldPearCost += 13250000000;
 				imgGoldPear.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Barn
 		if (GoldPearLevel >= 25) {
@@ -2614,13 +3189,21 @@ public class ScoreManager : MonoBehaviour {
 		if (GoldPearLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= BarnCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= BarnCost;
 				BarnLevel += 1;
 				BarnCPS = BarnCPS + 100000000;
 				BarnPointsPerSecond = BarnCPS;
 				BarnCost += 20000000000;
 				imgBarn.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Tractor
 		if (BarnLevel >= 25) {
@@ -2649,13 +3232,21 @@ public class ScoreManager : MonoBehaviour {
 		if (BarnLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= TractorCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= TractorCost;
 				TractorLevel += 1;
 				TractorCPS = TractorCPS + 150000000;
 				TractorPointsPerSecond = TractorCPS;
 				TractorCost += 45000000000;
 				imgTractor.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the Mill
 		if (TractorLevel >= 25) {
@@ -2679,18 +3270,26 @@ public class ScoreManager : MonoBehaviour {
 		Invoke ("RecalPtsPerSec", 0f);
 	}
 
-	//--------------------------  tomato  --------------------------
+	//--------------------------  Mill  --------------------------
 	public void BuyMill () {
 		if (TractorLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= MillCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= MillCost;
 				MillLevel += 1;
 				MillCPS = MillCPS + 250000000;
 				MillPointsPerSecond = MillCPS;
 				MillCost += 95000000000;
 				imgMill.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//enable the GoldApple
 		if (MillLevel >= 25) {
@@ -2719,13 +3318,21 @@ public class ScoreManager : MonoBehaviour {
 		if (MillLevel >= 25) {
 			//check for the money available
 			if (scoreCount >= GoldAppleCost) {
+				m_source.clip = btnClick;
+				m_source.Play();
 				scoreCount -= GoldAppleCost;
 				GoldAppleLevel += 1;
 				GoldAppleCPS = GoldAppleCPS + 1000000000;
 				GoldApplePointsPerSecond = GoldAppleCPS;
 				GoldAppleCost += 300000000000;
 				imgGoldApple.SetActive(true);
+			} else {
+				m_source.clip = btnError;
+				m_source.Play();
 			}
+		} else {
+			m_source.clip = btnError;
+			m_source.Play();
 		}
 		//GoldApple txt update
 		GoldAppleCPSTxt.text = "C.P.S : " + GoldAppleCPS;
