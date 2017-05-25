@@ -373,7 +373,16 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//seeds txt update
 				seedsCPSTxt.text = "C.P.S : " + seedsCPS;
-				seedsLevelTxt.text = "Level : " + seedsLevel;
+				seedsLevelTxt.text = "Lvl : " + seedsLevel;
+				seedsCostTxt.text = seedsCost + "$";
+			} else {
+				//set seeds default values
+				seedsCost = 100;
+				seedsLevel = 0;
+				seedsCPS = 0;
+				//seeds txt update
+				seedsCPSTxt.text = "C.P.S : " + seedsCPS;
+				seedsLevelTxt.text = "Lvl : " + seedsLevel;
 				seedsCostTxt.text = seedsCost + "$";
 			}
 
@@ -395,7 +404,18 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//flowers txt update
 				flowersCPSTxt.text = "C.P.S : " + flowersCPS;
-				flowersLevelTxt.text = "Level : " + flowersLevel;
+				flowersLevelTxt.text = "Lvl : " + flowersLevel;
+				flowersCostTxt.text = flowersCost + "$";
+			} else {
+				//set flowers default values
+				flowersCost = 10000;
+				flowersLevel = 0;
+				flowersCPS = 0;
+				//lock flowers
+				btnFlowers.GetComponent<Button>().interactable = false;
+				//flowers txt update
+				flowersCPSTxt.text = "C.P.S : " + flowersCPS;
+				flowersLevelTxt.text = "Lvl : " + flowersLevel;
 				flowersCostTxt.text = flowersCost + "$";
 			}
 
@@ -417,9 +437,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//tomato txt update
 				tomatoCPSTxt.text = "C.P.S : " + tomatoCPS;
-				tomatoLevelTxt.text = "Level : " + tomatoLevel;
+				tomatoLevelTxt.text = "Lvl : " + tomatoLevel;
 				tomatoCostTxt.text = tomatoCost + "$";
-			} 
+			} else {
+				//set tomato default values
+				tomatoCost = 100000;
+				tomatoLevel = 0;
+				tomatoCPS = 0;
+				//lock tomato
+				btnTomato.GetComponent<Button>().interactable = false;
+				//tomato txt update
+				tomatoCPSTxt.text = "C.P.S : " + tomatoCPS;
+				tomatoLevelTxt.text = "Lvl : " + tomatoLevel;
+				tomatoCostTxt.text = tomatoCost + "$";
+			}
 
 			//verify if Tree data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("TreeCost") && PlayerPrefs.HasKey ("TreeLevel") && PlayerPrefs.HasKey ("TreeCPS") && PlayerPrefs.HasKey ("TreePointsPerSecond")) {
@@ -439,9 +470,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Tree txt update
 				TreeCPSTxt.text = "C.P.S : " + TreeCPS;
-				TreeLevelTxt.text = "Level : " + TreeLevel;
+				TreeLevelTxt.text = "Lvl : " + TreeLevel;
 				TreeCostTxt.text = TreeCost + "$";
-			} 
+			} else {
+				//set Tree default values
+				TreeCost = 500000;
+				TreeLevel = 0;
+				TreeCPS = 0;
+				//lock Tree
+				btnTree.GetComponent<Button>().interactable = false;
+				//Tree txt update
+				TreeCPSTxt.text = "C.P.S : " + TreeCPS;
+				TreeLevelTxt.text = "Lvl : " + TreeLevel;
+				TreeCostTxt.text = TreeCost + "$";
+			}
 
 			//verify if GreenApple data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("GreenAppleCost") && PlayerPrefs.HasKey ("GreenAppleLevel") && PlayerPrefs.HasKey ("GreenAppleCPS") && PlayerPrefs.HasKey ("GreenApplePointsPerSecond")) {
@@ -461,9 +503,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//GreenApple txt update
 				GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
-				GreenAppleLevelTxt.text = "Level : " + GreenAppleLevel;
+				GreenAppleLevelTxt.text = "Lvl : " + GreenAppleLevel;
 				GreenAppleCostTxt.text = GreenAppleCost + "$";
-			} 
+			} else {
+				//set GreenApple default values
+				GreenAppleCost = 2000000;
+				GreenAppleLevel = 0;
+				GreenAppleCPS = 0;
+				//lock GreenApple
+				btnGreenApple.GetComponent<Button>().interactable = false;
+				//GreenApple txt update
+				GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
+				GreenAppleLevelTxt.text = "Lvl : " + GreenAppleLevel;
+				GreenAppleCostTxt.text = GreenAppleCost + "$";
+			}
 
 			//verify if Carrot data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("CarrotCost") && PlayerPrefs.HasKey ("CarrotLevel") && PlayerPrefs.HasKey ("CarrotCPS") && PlayerPrefs.HasKey ("CarrotPointsPerSecond")) {
@@ -483,9 +536,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Carrot txt update
 				CarrotCPSTxt.text = "C.P.S : " + CarrotCPS;
-				CarrotLevelTxt.text = "Level : " + CarrotLevel;
+				CarrotLevelTxt.text = "Lvl : " + CarrotLevel;
 				CarrotCostTxt.text = CarrotCost + "$";
-			} 
+			} else {
+				//set Carrot default values
+				CarrotCost = 10000000;
+				CarrotLevel = 0;
+				CarrotCPS = 0;
+				//lock Carrot
+				btnCarrot.GetComponent<Button>().interactable = false;
+				//Carrot txt update
+				CarrotCPSTxt.text = "C.P.S : " + CarrotCPS;
+				CarrotLevelTxt.text = "Lvl : " + CarrotLevel;
+				CarrotCostTxt.text = CarrotCost + "$";
+			}
 
 			//verify if GreenPear data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("GreenPearCost") && PlayerPrefs.HasKey ("GreenPearLevel") && PlayerPrefs.HasKey ("GreenPearCPS") && PlayerPrefs.HasKey ("GreenPearPointsPerSecond")) {
@@ -505,9 +569,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//GreenPear txt update
 				GreenPearCPSTxt.text = "C.P.S : " + GreenPearCPS;
-				GreenPearLevelTxt.text = "Level : " + GreenPearLevel;
+				GreenPearLevelTxt.text = "Lvl : " + GreenPearLevel;
 				GreenPearCostTxt.text = GreenPearCost + "$";
-			} 
+			} else {
+				//set GreenPear default values
+				GreenPearCost = 50000000;
+				GreenPearLevel = 0;
+				GreenPearCPS = 0;
+				//lock GreenPear
+				btnGreenPear.GetComponent<Button>().interactable = false;
+				//GreenPear txt update
+				GreenPearCPSTxt.text = "C.P.S : " + GreenPearCPS;
+				GreenPearLevelTxt.text = "Lvl : " + GreenPearLevel;
+				GreenPearCostTxt.text = GreenPearCost + "$";
+			}
 
 			//verify if Corn data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("CornCost") && PlayerPrefs.HasKey ("CornLevel") && PlayerPrefs.HasKey ("CornCPS") && PlayerPrefs.HasKey ("CornPointsPerSecond")) {
@@ -527,9 +602,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Corn txt update
 				CornCPSTxt.text = "C.P.S : " + CornCPS;
-				CornLevelTxt.text = "Level : " + CornLevel;
+				CornLevelTxt.text = "Lvl : " + CornLevel;
 				CornCostTxt.text = CornCost + "$";
-			} 
+			} else {
+				//set Corn default values
+				CornCost = 300000000;
+				CornLevel = 0;
+				CornCPS = 0;
+				//lock Corn
+				btnCorn.GetComponent<Button>().interactable = false;
+				//Corn txt update
+				CornCPSTxt.text = "C.P.S : " + CornCPS;
+				CornLevelTxt.text = "Lvl : " + CornLevel;
+				CornCostTxt.text = CornCost + "$";
+			}
 
 			//verify if RedApple data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("RedAppleCost") && PlayerPrefs.HasKey ("RedAppleLevel") && PlayerPrefs.HasKey ("RedAppleCPS") && PlayerPrefs.HasKey ("RedApplePointsPerSecond")) {
@@ -549,9 +635,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//RedApple txt update
 				RedAppleCPSTxt.text = "C.P.S : " + RedAppleCPS;
-				RedAppleLevelTxt.text = "Level : " + RedAppleLevel;
+				RedAppleLevelTxt.text = "Lvl : " + RedAppleLevel;
 				RedAppleCostTxt.text = RedAppleCost + "$";
-			} 
+			} else {
+				//set RedApple default values
+				RedAppleCost = 700000000;
+				RedAppleLevel = 0;
+				RedAppleCPS = 0;
+				//lock RedApple
+				btnRedApple.GetComponent<Button>().interactable = false;
+				//RedApple txt update
+				RedAppleCPSTxt.text = "C.P.S : " + RedAppleCPS;
+				RedAppleLevelTxt.text = "Lvl : " + RedAppleLevel;
+				RedAppleCostTxt.text = RedAppleCost + "$";
+			}
 
 			//verify if Watermelon data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("WatermelonCost") && PlayerPrefs.HasKey ("WatermelonLevel") && PlayerPrefs.HasKey ("WatermelonCPS") && PlayerPrefs.HasKey ("WatermelonPointsPerSecond")) {
@@ -571,9 +668,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Watermelon txt update
 				WatermelonCPSTxt.text = "C.P.S : " + WatermelonCPS;
-				WatermelonLevelTxt.text = "Level : " + WatermelonLevel;
+				WatermelonLevelTxt.text = "Lvl : " + WatermelonLevel;
 				WatermelonCostTxt.text = WatermelonCost + "$";
-			} 
+			} else {
+				//set Watermelon default values
+				WatermelonCost = 2000000000;
+				WatermelonLevel = 0;
+				WatermelonCPS = 0;
+				//lock Watermelon
+				btnWatermelon.GetComponent<Button>().interactable = false;
+				//Watermelon txt update
+				WatermelonCPSTxt.text = "C.P.S : " + WatermelonCPS;
+				WatermelonLevelTxt.text = "Lvl : " + WatermelonLevel;
+				WatermelonCostTxt.text = WatermelonCost + "$";
+			}
 
 			//verify if RedPear data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("RedPearCost") && PlayerPrefs.HasKey ("RedPearLevel") && PlayerPrefs.HasKey ("RedPearCPS") && PlayerPrefs.HasKey ("RedPearPointsPerSecond")) {
@@ -593,9 +701,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//RedPear txt update
 				RedPearCPSTxt.text = "C.P.S : " + RedPearCPS;
-				RedPearLevelTxt.text = "Level : " + RedPearLevel;
+				RedPearLevelTxt.text = "Lvl : " + RedPearLevel;
 				RedPearCostTxt.text = RedPearCost + "$";
-			} 
+			} else {
+				//set RedPear default values
+				RedPearCost = 4000000000;
+				RedPearLevel = 0;
+				RedPearCPS = 0;
+				//lock RedPear
+				btnRedPear.GetComponent<Button>().interactable = false;
+				//RedPear txt update
+				RedPearCPSTxt.text = "C.P.S : " + RedPearCPS;
+				RedPearLevelTxt.text = "Lvl : " + RedPearLevel;
+				RedPearCostTxt.text = RedPearCost + "$";
+			}
 
 			//verify if Pumpkin data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("PumpkinCost") && PlayerPrefs.HasKey ("PumpkinLevel") && PlayerPrefs.HasKey ("PumpkinCPS") && PlayerPrefs.HasKey ("PumpkinPointsPerSecond")) {
@@ -615,9 +734,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Pumpkin txt update
 				PumpkinCPSTxt.text = "C.P.S : " + PumpkinCPS;
-				PumpkinLevelTxt.text = "Level : " + PumpkinLevel;
+				PumpkinLevelTxt.text = "Lvl : " + PumpkinLevel;
 				PumpkinCostTxt.text = PumpkinCost + "$";
-			} 
+			} else {
+				//set Pumpkin default values
+				PumpkinCost = 6000000000;
+				PumpkinLevel = 0;
+				PumpkinCPS = 0;
+				//lock Pumpkin
+				btnPumpkin.GetComponent<Button>().interactable = false;
+				//Pumpkin txt update
+				PumpkinCPSTxt.text = "C.P.S : " + PumpkinCPS;
+				PumpkinLevelTxt.text = "Lvl : " + PumpkinLevel;
+				PumpkinCostTxt.text = PumpkinCost + "$";
+			}
 
 			//verify if Wrench data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("WrenchCost") && PlayerPrefs.HasKey ("WrenchLevel") && PlayerPrefs.HasKey ("WrenchCPS") && PlayerPrefs.HasKey ("WrenchPointsPerSecond")) {
@@ -637,9 +767,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Wrench txt update
 				WrenchCPSTxt.text = "C.P.S : " + WrenchCPS;
-				WrenchLevelTxt.text = "Level : " + WrenchLevel;
+				WrenchLevelTxt.text = "Lvl : " + WrenchLevel;
 				WrenchCostTxt.text = WrenchCost + "$";
-			} 
+			} else {
+				//set Wrench default values
+				WrenchCost = 10000000000;
+				WrenchLevel = 0;
+				WrenchCPS = 0;
+				//lock Wrench
+				btnWrench.GetComponent<Button>().interactable = false;
+				//Wrench txt update
+				WrenchCPSTxt.text = "C.P.S : " + WrenchCPS;
+				WrenchLevelTxt.text = "Lvl : " + WrenchLevel;
+				WrenchCostTxt.text = WrenchCost + "$";
+			}
 
 			//verify if Screwdriver data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("ScrewdriverCost") && PlayerPrefs.HasKey ("ScrewdriverLevel") && PlayerPrefs.HasKey ("ScrewdriverCPS") && PlayerPrefs.HasKey ("ScrewdriverPointsPerSecond")) {
@@ -659,9 +800,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Screwdriver txt update
 				ScrewdriverCPSTxt.text = "C.P.S : " + ScrewdriverCPS;
-				ScrewdriverLevelTxt.text = "Level : " + ScrewdriverLevel;
+				ScrewdriverLevelTxt.text = "Lvl : " + ScrewdriverLevel;
 				ScrewdriverCostTxt.text = ScrewdriverCost + "$";
-			} 
+			} else {
+				//set Screwdriver default values
+				ScrewdriverCost = 30000000000;
+				ScrewdriverLevel = 0;
+				ScrewdriverCPS = 0;
+				//lock Screwdriver
+				btnScrewdriver.GetComponent<Button>().interactable = false;
+				//Screwdriver txt update
+				ScrewdriverCPSTxt.text = "C.P.S : " + ScrewdriverCPS;
+				ScrewdriverLevelTxt.text = "Lvl : " + ScrewdriverLevel;
+				ScrewdriverCostTxt.text = ScrewdriverCost + "$";
+			}
 
 			//verify if Hammer data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("HammerCost") && PlayerPrefs.HasKey ("HammerLevel") && PlayerPrefs.HasKey ("HammerCPS") && PlayerPrefs.HasKey ("HammerPointsPerSecond")) {
@@ -681,9 +833,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Hammer txt update
 				HammerCPSTxt.text = "C.P.S : " + HammerCPS;
-				HammerLevelTxt.text = "Level : " + HammerLevel;
+				HammerLevelTxt.text = "Lvl : " + HammerLevel;
 				HammerCostTxt.text = HammerCost + "$";
-			} 
+			} else {
+				//set Hammer default values
+				HammerCost = 50000000000;
+				HammerLevel = 0;
+				HammerCPS = 0;
+				//lock Hammer
+				btnHammer.GetComponent<Button>().interactable = false;
+				//Hammer txt update
+				HammerCPSTxt.text = "C.P.S : " + HammerCPS;
+				HammerLevelTxt.text = "Lvl : " + HammerLevel;
+				HammerCostTxt.text = HammerCost + "$";
+			}
 
 			//verify if Handsaw data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("HandsawCost") && PlayerPrefs.HasKey ("HandsawLevel") && PlayerPrefs.HasKey ("HandsawCPS") && PlayerPrefs.HasKey ("HandsawPointsPerSecond")) {
@@ -703,9 +866,20 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Handsaw txt update
 				HandsawCPSTxt.text = "C.P.S : " + HandsawCPS;
-				HandsawLevelTxt.text = "Level : " + HandsawLevel;
+				HandsawLevelTxt.text = "Lvl : " + HandsawLevel;
 				HandsawCostTxt.text = HandsawCost + "$";
-			} 
+			} else {
+				//set Handsaw default values
+				HandsawCost = 100000000000;
+				HandsawLevel = 0;
+				HandsawCPS = 0;
+				//lock Handsaw
+				btnHandsaw.GetComponent<Button>().interactable = false;
+				//Handsaw txt update
+				HandsawCPSTxt.text = "C.P.S : " + HandsawCPS;
+				HandsawLevelTxt.text = "Lvl : " + HandsawLevel;
+				HandsawCostTxt.text = HandsawCost + "$";
+			}
 
 			//verify if Fence data already exist in PlayerPrefs
 			if (PlayerPrefs.HasKey ("FenceCost") && PlayerPrefs.HasKey ("FenceLevel") && PlayerPrefs.HasKey ("FenceCPS") && PlayerPrefs.HasKey ("FencePointsPerSecond")) {
@@ -725,175 +899,743 @@ public class ScoreManager : MonoBehaviour {
 				}
 				//Fence txt update
 				FenceCPSTxt.text = "C.P.S : " + FenceCPS;
-				FenceLevelTxt.text = "Level : " + FenceLevel;
+				FenceLevelTxt.text = "Lvl : " + FenceLevel;
 				FenceCostTxt.text = FenceCost + "$";
-			} 
-			//======================================================================================================================================================================
-			//======================================================================================================================================================================
-			//======================================================================================================================================================================
-			//======================================================================================================================================================================
-			//======================================================================================================================================================================
+			} else {
+				//set Fence default values
+				FenceCost = 200000000000;
+				FenceLevel = 0;
+				FenceCPS = 0;
+				//lock Fence
+				btnFence.GetComponent<Button>().interactable = false;
+				//Fence txt update
+				FenceCPSTxt.text = "C.P.S : " + FenceCPS;
+				FenceLevelTxt.text = "Lvl : " + FenceLevel;
+				FenceCostTxt.text = FenceCost + "$";
+			}
+
 			//verify if Dog data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
+			if (PlayerPrefs.HasKey ("DogCost") && PlayerPrefs.HasKey ("DogLevel") && PlayerPrefs.HasKey ("DogCPS") && PlayerPrefs.HasKey ("DogPointsPerSecond")) {
 				//retreive Dog data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
+				DogCost = decimal.Parse (PlayerPrefs.GetString("DogCost"));
+				DogLevel = decimal.Parse (PlayerPrefs.GetString("DogLevel"));
+				DogCPS = decimal.Parse (PlayerPrefs.GetString("DogCPS"));
+				DogPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("DogPointsPerSecond"));
 				//add pre-existing Dog data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+				pointsPerSecond += DogPointsPerSecond;
+				imgDog.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (DogLevel >= 25) {
+					btnCat.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnCat.GetComponent<Button>().interactable = false;
 				}
 				//Dog txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				DogCPSTxt.text = "C.P.S : " + DogCPS;
+				DogLevelTxt.text = "Lvl : " + DogLevel;
+				DogCostTxt.text = DogCost + "$";
+			} else {
+				//set Dog default values
+				DogCost = 500000000000;
+				DogLevel = 0;
+				DogCPS = 0;
+				//lock Dog
+				btnDog.GetComponent<Button>().interactable = false;
+				//Dog txt update
+				DogCPSTxt.text = "C.P.S : " + DogCPS;
+				DogLevelTxt.text = "Lvl : " + DogLevel;
+				DogCostTxt.text = DogCost + "$";
+			}
 
-			//verify if  data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
-				//retreive  data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
-				//add pre-existing  data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+			//verify if Cat data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("CatCost") && PlayerPrefs.HasKey ("CatLevel") && PlayerPrefs.HasKey ("CatCPS") && PlayerPrefs.HasKey ("CatPointsPerSecond")) {
+				//retreive Cat data and convert it to decimal
+				CatCost = decimal.Parse (PlayerPrefs.GetString("CatCost"));
+				CatLevel = decimal.Parse (PlayerPrefs.GetString("CatLevel"));
+				CatCPS = decimal.Parse (PlayerPrefs.GetString("CatCPS"));
+				CatPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("CatPointsPerSecond"));
+				//add pre-existing Cat data to pointsPerSecond
+				pointsPerSecond += CatPointsPerSecond;
+				imgCat.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (CatLevel >= 25) {
+					btnChicken.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnChicken.GetComponent<Button>().interactable = false;
 				}
-				// txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				//Cat txt update
+				CatCPSTxt.text = "C.P.S : " + CatCPS;
+				CatLevelTxt.text = "Lvl : " + CatLevel;
+				CatCostTxt.text = CatCost + "$";
+			} else {
+				//set Cat default values
+				CatCost = 1000000000000;
+				CatLevel = 0;
+				CatCPS = 0;
+				//lock Cat
+				btnCat.GetComponent<Button>().interactable = false;
+				//Cat txt update
+				CatCPSTxt.text = "C.P.S : " + CatCPS;
+				CatLevelTxt.text = "Lvl : " + CatLevel;
+				CatCostTxt.text = CatCost + "$";
+			}
 
-			//verify if  data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
-				//retreive  data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
-				//add pre-existing  data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+			//verify if Chicken data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("ChickenCost") && PlayerPrefs.HasKey ("ChickenLevel") && PlayerPrefs.HasKey ("ChickenCPS") && PlayerPrefs.HasKey ("ChickenPointsPerSecond")) {
+				//retreive Chicken data and convert it to decimal
+				ChickenCost = decimal.Parse (PlayerPrefs.GetString("ChickenCost"));
+				ChickenLevel = decimal.Parse (PlayerPrefs.GetString("ChickenLevel"));
+				ChickenCPS = decimal.Parse (PlayerPrefs.GetString("ChickenCPS"));
+				ChickenPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("ChickenPointsPerSecond"));
+				//add pre-existing Chicken data to pointsPerSecond
+				pointsPerSecond += ChickenPointsPerSecond;
+				imgChicken.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (ChickenLevel >= 25) {
+					btnPig.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnPig.GetComponent<Button>().interactable = false;
 				}
-				// txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				//Chicken txt update
+				ChickenCPSTxt.text = "C.P.S : " + ChickenCPS;
+				ChickenLevelTxt.text = "Lvl : " + ChickenLevel;
+				ChickenCostTxt.text = ChickenCost + "$";
+			} else {
+				//set Chicken default values
+				ChickenCost = 2000000000000;
+				ChickenLevel = 0;
+				ChickenCPS = 0;
+				//lock Chicken
+				btnChicken.GetComponent<Button>().interactable = false;
+				//Chicken txt update
+				ChickenCPSTxt.text = "C.P.S : " + ChickenCPS;
+				ChickenLevelTxt.text = "Lvl : " + ChickenLevel;
+				ChickenCostTxt.text = ChickenCost + "$";
+			}
 
-			//verify if  data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
-				//retreive  data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
-				//add pre-existing  data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+			//verify if Pig data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("PigCost") && PlayerPrefs.HasKey ("PigLevel") && PlayerPrefs.HasKey ("PigCPS") && PlayerPrefs.HasKey ("PigPointsPerSecond")) {
+				//retreive Pig data and convert it to decimal
+				PigCost = decimal.Parse (PlayerPrefs.GetString("PigCost"));
+				PigLevel = decimal.Parse (PlayerPrefs.GetString("PigLevel"));
+				PigCPS = decimal.Parse (PlayerPrefs.GetString("PigCPS"));
+				PigPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PigPointsPerSecond"));
+				//add pre-existing Pig data to pointsPerSecond
+				pointsPerSecond += PigPointsPerSecond;
+				imgPig.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (PigLevel >= 25) {
+					btnSheep.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnSheep.GetComponent<Button>().interactable = false;
 				}
-				// txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				//Pig txt update
+				PigCPSTxt.text = "C.P.S : " + PigCPS;
+				PigLevelTxt.text = "Lvl : " + PigLevel;
+				PigCostTxt.text = PigCost + "$";
+			} else {
+				//set Pig default values
+				PigCost = 4000000000000;
+				PigLevel = 0;
+				PigCPS = 0;
+				//lock Pig
+				btnPig.GetComponent<Button>().interactable = false;
+				//Pig txt update
+				PigCPSTxt.text = "C.P.S : " + PigCPS;
+				PigLevelTxt.text = "Lvl : " + PigLevel;
+				PigCostTxt.text = PigCost + "$";
+			}
 
-			//verify if  data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
-				//retreive  data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
-				//add pre-existing  data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+			//verify if Sheep data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("SheepCost") && PlayerPrefs.HasKey ("SheepLevel") && PlayerPrefs.HasKey ("SheepCPS") && PlayerPrefs.HasKey ("SheepPointsPerSecond")) {
+				//retreive Sheep data and convert it to decimal
+				SheepCost = decimal.Parse (PlayerPrefs.GetString("SheepCost"));
+				SheepLevel = decimal.Parse (PlayerPrefs.GetString("SheepLevel"));
+				SheepCPS = decimal.Parse (PlayerPrefs.GetString("SheepCPS"));
+				SheepPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("SheepPointsPerSecond"));
+				//add pre-existing Sheep data to pointsPerSecond
+				pointsPerSecond += SheepPointsPerSecond;
+				imgSheep.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (SheepLevel >= 25) {
+					btnCow.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnCow.GetComponent<Button>().interactable = false;
 				}
-				// txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				//Sheep txt update
+				SheepCPSTxt.text = "C.P.S : " + SheepCPS;
+				SheepLevelTxt.text = "Lvl : " + SheepLevel;
+				SheepCostTxt.text = SheepCost + "$";
+			} else {
+				//set Sheep default values
+				SheepCost = 8000000000000;
+				SheepLevel = 0;
+				SheepCPS = 0;
+				//lock Sheep
+				btnSheep.GetComponent<Button>().interactable = false;
+				//Sheep txt update
+				SheepCPSTxt.text = "C.P.S : " + SheepCPS;
+				SheepLevelTxt.text = "Lvl : " + SheepLevel;
+				SheepCostTxt.text = SheepCost + "$";
+			}
 
-			//verify if  data already exist in PlayerPrefs
-			if (PlayerPrefs.HasKey ("Cost") && PlayerPrefs.HasKey ("Level") && PlayerPrefs.HasKey ("CPS") && PlayerPrefs.HasKey ("PointsPerSecond")) {
-				//retreive  data and convert it to decimal
-				Cost = decimal.Parse (PlayerPrefs.GetString("Cost"));
-				Level = decimal.Parse (PlayerPrefs.GetString("Level"));
-				CPS = decimal.Parse (PlayerPrefs.GetString("CPS"));
-				PointsPerSecond = decimal.Parse (PlayerPrefs.GetString("PointsPerSecond"));
-				//add pre-existing  data to pointsPerSecond
-				pointsPerSecond += PointsPerSecond;
-				img.SetActive(true);
+			//verify if Cow data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("CowCost") && PlayerPrefs.HasKey ("CowLevel") && PlayerPrefs.HasKey ("CowCPS") && PlayerPrefs.HasKey ("CowPointsPerSecond")) {
+				//retreive Cow data and convert it to decimal
+				CowCost = decimal.Parse (PlayerPrefs.GetString("CowCost"));
+				CowLevel = decimal.Parse (PlayerPrefs.GetString("CowLevel"));
+				CowCPS = decimal.Parse (PlayerPrefs.GetString("CowCPS"));
+				CowPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("CowPointsPerSecond"));
+				//add pre-existing Cow data to pointsPerSecond
+				pointsPerSecond += CowPointsPerSecond;
+				imgCow.SetActive(true);
 				//verify to unlock next object
-				if (Level >= 25) {
-					btn.GetComponent<Button>().interactable = true;
+				if (CowLevel >= 25) {
+					btnHorse.GetComponent<Button>().interactable = true;
 				} else {
-					btn.GetComponent<Button>().interactable = false;
+					btnHorse.GetComponent<Button>().interactable = false;
 				}
-				// txt update
-				CPSTxt.text = "C.P.S : " + CPS;
-				LevelTxt.text = "Level : " + Level;
-				CostTxt.text = Cost + "$";
-			} 
+				//Cow txt update
+				CowCPSTxt.text = "C.P.S : " + CowCPS;
+				CowLevelTxt.text = "Lvl : " + CowLevel;
+				CowCostTxt.text = CowCost + "$";
+			} else {
+				//set Cow default values
+				CowCost = 16000000000000;
+				CowLevel = 0;
+				CowCPS = 0;
+				//lock Cow
+				btnCow.GetComponent<Button>().interactable = false;
+				//Cow txt update
+				CowCPSTxt.text = "C.P.S : " + CowCPS;
+				CowLevelTxt.text = "Lvl : " + CowLevel;
+				CowCostTxt.text = CowCost + "$";
+			}
 
+			//verify if Horse data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("HorseCost") && PlayerPrefs.HasKey ("HorseLevel") && PlayerPrefs.HasKey ("HorseCPS") && PlayerPrefs.HasKey ("HorsePointsPerSecond")) {
+				//retreive Horse data and convert it to decimal
+				HorseCost = decimal.Parse (PlayerPrefs.GetString("HorseCost"));
+				HorseLevel = decimal.Parse (PlayerPrefs.GetString("HorseLevel"));
+				HorseCPS = decimal.Parse (PlayerPrefs.GetString("HorseCPS"));
+				HorsePointsPerSecond = decimal.Parse (PlayerPrefs.GetString("HorsePointsPerSecond"));
+				//add pre-existing Horse data to pointsPerSecond
+				pointsPerSecond += HorsePointsPerSecond;
+				imgHorse.SetActive(true);
+				//verify to unlock next object
+				if (HorseLevel >= 25) {
+					btnGoldPear.GetComponent<Button>().interactable = true;
+				} else {
+					btnGoldPear.GetComponent<Button>().interactable = false;
+				}
+				//Horse txt update
+				HorseCPSTxt.text = "C.P.S : " + HorseCPS;
+				HorseLevelTxt.text = "Lvl : " + HorseLevel;
+				HorseCostTxt.text = HorseCost + "$";
+			} else {
+				//set Horse default values
+				HorseCost = 25000000000000;
+				HorseLevel = 0;
+				HorseCPS = 0;
+				//lock Horse
+				btnHorse.GetComponent<Button>().interactable = false;
+				//Horse txt update
+				HorseCPSTxt.text = "C.P.S : " + HorseCPS;
+				HorseLevelTxt.text = "Lvl : " + HorseLevel;
+				HorseCostTxt.text = HorseCost + "$";
+			}
 
+			//verify if GoldPear data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("GoldPearCost") && PlayerPrefs.HasKey ("GoldPearLevel") && PlayerPrefs.HasKey ("GoldPearCPS") && PlayerPrefs.HasKey ("GoldPearPointsPerSecond")) {
+				//retreive GoldPear data and convert it to decimal
+				GoldPearCost = decimal.Parse (PlayerPrefs.GetString("GoldPearCost"));
+				GoldPearLevel = decimal.Parse (PlayerPrefs.GetString("GoldPearLevel"));
+				GoldPearCPS = decimal.Parse (PlayerPrefs.GetString("GoldPearCPS"));
+				GoldPearPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("GoldPearPointsPerSecond"));
+				//add pre-existing GoldPear data to pointsPerSecond
+				pointsPerSecond += GoldPearPointsPerSecond;
+				imgGoldPear.SetActive(true);
+				//verify to unlock next object
+				if (GoldPearLevel >= 25) {
+					btnBarn.GetComponent<Button>().interactable = true;
+				} else {
+					btnBarn.GetComponent<Button>().interactable = false;
+				}
+				//GoldPear txt update
+				GoldPearCPSTxt.text = "C.P.S : " + GoldPearCPS;
+				GoldPearLevelTxt.text = "Lvl : " + GoldPearLevel;
+				GoldPearCostTxt.text = GoldPearCost + "$";
+			} else {
+				//set GoldPear default values
+				GoldPearCost = 40000000000000;
+				GoldPearLevel = 0;
+				GoldPearCPS = 0;
+				//lock GoldPear
+				btnGoldPear.GetComponent<Button>().interactable = false;
+				//GoldPear txt update
+				GoldPearCPSTxt.text = "C.P.S : " + GoldPearCPS;
+				GoldPearLevelTxt.text = "Lvl : " + GoldPearLevel;
+				GoldPearCostTxt.text = GoldPearCost + "$";
+			}
 
+			//verify if Barn data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("BarnCost") && PlayerPrefs.HasKey ("BarnLevel") && PlayerPrefs.HasKey ("BarnCPS") && PlayerPrefs.HasKey ("BarnPointsPerSecond")) {
+				//retreive Barn data and convert it to decimal
+				BarnCost = decimal.Parse (PlayerPrefs.GetString("BarnCost"));
+				BarnLevel = decimal.Parse (PlayerPrefs.GetString("BarnLevel"));
+				BarnCPS = decimal.Parse (PlayerPrefs.GetString("BarnCPS"));
+				BarnPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("BarnPointsPerSecond"));
+				//add pre-existing Barn data to pointsPerSecond
+				pointsPerSecond += BarnPointsPerSecond;
+				imgBarn.SetActive(true);
+				//verify to unlock next object
+				if (BarnLevel >= 25) {
+					btnTractor.GetComponent<Button>().interactable = true;
+				} else {
+					btnTractor.GetComponent<Button>().interactable = false;
+				}
+				//Barn txt update
+				BarnCPSTxt.text = "C.P.S : " + BarnCPS;
+				BarnLevelTxt.text = "Lvl : " + BarnLevel;
+				BarnCostTxt.text = BarnCost + "$";
+			} else {
+				//set Barn default values
+				BarnCost = 80000000000000;
+				BarnLevel = 0;
+				BarnCPS = 0;
+				//lock Barn
+				btnBarn.GetComponent<Button>().interactable = false;
+				//Barn txt update
+				BarnCPSTxt.text = "C.P.S : " + BarnCPS;
+				BarnLevelTxt.text = "Lvl : " + BarnLevel;
+				BarnCostTxt.text = BarnCost + "$";
+			}
 
+			//verify if Tractor data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("TractorCost") && PlayerPrefs.HasKey ("TractorLevel") && PlayerPrefs.HasKey ("TractorCPS") && PlayerPrefs.HasKey ("TractorPointsPerSecond")) {
+				//retreive Tractor data and convert it to decimal
+				TractorCost = decimal.Parse (PlayerPrefs.GetString("TractorCost"));
+				TractorLevel = decimal.Parse (PlayerPrefs.GetString("TractorLevel"));
+				TractorCPS = decimal.Parse (PlayerPrefs.GetString("TractorCPS"));
+				TractorPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("TractorPointsPerSecond"));
+				//add pre-existing Tractor data to pointsPerSecond
+				pointsPerSecond += TractorPointsPerSecond;
+				imgTractor.SetActive(true);
+				//verify to unlock next object
+				if (TractorLevel >= 25) {
+					btnMill.GetComponent<Button>().interactable = true;
+				} else {
+					btnMill.GetComponent<Button>().interactable = false;
+				}
+				//Tractor txt update
+				TractorCPSTxt.text = "C.P.S : " + TractorCPS;
+				TractorLevelTxt.text = "Lvl : " + TractorLevel;
+				TractorCostTxt.text = TractorCost + "$";
+			} else {
+				//set Tractor default values
+				TractorCost = 150000000000000;
+				TractorLevel = 0;
+				TractorCPS = 0;
+				//lock Tractor
+				btnTractor.GetComponent<Button>().interactable = false;
+				//Tractor txt update
+				TractorCPSTxt.text = "C.P.S : " + TractorCPS;
+				TractorLevelTxt.text = "Lvl : " + TractorLevel;
+				TractorCostTxt.text = TractorCost + "$";
+			}
 
+			//verify if Mill data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("MillCost") && PlayerPrefs.HasKey ("MillLevel") && PlayerPrefs.HasKey ("MillCPS") && PlayerPrefs.HasKey ("MillPointsPerSecond")) {
+				//retreive Mill data and convert it to decimal
+				MillCost = decimal.Parse (PlayerPrefs.GetString("MillCost"));
+				MillLevel = decimal.Parse (PlayerPrefs.GetString("MillLevel"));
+				MillCPS = decimal.Parse (PlayerPrefs.GetString("MillCPS"));
+				MillPointsPerSecond = decimal.Parse (PlayerPrefs.GetString("MillPointsPerSecond"));
+				//add pre-existing Mill data to pointsPerSecond
+				pointsPerSecond += MillPointsPerSecond;
+				imgMill.SetActive(true);
+				//verify to unlock next object
+				if (MillLevel >= 25) {
+					btnGoldApple.GetComponent<Button>().interactable = true;
+				} else {
+					btnGoldApple.GetComponent<Button>().interactable = false;
+				}
+				//Mill txt update
+				MillCPSTxt.text = "C.P.S : " + MillCPS;
+				MillLevelTxt.text = "Lvl : " + MillLevel;
+				MillCostTxt.text = MillCost + "$";
+			} else {
+				//set Mill default values
+				MillCost = 500000000000000;
+				MillLevel = 0;
+				MillCPS = 0;
+				//lock Mill
+				btnMill.GetComponent<Button>().interactable = false;
+				//Mill txt update
+				MillCPSTxt.text = "C.P.S : " + MillCPS;
+				MillLevelTxt.text = "Lvl : " + MillLevel;
+				MillCostTxt.text = MillCost + "$";
+			}
 
+			//verify if GoldApple data already exist in PlayerPrefs
+			if (PlayerPrefs.HasKey ("GoldAppleCost") && PlayerPrefs.HasKey ("GoldAppleLevel") && PlayerPrefs.HasKey ("GoldAppleCPS") && PlayerPrefs.HasKey ("GoldApplePointsPerSecond")) {
+				//retreive GoldApple data and convert it to decimal
+				GoldAppleCost = decimal.Parse (PlayerPrefs.GetString("GoldAppleCost"));
+				GoldAppleLevel = decimal.Parse (PlayerPrefs.GetString("GoldAppleLevel"));
+				GoldAppleCPS = decimal.Parse (PlayerPrefs.GetString("GoldAppleCPS"));
+				GoldApplePointsPerSecond = decimal.Parse (PlayerPrefs.GetString("GoldApplePointsPerSecond"));
+				//add pre-existing GoldApple data to pointsPerSecond
+				pointsPerSecond += GoldApplePointsPerSecond;
+				imgGoldApple.SetActive(true);
+				//GoldApple txt update
+				GoldAppleCPSTxt.text = "C.P.S : " + GoldAppleCPS;
+				GoldAppleLevelTxt.text = "Lvl : " + GoldAppleLevel;
+				GoldAppleCostTxt.text = GoldAppleCost + "$";
+			} else {
+				//set GoldApple default values
+				GoldAppleCost = 10000000000000000;
+				GoldAppleLevel = 0;
+				GoldAppleCPS = 0;
+				//lock GoldApple
+				btnGoldApple.GetComponent<Button>().interactable = false;
+				//GoldApple txt update
+				GoldAppleCPSTxt.text = "C.P.S : " + GoldAppleCPS;
+				GoldAppleLevelTxt.text = "Lvl : " + GoldAppleLevel;
+				GoldAppleCostTxt.text = GoldAppleCost + "$";
+			}
 
-		} else {	//Show welcome message at first launch
+		} else {
+			//Show welcome message at first launch
 			WelcomeActive = true;
 			panelWelcome.SetActive (true);
 
 			//set seeds default values
-			seedsCost = 5;
+			seedsCost = 100;
 			seedsLevel = 0;
 			seedsCPS = 0;
 			//seeds txt update
 			seedsCPSTxt.text = "C.P.S : " + seedsCPS;
-			seedsLevelTxt.text = "Level : " + seedsLevel;
+			seedsLevelTxt.text = "Lvl : " + seedsLevel;
 			seedsCostTxt.text = seedsCost + "$";
 
 			//set flowers default values
-			flowersCost = 1000;
+			flowersCost = 10000;
 			flowersLevel = 0;
-			flowersCPS = 3;
+			flowersCPS = 0;
 			//lock flowers
 			btnFlowers.GetComponent<Button>().interactable = false;
 			//flowers txt update
 			flowersCPSTxt.text = "C.P.S : " + flowersCPS;
-			flowersLevelTxt.text = "Level : " + flowersLevel;
-			flowersCostTxt.text = flowersCost + "$"; 
+			flowersLevelTxt.text = "Lvl : " + flowersLevel;
+			flowersCostTxt.text = flowersCost + "$";
+
+			//set tomato default values
+			tomatoCost = 100000;
+			tomatoLevel = 0;
+			tomatoCPS = 0;
+			//lock tomato
+			btnTomato.GetComponent<Button>().interactable = false;
+			//tomato txt update
+			tomatoCPSTxt.text = "C.P.S : " + tomatoCPS;
+			tomatoLevelTxt.text = "Lvl : " + tomatoLevel;
+			tomatoCostTxt.text = tomatoCost + "$";
+
+			//set Tree default values
+			TreeCost = 500000;
+			TreeLevel = 0;
+			TreeCPS = 0;
+			//lock Tree
+			btnTree.GetComponent<Button>().interactable = false;
+			//Tree txt update
+			TreeCPSTxt.text = "C.P.S : " + TreeCPS;
+			TreeLevelTxt.text = "Lvl : " + TreeLevel;
+			TreeCostTxt.text = TreeCost + "$";
+
+			//set GreenApple default values
+			GreenAppleCost = 2000000;
+			GreenAppleLevel = 0;
+			GreenAppleCPS = 0;
+			//lock GreenApple
+			btnGreenApple.GetComponent<Button>().interactable = false;
+			//GreenApple txt update
+			GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
+			GreenAppleLevelTxt.text = "Lvl : " + GreenAppleLevel;
+			GreenAppleCostTxt.text = GreenAppleCost + "$";
+
+			//set GreenApple default values
+			GreenAppleCost = 50000000;
+			GreenAppleLevel = 0;
+			GreenAppleCPS = 0;
+			//lock GreenApple
+			btnGreenApple.GetComponent<Button>().interactable = false;
+			//GreenApple txt update
+			GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
+			GreenAppleLevelTxt.text = "Lvl : " + GreenAppleLevel;
+			GreenAppleCostTxt.text = GreenAppleCost + "$";
+
+			//set Carrot default values
+			CarrotCost = 10000000;
+			CarrotLevel = 0;
+			CarrotCPS = 0;
+			//lock Carrot
+			btnCarrot.GetComponent<Button>().interactable = false;
+			//Carrot txt update
+			CarrotCPSTxt.text = "C.P.S : " + CarrotCPS;
+			CarrotLevelTxt.text = "Lvl : " + CarrotLevel;
+			CarrotCostTxt.text = CarrotCost + "$";
+
+			//set GreenPear default values
+			GreenPearCost = 50000000;
+			GreenPearLevel = 0;
+			GreenPearCPS = 0;
+			//lock GreenPear
+			btnGreenPear.GetComponent<Button>().interactable = false;
+			//GreenPear txt update
+			GreenPearCPSTxt.text = "C.P.S : " + GreenPearCPS;
+			GreenPearLevelTxt.text = "Lvl : " + GreenPearLevel;
+			GreenPearCostTxt.text = GreenPearCost + "$";
+
+			//set Corn default values
+			CornCost = 300000000;
+			CornLevel = 0;
+			CornCPS = 0;
+			//lock Corn
+			btnCorn.GetComponent<Button>().interactable = false;
+			//Corn txt update
+			CornCPSTxt.text = "C.P.S : " + CornCPS;
+			CornLevelTxt.text = "Lvl : " + CornLevel;
+			CornCostTxt.text = CornCost + "$";
+
+			//set RedApple default values
+			RedAppleCost = 700000000;
+			RedAppleLevel = 0;
+			RedAppleCPS = 0;
+			//lock RedApple
+			btnRedApple.GetComponent<Button>().interactable = false;
+			//RedApple txt update
+			RedAppleCPSTxt.text = "C.P.S : " + RedAppleCPS;
+			RedAppleLevelTxt.text = "Lvl : " + RedAppleLevel;
+			RedAppleCostTxt.text = RedAppleCost + "$";
+
+			//set Watermelon default values
+			WatermelonCost = 2000000000;
+			WatermelonLevel = 0;
+			WatermelonCPS = 0;
+			//lock Watermelon
+			btnWatermelon.GetComponent<Button>().interactable = false;
+			//Watermelon txt update
+			WatermelonCPSTxt.text = "C.P.S : " + WatermelonCPS;
+			WatermelonLevelTxt.text = "Lvl : " + WatermelonLevel;
+			WatermelonCostTxt.text = WatermelonCost + "$";
+
+			//set RedPear default values
+			RedPearCost = 4000000000;
+			RedPearLevel = 0;
+			RedPearCPS = 0;
+			//lock RedPear
+			btnRedPear.GetComponent<Button>().interactable = false;
+			//RedPear txt update
+			RedPearCPSTxt.text = "C.P.S : " + RedPearCPS;
+			RedPearLevelTxt.text = "Lvl : " + RedPearLevel;
+			RedPearCostTxt.text = RedPearCost + "$";
+
+			//set Pumpkin default values
+			PumpkinCost = 6000000000;
+			PumpkinLevel = 0;
+			PumpkinCPS = 0;
+			//lock Pumpkin
+			btnPumpkin.GetComponent<Button>().interactable = false;
+			//Pumpkin txt update
+			PumpkinCPSTxt.text = "C.P.S : " + PumpkinCPS;
+			PumpkinLevelTxt.text = "Lvl : " + PumpkinLevel;
+			PumpkinCostTxt.text = PumpkinCost + "$";
+
+			//set Wrench default values
+			WrenchCost = 10000000000;
+			WrenchLevel = 0;
+			WrenchCPS = 0;
+			//lock Wrench
+			btnWrench.GetComponent<Button>().interactable = false;
+			//Wrench txt update
+			WrenchCPSTxt.text = "C.P.S : " + WrenchCPS;
+			WrenchLevelTxt.text = "Lvl : " + WrenchLevel;
+			WrenchCostTxt.text = WrenchCost + "$";
+
+			//set Screwdriver default values
+			ScrewdriverCost = 30000000000;
+			ScrewdriverLevel = 0;
+			ScrewdriverCPS = 0;
+			//lock Screwdriver
+			btnScrewdriver.GetComponent<Button>().interactable = false;
+			//Screwdriver txt update
+			ScrewdriverCPSTxt.text = "C.P.S : " + ScrewdriverCPS;
+			ScrewdriverLevelTxt.text = "Lvl : " + ScrewdriverLevel;
+			ScrewdriverCostTxt.text = ScrewdriverCost + "$";
+
+			//set Hammer default values
+			HammerCost = 50000000000;
+			HammerLevel = 0;
+			HammerCPS = 0;
+			//lock Hammer
+			btnHammer.GetComponent<Button>().interactable = false;
+			//Hammer txt update
+			HammerCPSTxt.text = "C.P.S : " + HammerCPS;
+			HammerLevelTxt.text = "Lvl : " + HammerLevel;
+			HammerCostTxt.text = HammerCost + "$";
+
+			//set Handsaw default values
+			HandsawCost = 100000000000;
+			HandsawLevel = 0;
+			HandsawCPS = 0;
+			//lock Handsaw
+			btnHandsaw.GetComponent<Button>().interactable = false;
+			//Handsaw txt update
+			HandsawCPSTxt.text = "C.P.S : " + HandsawCPS;
+			HandsawLevelTxt.text = "Lvl : " + HandsawLevel;
+			HandsawCostTxt.text = HandsawCost + "$";
+
+			//set Fence default values
+			FenceCost = 200000000000;
+			FenceLevel = 0;
+			FenceCPS = 0;
+			//lock Fence
+			btnFence.GetComponent<Button>().interactable = false;
+			//Fence txt update
+			FenceCPSTxt.text = "C.P.S : " + FenceCPS;
+			FenceLevelTxt.text = "Lvl : " + FenceLevel;
+			FenceCostTxt.text = FenceCost + "$";
+
+			//set Dog default values
+			DogCost = 500000000000;
+			DogLevel = 0;
+			DogCPS = 0;
+			//lock Dog
+			btnDog.GetComponent<Button>().interactable = false;
+			//Dog txt update
+			DogCPSTxt.text = "C.P.S : " + DogCPS;
+			DogLevelTxt.text = "Lvl : " + DogLevel;
+			DogCostTxt.text = DogCost + "$";
+
+			//set Cat default values
+			CatCost = 1000000000000;
+			CatLevel = 0;
+			CatCPS = 0;
+			//lock Cat
+			btnCat.GetComponent<Button>().interactable = false;
+			//Cat txt update
+			CatCPSTxt.text = "C.P.S : " + CatCPS;
+			CatLevelTxt.text = "Lvl : " + CatLevel;
+			CatCostTxt.text = CatCost + "$";
+
+			//set Chicken default values
+			ChickenCost = 2000000000000;
+			ChickenLevel = 0;
+			ChickenCPS = 0;
+			//lock Chicken
+			btnChicken.GetComponent<Button>().interactable = false;
+			//Chicken txt update
+			ChickenCPSTxt.text = "C.P.S : " + ChickenCPS;
+			ChickenLevelTxt.text = "Lvl : " + ChickenLevel;
+			ChickenCostTxt.text = ChickenCost + "$";
+
+			//set Pig default values
+			PigCost = 4000000000000;
+			PigLevel = 0;
+			PigCPS = 0;
+			//lock Pig
+			btnPig.GetComponent<Button>().interactable = false;
+			//Pig txt update
+			PigCPSTxt.text = "C.P.S : " + PigCPS;
+			PigLevelTxt.text = "Lvl : " + PigLevel;
+			PigCostTxt.text = PigCost + "$";
+
+			//set Sheep default values
+			SheepCost = 8000000000000;
+			SheepLevel = 0;
+			SheepCPS = 0;
+			//lock Sheep
+			btnSheep.GetComponent<Button>().interactable = false;
+			//Sheep txt update
+			SheepCPSTxt.text = "C.P.S : " + SheepCPS;
+			SheepLevelTxt.text = "Lvl : " + SheepLevel;
+			SheepCostTxt.text = SheepCost + "$";
+
+			//set Cow default values
+			CowCost = 16000000000000;
+			CowLevel = 0;
+			CowCPS = 0;
+			//lock Cow
+			btnCow.GetComponent<Button>().interactable = false;
+			//Cow txt update
+			CowCPSTxt.text = "C.P.S : " + CowCPS;
+			CowLevelTxt.text = "Lvl : " + CowLevel;
+			CowCostTxt.text = CowCost + "$";
+
+			//set Horse default values
+			HorseCost = 25000000000000;
+			HorseLevel = 0;
+			HorseCPS = 0;
+			//lock Horse
+			btnHorse.GetComponent<Button>().interactable = false;
+			//Horse txt update
+			HorseCPSTxt.text = "C.P.S : " + HorseCPS;
+			HorseLevelTxt.text = "Lvl : " + HorseLevel;
+			HorseCostTxt.text = HorseCost + "$";
+
+			//set GoldPear default values
+			GoldPearCost = 40000000000000;
+			GoldPearLevel = 0;
+			GoldPearCPS = 0;
+			//lock GoldPear
+			btnGoldPear.GetComponent<Button>().interactable = false;
+			//GoldPear txt update
+			GoldPearCPSTxt.text = "C.P.S : " + GoldPearCPS;
+			GoldPearLevelTxt.text = "Lvl : " + GoldPearLevel;
+			GoldPearCostTxt.text = GoldPearCost + "$";
+
+			//set Barn default values
+			BarnCost = 80000000000000;
+			BarnLevel = 0;
+			BarnCPS = 0;
+			//lock Barn
+			btnBarn.GetComponent<Button>().interactable = false;
+			//Barn txt update
+			BarnCPSTxt.text = "C.P.S : " + BarnCPS;
+			BarnLevelTxt.text = "Lvl : " + BarnLevel;
+			BarnCostTxt.text = BarnCost + "$";
+
+			//set Tractor default values
+			TractorCost = 150000000000000;
+			TractorLevel = 0;
+			TractorCPS = 0;
+			//lock Tractor
+			btnTractor.GetComponent<Button>().interactable = false;
+			//Tractor txt update
+			TractorCPSTxt.text = "C.P.S : " + TractorCPS;
+			TractorLevelTxt.text = "Lvl : " + TractorLevel;
+			TractorCostTxt.text = TractorCost + "$";
+
+			//set Mill default values
+			MillCost = 500000000000000;
+			MillLevel = 0;
+			MillCPS = 0;
+			//lock Mill
+			btnMill.GetComponent<Button>().interactable = false;
+			//Mill txt update
+			MillCPSTxt.text = "C.P.S : " + MillCPS;
+			MillLevelTxt.text = "Lvl : " + MillLevel;
+			MillCostTxt.text = MillCost + "$";
+
+			//set GoldApple default values
+			GoldAppleCost = 10000000000000000;
+			GoldAppleLevel = 0;
+			GoldAppleCPS = 0;
+			//lock GoldApple
+			btnGoldApple.GetComponent<Button>().interactable = false;
+			//GoldApple txt update
+			GoldAppleCPSTxt.text = "C.P.S : " + GoldAppleCPS;
+			GoldAppleLevelTxt.text = "Lvl : " + GoldAppleLevel;
+			GoldAppleCostTxt.text = GoldAppleCost + "$";
 		}
 	}
 
@@ -938,7 +1680,7 @@ public class ScoreManager : MonoBehaviour {
 	public void OnBtnShowInstructionsClick () {
 		instructionsActive = true;
 		WelcomeActive = false;
-		panelWelcome.SetActive(false);
+		panelWelcome.SetActive (false);
 		imgNotepad.SetActive(true);
 		panelInstructions.SetActive(true);
 		btnInstructions.SetActive(true);
@@ -1002,20 +1744,16 @@ public class ScoreManager : MonoBehaviour {
 			seedsLevel += 1;
 			seedsCPS = seedsCPS + 1;
 			seedsPointsPerSecond = seedsCPS;
-			seedsCost += 25;
+			seedsCost += 50;
 			imgSeeds.SetActive(true);
 		}
-		//cheat for developper
-		//if (seedsLevel > 3) {
-		//	pointsPerSecond += 10000000000000000000;
-		//}
 		//enable the flowers
 		if (seedsLevel >= 25) {
 			btnFlowers.GetComponent<Button>().interactable = true;
 		}
 		//seeds txt update
 		seedsCPSTxt.text = "C.P.S : " + seedsCPS;
-		seedsLevelTxt.text = "Level : " + seedsLevel;
+		seedsLevelTxt.text = "Lvl : " + seedsLevel;
 		seedsCostTxt.text = seedsCost + "$";
 		//convert seeds data to string to save in PlayerPrefs
 		string seedsCPSSave = seedsCPS.ToString ();
@@ -1033,145 +1771,977 @@ public class ScoreManager : MonoBehaviour {
 
 	//--------------------------  flowers  --------------------------
 	public void BuyFlowers () {
-		if (Level >= 25) {
+		if (seedsLevel >= 25) {
 			//check for the money available
-			if (scoreCount >= Cost) {
-				scoreCount -= Cost;
-				Level += 1;
-				CPS = CPS + 1;
-				PointsPerSecond = CPS;
-				Cost += 25;
-				img.SetActive(true);
+			if (scoreCount >= flowersCost) {
+				scoreCount -= flowersCost;
+				flowersLevel += 1;
+				flowersCPS = flowersCPS + 3;
+				FlowersPointsPerSecond = flowersCPS;
+				flowersCost += 175;
+				imgFlowers.SetActive(true);
 			}
 		}
-		//enable the 
-		if (Level >= 25) {
-			btn.GetComponent<Button>().interactable = true;
+		//enable the tomato
+		if (flowersLevel >= 25) {
+			btnTomato.GetComponent<Button>().interactable = true;
 		}
-		// txt update
-		CPSTxt.text = "C.P.S : " + CPS;
-		LevelTxt.text = "Level : " + Level;
-		CostTxt.text = Cost + "$";
-		//convert  data to string to save in PlayerPrefs
-		string CPSSave = CPS.ToString ();
-		string LevelSave = Level.ToString ();
-		string CostSave = Cost.ToString ();
-		string PointsPerSecondSave = PointsPerSecond.ToString ();
-		//save  data to PlayerPrefs
-		PlayerPrefs.SetString ("CPS", seedsCPSSave);
-		PlayerPrefs.SetString ("Level", seedsLevelSave);
-		PlayerPrefs.SetString ("Cost", seedsCostSave);
-		PlayerPrefs.SetString ("PointsPerSecond", seedsPointsPerSecondSave);
+		//flowers txt update
+		flowersCPSTxt.text = "C.P.S : " + flowersCPS;
+		flowersLevelTxt.text = "Lvl : " + flowersLevel;
+		flowersCostTxt.text = flowersCost + "$";
+		//convert flowers data to string to save in PlayerPrefs
+		string flowersCPSSave = flowersCPS.ToString ();
+		string flowersLevelSave = flowersLevel.ToString ();
+		string flowersCostSave = flowersCost.ToString ();
+		string FlowersPointsPerSecondSave = FlowersPointsPerSecond.ToString ();
+		//save flowers data to PlayerPrefs
+		PlayerPrefs.SetString ("flowersCPS", flowersCPSSave);
+		PlayerPrefs.SetString ("flowersLevel", flowersLevelSave);
+		PlayerPrefs.SetString ("flowersCost", flowersCostSave);
+		PlayerPrefs.SetString ("flowersPointsPerSecond", FlowersPointsPerSecondSave);
 		//go refresh the pointsPerSecond
 		Invoke ("RecalPtsPerSec", 0f);
 	}
 
 	//--------------------------  tomato  --------------------------
 	public void BuyTomato () {
-		
+		if (flowersLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= tomatoCost) {
+				scoreCount -= tomatoCost;
+				tomatoLevel += 1;
+				tomatoCPS = tomatoCPS + 10;
+				TomatoPointsPerSecond = tomatoCPS;
+				tomatoCost += 1500;
+				imgTomato.SetActive(true);
+			}
+		}
+		//enable the Tree
+		if (tomatoLevel >= 25) {
+			btnTree.GetComponent<Button>().interactable = true;
+		}
+		//tomato txt update
+		tomatoCPSTxt.text = "C.P.S : " + tomatoCPS;
+		tomatoLevelTxt.text = "Lvl : " + tomatoLevel;
+		tomatoCostTxt.text = tomatoCost + "$";
+		//convert tomato data to string to save in PlayerPrefs
+		string CPSSave = tomatoCPS.ToString ();
+		string LevelSave = tomatoLevel.ToString ();
+		string CostSave = tomatoCost.ToString ();
+		string PointsPerSecondSave = TomatoPointsPerSecond.ToString ();
+		//save tomato data to PlayerPrefs
+		PlayerPrefs.SetString ("tomatoCPS", CPSSave);
+		PlayerPrefs.SetString ("tomatoLevel", LevelSave);
+		PlayerPrefs.SetString ("tomatoCost", CostSave);
+		PlayerPrefs.SetString ("tomatoPointsPerSecond", PointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Tree  --------------------------
 	public void BuyTree () {
-		
+		if (tomatoLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= TreeCost) {
+				scoreCount -= TreeCost;
+				TreeLevel += 1;
+				TreeCPS = TreeCPS + 31;
+				TreePointsPerSecond = TreeCPS;
+				TreeCost += 5250;
+				imgTree.SetActive(true);
+			}
+		}
+		//enable the GreenApple
+		if (TreeLevel >= 25) {
+			btnGreenApple.GetComponent<Button>().interactable = true;
+		}
+		//Tree txt update
+		TreeCPSTxt.text = "C.P.S : " + TreeCPS;
+		TreeLevelTxt.text = "Lvl : " + TreeLevel;
+		TreeCostTxt.text = TreeCost + "$";
+		//convert Tree data to string to save in PlayerPrefs
+		string TreeCPSSave = TreeCPS.ToString ();
+		string TreeLevelSave = TreeLevel.ToString ();
+		string TreeCostSave = TreeCost.ToString ();
+		string TreePointsPerSecondSave = TreePointsPerSecond.ToString ();
+		//save Tree data to PlayerPrefs
+		PlayerPrefs.SetString ("TreeCPS", TreeCPSSave);
+		PlayerPrefs.SetString ("TreeLevel", TreeLevelSave);
+		PlayerPrefs.SetString ("TreeCost", TreeCostSave);
+		PlayerPrefs.SetString ("TreePointsPerSecond", TreePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  GreenApple  --------------------------
 	public void BuyGreenApple () {
-		
+		if (TreeLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= GreenAppleCost) {
+				scoreCount -= GreenAppleCost;
+				GreenAppleLevel += 1;
+				GreenAppleCPS = GreenAppleCPS + 60;
+				GreenApplePointsPerSecond = GreenAppleCPS;
+				GreenAppleCost += 13750;
+				imgGreenApple.SetActive(true);
+			}
+		}
+		//enable the carrot
+		if (GreenAppleLevel >= 25) {
+			btnCarrot.GetComponent<Button>().interactable = true;
+		}
+		//GreenApple txt update
+		GreenAppleCPSTxt.text = "C.P.S : " + GreenAppleCPS;
+		GreenAppleLevelTxt.text = "Lvl : " + GreenAppleLevel;
+		GreenAppleCostTxt.text = GreenAppleCost + "$";
+		//convert GreenApple data to string to save in PlayerPrefs
+		string GreenAppleCPSSave = GreenAppleCPS.ToString ();
+		string GreenAppleLevelSave = GreenAppleLevel.ToString ();
+		string GreenAppleCostSave = GreenAppleCost.ToString ();
+		string GreenApplePointsPerSecondSave = GreenApplePointsPerSecond.ToString ();
+		//save GreenApple data to PlayerPrefs
+		PlayerPrefs.SetString ("GreenAppleCPS", GreenAppleCPSSave);
+		PlayerPrefs.SetString ("GreenAppleLevel", GreenAppleLevelSave);
+		PlayerPrefs.SetString ("GreenAppleCost", GreenAppleCostSave);
+		PlayerPrefs.SetString ("GreenApplePointsPerSecond", GreenApplePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Carrot  --------------------------
 	public void BuyCarrot () {
-		
+		if (GreenAppleLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= CarrotCost) {
+				scoreCount -= CarrotCost;
+				CarrotLevel += 1;
+				CarrotCPS = CarrotCPS + 200;
+				CarrotPointsPerSecond = CarrotCPS;
+				CarrotCost += 73120;
+				imgCarrot.SetActive(true);
+			}
+		}
+		//enable the GreenPear
+		if (CarrotLevel >= 25) {
+			btnGreenPear.GetComponent<Button>().interactable = true;
+		}
+		//Carrot txt update
+		CarrotCPSTxt.text = "C.P.S : " + CarrotCPS;
+		CarrotLevelTxt.text = "Lvl : " + CarrotLevel;
+		CarrotCostTxt.text = CarrotCost + "$";
+		//convert Carrot data to string to save in PlayerPrefs
+		string CarrotCPSSave = CarrotCPS.ToString ();
+		string CarrotLevelSave = CarrotLevel.ToString ();
+		string CarrotCostSave = CarrotCost.ToString ();
+		string CarrotPointsPerSecondSave = CarrotPointsPerSecond.ToString ();
+		//save Carrot data to PlayerPrefs
+		PlayerPrefs.SetString ("CarrotCPS", CarrotCPSSave);
+		PlayerPrefs.SetString ("CarrotLevel", CarrotLevelSave);
+		PlayerPrefs.SetString ("CarrotCost", CarrotCostSave);
+		PlayerPrefs.SetString ("CarrotPointsPerSecond", CarrotPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  GreenPear  --------------------------
 	public void BuyGreenPear () {
-		
+		if (CarrotLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= GreenPearCost) {
+				scoreCount -= GreenPearCost;
+				GreenPearLevel += 1;
+				GreenPearCPS = GreenPearCPS + 400;
+				GreenPearPointsPerSecond = GreenPearCPS;
+				GreenPearCost += 137852;
+				imgGreenPear.SetActive(true);
+			}
+		}
+		//enable the Corn
+		if (GreenPearLevel >= 25) {
+			btnCorn.GetComponent<Button>().interactable = true;
+		}
+		//GreenPear txt update
+		GreenPearCPSTxt.text = "C.P.S : " + GreenPearCPS;
+		GreenPearLevelTxt.text = "Lvl : " + GreenPearLevel;
+		GreenPearCostTxt.text = GreenPearCost + "$";
+		//convert GreenPear data to string to save in PlayerPrefs
+		string GreenPearCPSSave = GreenPearCPS.ToString ();
+		string GreenPearLevelSave = GreenPearLevel.ToString ();
+		string GreenPearCostSave = GreenPearCost.ToString ();
+		string GreenPearPointsPerSecondSave = GreenPearPointsPerSecond.ToString ();
+		//save GreenPear data to PlayerPrefs
+		PlayerPrefs.SetString ("GreenPearCPS", GreenPearCPSSave);
+		PlayerPrefs.SetString ("GreenPearLevel", GreenPearLevelSave);
+		PlayerPrefs.SetString ("GreenPearCost", GreenPearCostSave);
+		PlayerPrefs.SetString ("GreenPearPointsPerSecond", GreenPearPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Corn  --------------------------
 	public void BuyCorn () {
-		
+		if (GreenPearLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= CornCost) {
+				scoreCount -= CornCost;
+				CornLevel += 1;
+				CornCPS = CornCPS + 700;
+				CornPointsPerSecond = CornCPS;
+				CornCost += 2600000;
+				imgCorn.SetActive(true);
+			}
+		}
+		//enable the RedApple
+		if (CornLevel >= 25) {
+			btnRedApple.GetComponent<Button>().interactable = true;
+		}
+		//Corn txt update
+		CornCPSTxt.text = "C.P.S : " + CornCPS;
+		CornLevelTxt.text = "Lvl : " + CornLevel;
+		CornCostTxt.text = CornCost + "$";
+		//convert Corn data to string to save in PlayerPrefs
+		string CornCPSSave = CornCPS.ToString ();
+		string CornLevelSave = CornLevel.ToString ();
+		string CornCostSave = CornCost.ToString ();
+		string CornPointsPerSecondSave = CornPointsPerSecond.ToString ();
+		//save Corn data to PlayerPrefs
+		PlayerPrefs.SetString ("CornCPS", CornCPSSave);
+		PlayerPrefs.SetString ("CornLevel", CornLevelSave);
+		PlayerPrefs.SetString ("CornCost", CornCostSave);
+		PlayerPrefs.SetString ("CornPointsPerSecond", CornPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  RedApple  --------------------------
 	public void BuyRedApple () {
-		
+		if (CornLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= RedAppleCost) {
+				scoreCount -= RedAppleCost;
+				RedAppleLevel += 1;
+				RedAppleCPS = RedAppleCPS + 3000;
+				RedApplePointsPerSecond = RedAppleCPS;
+				RedAppleCost += 5300000;
+				imgRedApple.SetActive(true);
+			}
+		}
+		//enable the 
+		if (RedAppleLevel >= 25) {
+			btnWatermelon.GetComponent<Button>().interactable = true;
+		}
+		//RedApple txt update
+		RedAppleCPSTxt.text = "C.P.S : " + RedAppleCPS;
+		RedAppleLevelTxt.text = "Lvl : " + RedAppleLevel;
+		RedAppleCostTxt.text = RedAppleCost + "$";
+		//convert RedApple data to string to save in PlayerPrefs
+		string RedAppleCPSSave = RedAppleCPS.ToString ();
+		string RedAppleLevelSave = RedAppleLevel.ToString ();
+		string RedAppleCostSave = RedAppleCost.ToString ();
+		string RedApplePointsPerSecondSave = RedApplePointsPerSecond.ToString ();
+		//save RedApple data to PlayerPrefs
+		PlayerPrefs.SetString ("RedAppleCPS", RedAppleCPSSave);
+		PlayerPrefs.SetString ("RedAppleLevel", RedAppleLevelSave);
+		PlayerPrefs.SetString ("RedAppleCost", RedAppleCostSave);
+		PlayerPrefs.SetString ("RedApplePointsPerSecond", RedApplePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Watermelon  --------------------------
 	public void BuyWatermelon () {
-		
+		if (RedAppleLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= WatermelonCost) {
+				scoreCount -= WatermelonCost;
+				WatermelonLevel += 1;
+				WatermelonCPS = WatermelonCPS + 15000;
+				WatermelonPointsPerSecond = WatermelonCPS;
+				WatermelonCost += 17500000;
+				imgWatermelon.SetActive(true);
+			}
+		}
+		//enable the RedPear
+		if (WatermelonLevel >= 25) {
+			btnRedPear.GetComponent<Button>().interactable = true;
+		}
+		//Watermelon txt update
+		WatermelonCPSTxt.text = "C.P.S : " + WatermelonCPS;
+		WatermelonLevelTxt.text = "Lvl : " + WatermelonLevel;
+		WatermelonCostTxt.text = WatermelonCost + "$";
+		//convert Watermelon data to string to save in PlayerPrefs
+		string WatermelonCPSSave = WatermelonCPS.ToString ();
+		string WatermelonLevelSave = WatermelonLevel.ToString ();
+		string WatermelonCostSave = WatermelonCost.ToString ();
+		string WatermelonPointsPerSecondSave = WatermelonPointsPerSecond.ToString ();
+		//save Watermelon data to PlayerPrefs
+		PlayerPrefs.SetString ("WatermelonCPS", WatermelonCPSSave);
+		PlayerPrefs.SetString ("WatermelonLevel", WatermelonLevelSave);
+		PlayerPrefs.SetString ("WatermelonCost", WatermelonCostSave);
+		PlayerPrefs.SetString ("WatermelonPointsPerSecond", WatermelonPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  RedPear  --------------------------
 	public void BuyRedPear () {
-		
+		if (WatermelonLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= RedPearCost) {
+				scoreCount -= RedPearCost;
+				RedPearLevel += 1;
+				RedPearCPS = RedPearCPS + 30000;
+				RedPearPointsPerSecond = RedPearCPS;
+				RedPearCost += 3300252;
+				imgRedPear.SetActive(true);
+			}
+		}
+		//enable the Pumpkin
+		if (RedPearLevel >= 25) {
+			btnPumpkin.GetComponent<Button>().interactable = true;
+		}
+		//RedPear txt update
+		RedPearCPSTxt.text = "C.P.S : " + RedPearCPS;
+		RedPearLevelTxt.text = "Lvl : " + RedPearLevel;
+		RedPearCostTxt.text = RedPearCost + "$";
+		//convert RedPear data to string to save in PlayerPrefs
+		string RedPearCPSSave = RedPearCPS.ToString ();
+		string RedPearLevelSave = RedPearLevel.ToString ();
+		string RedPearCostSave = RedPearCost.ToString ();
+		string RedPearPointsPerSecondSave = RedPearPointsPerSecond.ToString ();
+		//save RedPear data to PlayerPrefs
+		PlayerPrefs.SetString ("RedPearCPS", RedPearCPSSave);
+		PlayerPrefs.SetString ("RedPearLevel", RedPearLevelSave);
+		PlayerPrefs.SetString ("RedPearCost", RedPearCostSave);
+		PlayerPrefs.SetString ("RedPearPointsPerSecond", RedPearPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Pumpkin  --------------------------
 	public void BuyPumpkin () {
-		
+		if (RedPearLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= PumpkinCost) {
+				scoreCount -= PumpkinCost;
+				PumpkinLevel += 1;
+				PumpkinCPS = PumpkinCPS + 80000;
+				PumpkinPointsPerSecond = PumpkinCPS;
+				PumpkinCost += 55000000;
+				imgPumpkin.SetActive(true);
+			}
+		}
+		//enable the Wrench
+		if (PumpkinLevel >= 25) {
+			btnWrench.GetComponent<Button>().interactable = true;
+		}
+		//Pumpkin txt update
+		PumpkinCPSTxt.text = "C.P.S : " + PumpkinCPS;
+		PumpkinLevelTxt.text = "Lvl : " + PumpkinLevel;
+		PumpkinCostTxt.text = PumpkinCost + "$";
+		//convert  data to string to save in PlayerPrefs
+		string PumpkinCPSSave = PumpkinCPS.ToString ();
+		string PumpkinLevelSave = PumpkinLevel.ToString ();
+		string PumpkinCostSave = PumpkinCost.ToString ();
+		string PumpkinPointsPerSecondSave = PumpkinPointsPerSecond.ToString ();
+		//save  data to PlayerPrefs
+		PlayerPrefs.SetString ("PumpkinCPS", PumpkinCPSSave);
+		PlayerPrefs.SetString ("PumpkinLevel", PumpkinLevelSave);
+		PlayerPrefs.SetString ("PumpkinCost", PumpkinCostSave);
+		PlayerPrefs.SetString ("PumpkinPointsPerSecond", PumpkinPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Wrench  --------------------------
 	public void BuyWrench () {
-		
+		if (PumpkinLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= WrenchCost) {
+				scoreCount -= WrenchCost;
+				WrenchLevel += 1;
+				WrenchCPS = WrenchCPS + 150000;
+				WrenchPointsPerSecond = WrenchCPS;
+				WrenchCost += 67895220;
+				imgWrench.SetActive(true);
+			}
+		}
+		//enable the Screwdriver
+		if (WrenchLevel >= 25) {
+			btnScrewdriver.GetComponent<Button>().interactable = true;
+		}
+		//Wrench txt update
+		WrenchCPSTxt.text = "C.P.S : " + WrenchCPS;
+		WrenchLevelTxt.text = "Lvl : " + WrenchLevel;
+		WrenchCostTxt.text = WrenchCost + "$";
+		//convert Wrench data to string to save in PlayerPrefs
+		string WrenchCPSSave = WrenchCPS.ToString ();
+		string WrenchLevelSave = WrenchLevel.ToString ();
+		string WrenchCostSave = WrenchCost.ToString ();
+		string WrenchPointsPerSecondSave = WrenchPointsPerSecond.ToString ();
+		//save Wrench data to PlayerPrefs
+		PlayerPrefs.SetString ("WrenchCPS", WrenchCPSSave);
+		PlayerPrefs.SetString ("WrenchLevel", WrenchLevelSave);
+		PlayerPrefs.SetString ("WrenchCost", WrenchCostSave);
+		PlayerPrefs.SetString ("WrenchPointsPerSecond", WrenchPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Screwdriver  --------------------------
 	public void BuyScrewdriver () {
-		
+		if (WrenchLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= ScrewdriverCost) {
+				scoreCount -= ScrewdriverCost;
+				ScrewdriverLevel += 1;
+				ScrewdriverCPS = ScrewdriverCPS + 200000;
+				ScrewdriverPointsPerSecond = ScrewdriverCPS;
+				ScrewdriverCost += 90632300;
+				imgScrewdriver.SetActive(true);
+			}
+		}
+		//enable the Hammer
+		if (ScrewdriverLevel >= 25) {
+			btnHammer.GetComponent<Button>().interactable = true;
+		}
+		//Screwdriver txt update
+		ScrewdriverCPSTxt.text = "C.P.S : " + ScrewdriverCPS;
+		ScrewdriverLevelTxt.text = "Lvl : " + ScrewdriverLevel;
+		ScrewdriverCostTxt.text = ScrewdriverCost + "$";
+		//convert Screwdriver data to string to save in PlayerPrefs
+		string ScrewdriverCPSSave = ScrewdriverCPS.ToString ();
+		string ScrewdriverLevelSave = ScrewdriverLevel.ToString ();
+		string ScrewdriverCostSave = ScrewdriverCost.ToString ();
+		string ScrewdriverPointsPerSecondSave = ScrewdriverPointsPerSecond.ToString ();
+		//save Screwdriver data to PlayerPrefs
+		PlayerPrefs.SetString ("ScrewdriverCPS", ScrewdriverCPSSave);
+		PlayerPrefs.SetString ("ScrewdriverLevel", ScrewdriverLevelSave);
+		PlayerPrefs.SetString ("ScrewdriverCost", ScrewdriverCostSave);
+		PlayerPrefs.SetString ("ScrewdriverPointsPerSecond", ScrewdriverPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Hammer  --------------------------
 	public void BuyHammer () {
-		
+		if (ScrewdriverLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= HammerCost) {
+				scoreCount -= HammerCost;
+				HammerLevel += 1;
+				HammerCPS = HammerCPS + 300000;
+				HammerPointsPerSecond = HammerCPS;
+				HammerCost += 119230152;
+				imgHammer.SetActive(true);
+			}
+		}
+		//enable the Handsaw
+		if (HammerLevel >= 25) {
+			btnHandsaw.GetComponent<Button>().interactable = true;
+		}
+		//Hammer txt update
+		HammerCPSTxt.text = "C.P.S : " + HammerCPS;
+		HammerLevelTxt.text = "Lvl : " + HammerLevel;
+		HammerCostTxt.text = HammerCost + "$";
+		//convert Hammer data to string to save in PlayerPrefs
+		string HammerCPSSave = HammerCPS.ToString ();
+		string HammerLevelSave = HammerLevel.ToString ();
+		string HammerCostSave = HammerCost.ToString ();
+		string HammerPointsPerSecondSave = HammerPointsPerSecond.ToString ();
+		//save Hammer data to PlayerPrefs
+		PlayerPrefs.SetString ("HammerCPS", HammerCPSSave);
+		PlayerPrefs.SetString ("HammerLevel", HammerLevelSave);
+		PlayerPrefs.SetString ("HammerCost", HammerCostSave);
+		PlayerPrefs.SetString ("HammerPointsPerSecond", HammerPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Handsaw  --------------------------
 	public void BuyHandsaw () {
-		
+		if (HammerLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= HandsawCost) {
+				scoreCount -= HandsawCost;
+				HandsawLevel += 1;
+				HandsawCPS = HandsawCPS + 800000;
+				HandsawPointsPerSecond = HandsawCPS;
+				HandsawCost += 165298456;
+				imgHandsaw.SetActive(true);
+			}
+		}
+		//enable the Fence
+		if (HandsawLevel >= 25) {
+			btnFence.GetComponent<Button>().interactable = true;
+		}
+		//Handsaw txt update
+		HandsawCPSTxt.text = "C.P.S : " + HandsawCPS;
+		HandsawLevelTxt.text = "Lvl : " + HandsawLevel;
+		HandsawCostTxt.text = HandsawCost + "$";
+		//convert Handsaw data to string to save in PlayerPrefs
+		string HandsawCPSSave = HandsawCPS.ToString ();
+		string HandsawLevelSave = HandsawLevel.ToString ();
+		string HandsawCostSave = HandsawCost.ToString ();
+		string HandsawPointsPerSecondSave = HandsawPointsPerSecond.ToString ();
+		//save Handsaw data to PlayerPrefs
+		PlayerPrefs.SetString ("HandsawCPS", HandsawCPSSave);
+		PlayerPrefs.SetString ("HandsawLevel", HandsawLevelSave);
+		PlayerPrefs.SetString ("HandsawCost", HandsawCostSave);
+		PlayerPrefs.SetString ("HandsawPointsPerSecond", HandsawPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Fence  --------------------------
 	public void BuyFence () {
-		
+		if (HandsawLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= FenceCost) {
+				scoreCount -= FenceCost;
+				FenceLevel += 1;
+				FenceCPS = FenceCPS + 1200000;
+				FencePointsPerSecond = FenceCPS;
+				FenceCost += 250000000;
+				imgFence.SetActive(true);
+			}
+		}
+		//enable the Dog
+		if (FenceLevel >= 25) {
+			btnDog.GetComponent<Button>().interactable = true;
+		}
+		//Fence txt update
+		FenceCPSTxt.text = "C.P.S : " + FenceCPS;
+		FenceLevelTxt.text = "Lvl : " + FenceLevel;
+		FenceCostTxt.text = FenceCost + "$";
+		//convert Fence data to string to save in PlayerPrefs
+		string FenceCPSSave = FenceCPS.ToString ();
+		string FenceLevelSave = FenceLevel.ToString ();
+		string FenceCostSave = FenceCost.ToString ();
+		string FencePointsPerSecondSave = FencePointsPerSecond.ToString ();
+		//save Fence data to PlayerPrefs
+		PlayerPrefs.SetString ("FenceCPS", FenceCPSSave);
+		PlayerPrefs.SetString ("FenceLevel", FenceLevelSave);
+		PlayerPrefs.SetString ("FenceCost", FenceCostSave);
+		PlayerPrefs.SetString ("FencePointsPerSecond", FencePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Dog  --------------------------
 	public void BuyDog () {
-		
+		if (FenceLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= DogCost) {
+				scoreCount -= DogCost;
+				DogLevel += 1;
+				DogCPS = DogCPS + 2000000;
+				DogPointsPerSecond = DogCPS;
+				DogCost += 400000000;
+				imgDog.SetActive(true);
+			}
+		}
+		//enable the Cat
+		if (DogLevel >= 25) {
+			btnCat.GetComponent<Button>().interactable = true;
+		}
+		//Dog txt update
+		DogCPSTxt.text = "C.P.S : " + DogCPS;
+		DogLevelTxt.text = "Lvl : " + DogLevel;
+		DogCostTxt.text = DogCost + "$";
+		//convert Dog data to string to save in PlayerPrefs
+		string DogCPSSave = DogCPS.ToString ();
+		string DogLevelSave = DogLevel.ToString ();
+		string DogCostSave = DogCost.ToString ();
+		string DogPointsPerSecondSave = DogPointsPerSecond.ToString ();
+		//save Dog data to PlayerPrefs
+		PlayerPrefs.SetString ("DogCPS", DogCPSSave);
+		PlayerPrefs.SetString ("DogLevel", DogLevelSave);
+		PlayerPrefs.SetString ("DogCost", DogCostSave);
+		PlayerPrefs.SetString ("DogPointsPerSecond", DogPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Cat  --------------------------
 	public void BuyCat () {
-		
+		if (DogLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= CatCost) {
+				scoreCount -= CatCost;
+				CatLevel += 1;
+				CatCPS = CatCPS + 3500000;
+				CatPointsPerSecond = CatCPS;
+				CatCost += 800000000;
+				imgCat.SetActive(true);
+			}
+		}
+		//enable the Chicken
+		if (CatLevel >= 25) {
+			btnChicken.GetComponent<Button>().interactable = true;
+		}
+		//Cat txt update
+		CatCPSTxt.text = "C.P.S : " + CatCPS;
+		CatLevelTxt.text = "Lvl : " + CatLevel;
+		CatCostTxt.text = CatCost + "$";
+		//convert Cat data to string to save in PlayerPrefs
+		string CatCPSSave = CatCPS.ToString ();
+		string CatLevelSave = CatLevel.ToString ();
+		string CatCostSave = CatCost.ToString ();
+		string CatPointsPerSecondSave = CatPointsPerSecond.ToString ();
+		//save Cat data to PlayerPrefs
+		PlayerPrefs.SetString ("CatCPS", CatCPSSave);
+		PlayerPrefs.SetString ("CatLevel", CatLevelSave);
+		PlayerPrefs.SetString ("CatCost", CatCostSave);
+		PlayerPrefs.SetString ("CatPointsPerSecond", CatPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Chicken  --------------------------
 	public void BuyChicken () {
-		
+		if (CatLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= ChickenCost) {
+				scoreCount -= ChickenCost;
+				ChickenLevel += 1;
+				ChickenCPS = ChickenCPS + 6000000;
+				ChickenPointsPerSecond = ChickenCPS;
+				ChickenCost += 1200000000;
+				imgChicken.SetActive(true);
+			}
+		}
+		//enable the Pig
+		if (ChickenLevel >= 25) {
+			btnPig.GetComponent<Button>().interactable = true;
+		}
+		//Chicken txt update
+		ChickenCPSTxt.text = "C.P.S : " + ChickenCPS;
+		ChickenLevelTxt.text = " " + ChickenLevel;
+		ChickenCostTxt.text = ChickenCost + "$";
+		//convert Chicken data to string to save in PlayerPrefs
+		string ChickenCPSSave = ChickenCPS.ToString ();
+		string ChickenLevelSave = ChickenLevel.ToString ();
+		string ChickenCostSave = ChickenCost.ToString ();
+		string ChickenPointsPerSecondSave = ChickenPointsPerSecond.ToString ();
+		//save Chicken data to PlayerPrefs
+		PlayerPrefs.SetString ("ChickenCPS", ChickenCPSSave);
+		PlayerPrefs.SetString ("ChickenLevel", ChickenLevelSave);
+		PlayerPrefs.SetString ("ChickenCost", ChickenCostSave);
+		PlayerPrefs.SetString ("ChickenPointsPerSecond", ChickenPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Pig  --------------------------
 	public void BuyPig () {
-		
+		if (ChickenLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= PigCost) {
+				scoreCount -= PigCost;
+				PigLevel += 1;
+				PigCPS = PigCPS + 10000000;
+				PigPointsPerSecond = PigCPS;
+				PigCost += 1700000000;
+				imgPig.SetActive(true);
+			}
+		}
+		//enable the Sheep
+		if (PigLevel >= 25) {
+			btnSheep.GetComponent<Button>().interactable = true;
+		}
+		//Pig txt update
+		PigCPSTxt.text = "C.P.S : " + PigCPS;
+		PigLevelTxt.text = "Lvl : " + PigLevel;
+		PigCostTxt.text = PigCost + "$";
+		//convert Pig data to string to save in PlayerPrefs
+		string PigCPSSave = PigCPS.ToString ();
+		string PigLevelSave = PigLevel.ToString ();
+		string PigCostSave = PigCost.ToString ();
+		string PigPointsPerSecondSave = PigPointsPerSecond.ToString ();
+		//save Pig data to PlayerPrefs
+		PlayerPrefs.SetString ("PigCPS", PigCPSSave);
+		PlayerPrefs.SetString ("PigLevel", PigLevelSave);
+		PlayerPrefs.SetString ("PigCost", PigCostSave);
+		PlayerPrefs.SetString ("PigPointsPerSecond", PigPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Sheep  --------------------------
 	public void BuySheep () {
-		
+		if (PigLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= SheepCost) {
+				scoreCount -= SheepCost;
+				SheepLevel += 1;
+				SheepCPS = SheepCPS + 15000000;
+				SheepPointsPerSecond = SheepCPS;
+				SheepCost += 3000000000;
+				imgSheep.SetActive(true);
+			}
+		}
+		//enable the Cow
+		if (SheepLevel >= 25) {
+			btnCow.GetComponent<Button>().interactable = true;
+		}
+		//Sheep txt update
+		SheepCPSTxt.text = "C.P.S : " + SheepCPS;
+		SheepLevelTxt.text = "Lvl : " + SheepLevel;
+		SheepCostTxt.text = SheepCost + "$";
+		//convert Sheep data to string to save in PlayerPrefs
+		string SheepCPSSave = SheepCPS.ToString ();
+		string SheepLevelSave = SheepLevel.ToString ();
+		string SheepCostSave = SheepCost.ToString ();
+		string SheepPointsPerSecondSave = SheepPointsPerSecond.ToString ();
+		//save Sheep data to PlayerPrefs
+		PlayerPrefs.SetString ("SheepCPS", SheepCPSSave);
+		PlayerPrefs.SetString ("SheepLevel", SheepLevelSave);
+		PlayerPrefs.SetString ("SheepCost", SheepCostSave);
+		PlayerPrefs.SetString ("SheepPointsPerSecond", SheepPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Cow  --------------------------
 	public void BuyCow () {
-		
+		if (SheepLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= CowCost) {
+				scoreCount -= CowCost;
+				CowLevel += 1;
+				CowCPS = CowCPS + 25000000;
+				CowPointsPerSecond = CowCPS;
+				CowCost += 5500000000;
+				imgCow.SetActive(true);
+			}
+		}
+		//enable the Horse
+		if (CowLevel >= 25) {
+			btnHorse.GetComponent<Button>().interactable = true;
+		}
+		//Cow txt update
+		CowCPSTxt.text = "C.P.S : " + CowCPS;
+		CowLevelTxt.text = "Lvl : " + CowLevel;
+		CowCostTxt.text = CowCost + "$";
+		//convert Cow data to string to save in PlayerPrefs
+		string CowCPSSave = CowCPS.ToString ();
+		string CowLevelSave = CowLevel.ToString ();
+		string CowCostSave = CowCost.ToString ();
+		string CowPointsPerSecondSave = CowPointsPerSecond.ToString ();
+		//save Cow data to PlayerPrefs
+		PlayerPrefs.SetString ("CowCPS", CowCPSSave);
+		PlayerPrefs.SetString ("CowLevel", CowLevelSave);
+		PlayerPrefs.SetString ("CowCost", CowCostSave);
+		PlayerPrefs.SetString ("CowPointsPerSecond", CowPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Horse  --------------------------
 	public void BuyHorse () {
-		
+		if (CowLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= HorseCost) {
+				scoreCount -= HorseCost;
+				HorseLevel += 1;
+				HorseCPS = HorseCPS + 40000000;
+				HorsePointsPerSecond = HorseCPS;
+				HorseCost += 8000000000;
+				imgHorse.SetActive(true);
+			}
+		}
+		//enable the GoldPear
+		if (HorseLevel >= 25) {
+			btnGoldPear.GetComponent<Button>().interactable = true;
+		}
+		//Horse txt update
+		HorseCPSTxt.text = "C.P.S : " + HorseCPS;
+		HorseLevelTxt.text = "Lvl : " + HorseLevel;
+		HorseCostTxt.text = HorseCost + "$";
+		//convert Horse data to string to save in PlayerPrefs
+		string HorseCPSSave = HorseCPS.ToString ();
+		string HorseLevelSave = HorseLevel.ToString ();
+		string HorseCostSave = HorseCost.ToString ();
+		string HorsePointsPerSecondSave = HorsePointsPerSecond.ToString ();
+		//save Horse data to PlayerPrefs
+		PlayerPrefs.SetString ("HorseCPS", HorseCPSSave);
+		PlayerPrefs.SetString ("HorseLevel", HorseLevelSave);
+		PlayerPrefs.SetString ("HorseCost", HorseCostSave);
+		PlayerPrefs.SetString ("HorsePointsPerSecond", HorsePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  GoldPear  --------------------------
 	public void BuyGoldPear () {
-		
+		if (HorseLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= GoldPearCost) {
+				scoreCount -= GoldPearCost;
+				GoldPearLevel += 1;
+				GoldPearCPS = GoldPearCPS + 70000000;
+				GoldPearPointsPerSecond = GoldPearCPS;
+				GoldPearCost += 13250000000;
+				imgGoldPear.SetActive(true);
+			}
+		}
+		//enable the Barn
+		if (GoldPearLevel >= 25) {
+			btnBarn.GetComponent<Button>().interactable = true;
+		}
+		//GoldPear txt update
+		GoldPearCPSTxt.text = "C.P.S : " + GoldPearCPS;
+		GoldPearLevelTxt.text = "Lvl : " + GoldPearLevel;
+		GoldPearCostTxt.text = GoldPearCost + "$";
+		//convert GoldPear data to string to save in PlayerPrefs
+		string GoldPearCPSSave = GoldPearCPS.ToString ();
+		string GoldPearLevelSave = GoldPearLevel.ToString ();
+		string GoldPearCostSave = GoldPearCost.ToString ();
+		string GoldPearPointsPerSecondSave = GoldPearPointsPerSecond.ToString ();
+		//save GoldPear data to PlayerPrefs
+		PlayerPrefs.SetString ("GoldPearCPS", GoldPearCPSSave);
+		PlayerPrefs.SetString ("GoldPearLevel", GoldPearLevelSave);
+		PlayerPrefs.SetString ("GoldPearCost", GoldPearCostSave);
+		PlayerPrefs.SetString ("GoldPearPointsPerSecond", GoldPearPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Barn  --------------------------
 	public void BuyBarn () {
-		
+		if (GoldPearLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= BarnCost) {
+				scoreCount -= BarnCost;
+				BarnLevel += 1;
+				BarnCPS = BarnCPS + 100000000;
+				BarnPointsPerSecond = BarnCPS;
+				BarnCost += 20000000000;
+				imgBarn.SetActive(true);
+			}
+		}
+		//enable the Tractor
+		if (BarnLevel >= 25) {
+			btnTractor.GetComponent<Button>().interactable = true;
+		}
+		//Barn txt update
+		BarnCPSTxt.text = "C.P.S : " + BarnCPS;
+		BarnLevelTxt.text = "Lvl : " + BarnLevel;
+		BarnCostTxt.text = BarnCost + "$";
+		//convert Barn data to string to save in PlayerPrefs
+		string BarnCPSSave = BarnCPS.ToString ();
+		string BarnLevelSave = BarnLevel.ToString ();
+		string BarnCostSave = BarnCost.ToString ();
+		string BarnPointsPerSecondSave = BarnPointsPerSecond.ToString ();
+		//save Barn data to PlayerPrefs
+		PlayerPrefs.SetString ("BarnCPS", BarnCPSSave);
+		PlayerPrefs.SetString ("BarnLevel", BarnLevelSave);
+		PlayerPrefs.SetString ("BarnCost", BarnCostSave);
+		PlayerPrefs.SetString ("BarnPointsPerSecond", BarnPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  Tractor  --------------------------
 	public void BuyTractor () {
-		
+		if (BarnLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= TractorCost) {
+				scoreCount -= TractorCost;
+				TractorLevel += 1;
+				TractorCPS = TractorCPS + 150000000;
+				TractorPointsPerSecond = TractorCPS;
+				TractorCost += 45000000000;
+				imgTractor.SetActive(true);
+			}
+		}
+		//enable the Mill
+		if (TractorLevel >= 25) {
+			btnMill.GetComponent<Button>().interactable = true;
+		}
+		//Tractor txt update
+		TractorCPSTxt.text = "C.P.S : " + TractorCPS;
+		TractorLevelTxt.text = "Lvl : " + TractorLevel;
+		TractorCostTxt.text = TractorCost + "$";
+		//convert Tractor data to string to save in PlayerPrefs
+		string TractorCPSSave = TractorCPS.ToString ();
+		string TractorLevelSave = TractorLevel.ToString ();
+		string TractorCostSave = TractorCost.ToString ();
+		string TractorPointsPerSecondSave = TractorPointsPerSecond.ToString ();
+		//save Tractor data to PlayerPrefs
+		PlayerPrefs.SetString ("TractorCPS", TractorCPSSave);
+		PlayerPrefs.SetString ("TractorLevel", TractorLevelSave);
+		PlayerPrefs.SetString ("TractorCost", TractorCostSave);
+		PlayerPrefs.SetString ("TractorPointsPerSecond", TractorPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  tomato  --------------------------
 	public void BuyMill () {
-		
+		if (TractorLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= MillCost) {
+				scoreCount -= MillCost;
+				MillLevel += 1;
+				MillCPS = MillCPS + 250000000;
+				MillPointsPerSecond = MillCPS;
+				MillCost += 95000000000;
+				imgMill.SetActive(true);
+			}
+		}
+		//enable the GoldApple
+		if (MillLevel >= 25) {
+			btnGoldApple.GetComponent<Button>().interactable = true;
+		}
+		//Mill txt update
+		MillCPSTxt.text = "C.P.S : " + MillCPS;
+		MillLevelTxt.text = "Lvl : " + MillLevel;
+		MillCostTxt.text = MillCost + "$";
+		//convert Mill data to string to save in PlayerPrefs
+		string MillCPSSave = MillCPS.ToString ();
+		string MillLevelSave = MillLevel.ToString ();
+		string MillCostSave = MillCost.ToString ();
+		string MillPointsPerSecondSave = MillPointsPerSecond.ToString ();
+		//save Mill data to PlayerPrefs
+		PlayerPrefs.SetString ("MillCPS", MillCPSSave);
+		PlayerPrefs.SetString ("MillLevel", MillLevelSave);
+		PlayerPrefs.SetString ("MillCost", MillCostSave);
+		PlayerPrefs.SetString ("MillPointsPerSecond", MillPointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 
+	//--------------------------  GoldApple  --------------------------
 	public void BuyGoldApple () {
-		
+		if (MillLevel >= 25) {
+			//check for the money available
+			if (scoreCount >= GoldAppleCost) {
+				scoreCount -= GoldAppleCost;
+				GoldAppleLevel += 1;
+				GoldAppleCPS = GoldAppleCPS + 1000000000;
+				GoldApplePointsPerSecond = GoldAppleCPS;
+				GoldAppleCost += 300000000000;
+				imgGoldApple.SetActive(true);
+			}
+		}
+		//GoldApple txt update
+		GoldAppleCPSTxt.text = "C.P.S : " + GoldAppleCPS;
+		GoldAppleLevelTxt.text = "Lvl : " + GoldAppleLevel;
+		GoldAppleCostTxt.text = GoldAppleCost + "$";
+		//convert GoldApple data to string to save in PlayerPrefs
+		string GoldAppleCPSSave = GoldAppleCPS.ToString ();
+		string GoldAppleLevelSave = GoldAppleLevel.ToString ();
+		string GoldAppleCostSave = GoldAppleCost.ToString ();
+		string GoldApplePointsPerSecondSave = GoldApplePointsPerSecond.ToString ();
+		//save GoldApple data to PlayerPrefs
+		PlayerPrefs.SetString ("GoldAppleCPS", GoldAppleCPSSave);
+		PlayerPrefs.SetString ("GoldAppleLevel", GoldAppleLevelSave);
+		PlayerPrefs.SetString ("GoldAppleCost", GoldAppleCostSave);
+		PlayerPrefs.SetString ("GoldApplePointsPerSecond", GoldApplePointsPerSecondSave);
+		//go refresh the pointsPerSecond
+		Invoke ("RecalPtsPerSec", 0f);
 	}
 }

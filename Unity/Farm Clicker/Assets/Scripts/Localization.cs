@@ -89,6 +89,37 @@ public class Localization : MonoBehaviour {
 		EN["BTN_TASK"] = "Task";
 		EN["CORN_DOLLARS"] = "Corn dollars";
 
+		//shop screen
+		EN["BTN_SEEDS"] = "Seeds";
+		EN["BTN_FLOWERS"] = "Flowers";
+		EN["BTN_TOMATO"] = "Tomato";
+		EN["BTN_TREE"] = "Tree";
+		EN["BTN_GREENAPPLE"] = "Green Apple";
+		EN["BTN_CARROT"] = "Carrot";
+		EN["BTN_GREENPEAR"] = "Green Pear";
+		EN["BTN_CORN"] = "Corn";
+		EN["BTN_REDAPPLE"] = "Red Apple";
+		EN["BTN_WATERMELON"] = "Watermelon";
+		EN["BTN_REDPEAR"] = "Red Pear";
+		EN["BTN_PUMPKIN"] = "Pumpkin";
+		EN["BTN_WRENCH"] = "Wrench";
+		EN["BTN_SCREWDRIVER"] = "Screwdriver";
+		EN["BTN_HAMMER"] = "Hammer";
+		EN["BTN_HANDSAW"] = "Handsaw";
+		EN["BTN_FENCE"] = "Fence";
+		EN["BTN_DOG"] = "Dog";
+		EN["BTN_CAT"] = "Cat";
+		EN["BTN_CHICKEN"] = "Chicken";
+		EN["BTN_PIG"] = "Pig";
+		EN["BTN_SHEEP"] = "Sheep";
+		EN["BTN_COW"] = "Cow";
+		EN["BTN_HORSE"] = "Horse";
+		EN["BTN_GOLDPEAR"] = "Gold Pear";
+		EN["BTN_BARN"] = "Barn";
+		EN["BTN_TRACTOR"] = "Tractor";
+		EN["BTN_MILL"] = "Mill";
+		EN["BTN_GOLDAPPLE"] = "Gold Apple";
+
 
 
 
@@ -152,19 +183,36 @@ public class Localization : MonoBehaviour {
 		FR["BTN_TASK"] = "Tâches";
 		FR["CORN_DOLLARS"] = "Billet de Maïs";
 
-
-
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
-		FR[""] = "";
+		//shop screen
+		FR["BTN_SEEDS"] = "Graines";
+		FR["BTN_FLOWERS"] = "Fleurs";
+		FR["BTN_TOMATO"] = "Tomate";
+		FR["BTN_TREE"] = "Arbre";
+		FR["BTN_GREENAPPLE"] = "Pomme verte";
+		FR["BTN_CARROT"] = "Carotte";
+		FR["BTN_GREENPEAR"] = "Poire verte";
+		FR["BTN_CORN"] = "Maïs";
+		FR["BTN_REDAPPLE"] = "Pomme rouge";
+		FR["BTN_WATERMELON"] = "Melon d'eau";
+		FR["BTN_REDPEAR"] = "Poire rouge";
+		FR["BTN_PUMPKIN"] = "Citrouille";
+		FR["BTN_WRENCH"] = "Clé anglaise";
+		FR["BTN_SCREWDRIVER"] = "Tournevis";
+		FR["BTN_HAMMER"] = "Marteau";
+		FR["BTN_HANDSAW"] = "Scie à main";
+		FR["BTN_FENCE"] = "Clôture";
+		FR["BTN_DOG"] = "Chien";
+		FR["BTN_CAT"] = "Chat";
+		FR["BTN_CHICKEN"] = "Poulet";
+		FR["BTN_PIG"] = "Cochon";
+		FR["BTN_SHEEP"] = "Mouton";
+		FR["BTN_COW"] = "Vache";
+		FR["BTN_HORSE"] = "Cheval";
+		FR["BTN_GOLDPEAR"] = "Poire en or";
+		FR["BTN_BARN"] = "Grange";
+		FR["BTN_TRACTOR"] = "Tracteur";
+		FR["BTN_MILL"] = "Moulin";
+		FR["BTN_GOLDAPPLE"] = "Pomme en or";
 
 
 
